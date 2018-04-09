@@ -1,4 +1,4 @@
-void creditList();
+void creditList(int* userNum);
 void userMenu(int* userNum);
 void addition(int* userNum);
 void deletion(int* userNum);

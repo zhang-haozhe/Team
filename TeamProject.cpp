@@ -1,22 +1,22 @@
 #include <iostream>
 #include <string>
-#include <map>
 #include"Header.h"
 
 using namespace std;
 
-void creditList() {
+void creditList(int *userNum) {
 	cout << "1. Nhi Dinh" << endl;
 	cout << "2. Haozhe Zhang" << endl;
 	cout << "3. Jessie Huang" << endl;
 	cout << "4. Teresa Cheung" << endl;
 	cout << "5. James Boultinghouse" << endl;
 	cout << "6. Thien Pham" << endl;
+	*userNum = 0;
 }
 
 void userMenu(int* userNum) {
 
-	while (!((*userNum == 1) || (*userNum == 2) || (*userNum == 3) || (*userNum == 4) || (*userNum == 5) || (*userNum == 6) || (*userNum == 7)||(*userNum==8))) {
+	while (!((*userNum == 1) || (*userNum == 2) || (*userNum == 3) || (*userNum == 4) || (*userNum == 5) || (*userNum == 6) || (*userNum == 7) || (*userNum == 8))) {
 		cout << "1. Add" << endl;
 		cout << "2. Remove " << endl;
 		cout << "3. Sort " << endl;
@@ -28,7 +28,7 @@ void userMenu(int* userNum) {
 		cout << endl;
 		cout << "choice - ";
 		cin >> *userNum;
-		if (!((*userNum == 1) || (*userNum == 2) || (*userNum == 3) || (*userNum == 4) || (*userNum == 5) || (*userNum == 6) || (*userNum == 7)||(*userNum == 8))) {
+		if (!((*userNum == 1) || (*userNum == 2) || (*userNum == 3) || (*userNum == 4) || (*userNum == 5) || (*userNum == 6) || (*userNum == 7) || (*userNum == 8))) {
 
 			cout << endl;
 			cout << "Be serious." << endl;
@@ -148,12 +148,12 @@ int main() {
 			*userNum = 0;
 			break;
 		}case 6: {
-			creditList();
+			creditList(userNum);
 			*userNum = 0;
 			break;
 		}
 		}userMenu(userNum);
-	}while (*userNum != 8);
+	} while (*userNum != 8);
 
 	return 0;
 }
