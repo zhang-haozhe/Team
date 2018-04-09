@@ -59,14 +59,14 @@ void addition(int *userNum) {
 			*userNum = 0;
 			cout << endl;
 		}
-		if ((chap != 2) && (chap != 1) && (chap != 3) && (chap != 4) && (chap != 5) && (chap != 6) && (chap != 7) && (chap != 9) && (chap != 10) && (chap != 11) && (chap != 13)) {
+		if ((chap != 2) && (chap != 1) && (chap != 3) && (chap != 4) && (chap != 5) && (chap != 6) && (chap != 7) && (chap != 9) && (chap != 10) && (chap != 11)) {
 			cout << "Chapter # misinput. " << endl;
 			cin.clear();
 			cin.ignore(1024, '\n');
 			*userNum = 0;
 			cout << endl;
 		}
-	} while ((cin.fail()) || ((chap != 2) && (chap != 1) && (chap != 3) && (chap != 4) && (chap != 5) && (chap != 6) && (chap != 7) && (chap != 9) && (chap != 10) && (chap != 11) && (chap != 13)));
+	} while ((cin.fail()) || ((chap != 2) && (chap != 1) && (chap != 3) && (chap != 4) && (chap != 5) && (chap != 6) && (chap != 7) && (chap != 9) && (chap != 10) && (chap != 11)));
 	cout << endl;
 	*userNum = 0;
 }
@@ -390,36 +390,36 @@ int main() {
 //};
 
 
-#include"Header.h"
-#include <stdio.h>
-
-using namespace std;
-
-static int* released = new int;
-
-
-void userMenu(int* userNum) {
-
-	while (!((*userNum == 1) || (*userNum == 2) || (*userNum == 3) || (*userNum == 4) || (*userNum == 5))) {
-		cout << "1. Add program " << endl;
-		cout << "2. Kill program " << endl;
-		cout << "3. Fragmentation" << endl;
-		cout << "4. Print memory " << endl;
-		cout << "5. Exit" << endl;
-		cout << endl;
-		cout << "choice - ";
-		cin >> *userNum;
-		if (!((*userNum == 1) || (*userNum == 2) || (*userNum == 3) || (*userNum == 4) || (*userNum == 5))) {
-
-			cout << endl;
-			cout << "Be serious." << endl;
-			cin.clear();
-			cin.ignore(1024, '\n');
-			*userNum = 0;
-			cout << endl;
-		}
-	}
-}
+//#include"Header.h"
+//#include <stdio.h>
+//
+//using namespace std;
+//
+//static int* released = new int;
+//
+//
+//void userMenu(int* userNum) {
+//
+//	while (!((*userNum == 1) || (*userNum == 2) || (*userNum == 3) || (*userNum == 4) || (*userNum == 5))) {
+//		cout << "1. Add program " << endl;
+//		cout << "2. Kill program " << endl;
+//		cout << "3. Fragmentation" << endl;
+//		cout << "4. Print memory " << endl;
+//		cout << "5. Exit" << endl;
+//		cout << endl;
+//		cout << "choice - ";
+//		cin >> *userNum;
+//		if (!((*userNum == 1) || (*userNum == 2) || (*userNum == 3) || (*userNum == 4) || (*userNum == 5))) {
+//
+//			cout << endl;
+//			cout << "Be serious." << endl;
+//			cin.clear();
+//			cin.ignore(1024, '\n');
+//			*userNum = 0;
+//			cout << endl;
+//		}
+//	}
+//}
 
 //
 //
