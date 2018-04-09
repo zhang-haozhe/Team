@@ -10,7 +10,7 @@ void creditList() {
 	cout << "3. Jessie Huang" << endl;
 	cout << "4. Teresa Cheung" << endl;
 	cout << "5. James Boultinghouse" << endl;
-	cout << "6. Thiem Pham" << endl;
+	cout << "6. Thien Pham" << endl;
 
 }
 
