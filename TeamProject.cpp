@@ -3,6 +3,8 @@
 void userMenu(int* userNum);
 using namespace std;
 
+//jessie testing
+
 void userMenu(int* userNum) {
 
 	while (!((*userNum == 1) || (*userNum == 2) || (*userNum == 3) || (*userNum == 4) || (*userNum == 5) || (*userNum == 6) || (*userNum == 7))) {
