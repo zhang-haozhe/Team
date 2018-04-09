@@ -38,6 +38,39 @@ void userMenu(int* userNum) {
 		}
 	}
 }
+
+void addition(int *userNum) {
+	int chap = 0;
+	string def = "?";
+	string word = "?";
+	cout << "Input your word: " << endl;
+	cin >> word;
+	cout << "Input the definition of this word: " << endl;
+	cin.ignore();//Important!!!
+	getline(cin, def);
+	do {
+		cout << "Input the chapter that this word is located: " << endl;
+		cin >> chap;
+		if (cin.fail()) {
+			cout << "Your input is invalid." << endl;
+			cin.clear();
+			cin.ignore(1024, '\n');
+			*userNum = 0;
+			cout << endl;
+		}
+		if ((chap != 2) && (chap != 1) && (chap != 3) && (chap != 4) && (chap != 5) && (chap != 6) && (chap != 7) && (chap != 9) && (chap != 10) && (chap != 11) && (chap != 13)) {
+			cout << "Chapter # misinput. " << endl;
+			cin.clear();
+			cin.ignore(1024, '\n');
+			*userNum = 0;
+			cout << endl;
+		}
+	} while ((cin.fail()) || ((chap != 2) && (chap != 1) && (chap != 3) && (chap != 4) && (chap != 5) && (chap != 6) && (chap != 7) && (chap != 9) && (chap != 10) && (chap != 11) && (chap != 13)));
+	cout << endl;
+	*userNum = 0;
+}
+
+
 int main() {
 	int userInput;
 	int* userNum = &userInput;
@@ -47,34 +80,7 @@ int main() {
 		userMenu(userNum);
 		switch (*userNum) {
 		case 1: {
-			int chap = 0;
-			string def = "?";
-			string word = "?";
-			cout <<"Input your word: "<< endl;
-			cin >> word;
-			cout << "Input the definition of this word: " << endl;
-			cin.ignore();//Important!!!
-			getline(cin,def);
-			do {
-				cout << "Input the chapter that this word is located: " << endl;
-				cin >> chap;
-				if (cin.fail()) {
-					cout << "Your input is invalid." << endl;
-					cin.clear();
-					cin.ignore(1024, '\n');
-					*userNum = 0;
-					cout << endl;
-				}
-				if ((chap != 2) && (chap != 1) && (chap != 3) && (chap != 4) && (chap != 5) && (chap != 6) && (chap != 7) && (chap != 9) && (chap != 10) && (chap != 11) && (chap != 13)) {
-					cout << "Chapter # misinput. " << endl;
-					cin.clear();
-					cin.ignore(1024, '\n');
-					*userNum = 0;
-					cout << endl;
-				}
-			} while ((cin.fail()) || ((chap != 2) && (chap != 1) && (chap != 3) && (chap != 4) && (chap != 5) && (chap != 6) && (chap != 7) && (chap != 9) && (chap != 10) && (chap != 11) && (chap != 13)));
-			cout << endl;
-			*userNum = 0;
+			addition(userNum);
 			break;
 		}case 2: {
 			string weebs;
