@@ -5,7 +5,7 @@
 using namespace std;
 
 void creditList() {
-	cout << "1. Nhi Dihn" << endl;
+	cout << "1. Nhi Dinh" << endl;
 	cout << "2. Zhang Haozhe" << endl;
 	cout << "3. Jessie Huang" << endl;
 	cout << "4. Teresa Cheung" << endl;
