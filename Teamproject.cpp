@@ -15,7 +15,7 @@ void creditList() {
 
 void userMenu(int* userNum) {
 
-	while (!((*userNum == 1) || (*userNum == 2) || (*userNum == 3) || (*userNum == 4) || (*userNum == 5) || (*userNum == 6) || (*userNum == 7))) {
+	while (!((*userNum == 1) || (*userNum == 2) || (*userNum == 3) || (*userNum == 4) || (*userNum == 5) || (*userNum == 6) || (*userNum == 7)||(*userNum==8))) {
 		cout << "1. Add" << endl;
 		cout << "2. Remove " << endl;
 		cout << "3. Sort " << endl;
@@ -23,11 +23,11 @@ void userMenu(int* userNum) {
 		cout << "5. Search" << endl;
 		cout << "6. Credits " << endl;
 		cout << "7. Sort and Print " << endl;
-		cout << "7. Quit " << endl;
+		cout << "8. Quit " << endl;
 		cout << endl;
 		cout << "choice - ";
 		cin >> *userNum;
-		if (!((*userNum == 1) || (*userNum == 2) || (*userNum == 3) || (*userNum == 4) || (*userNum == 5) || (*userNum == 6) || (*userNum == 7))) {
+		if (!((*userNum == 1) || (*userNum == 2) || (*userNum == 3) || (*userNum == 4) || (*userNum == 5) || (*userNum == 6) || (*userNum == 7)||(*userNum == 8))) {
 
 			cout << endl;
 			cout << "Be serious." << endl;
@@ -152,7 +152,7 @@ int main() {
 			break;
 		}
 		}userMenu(userNum);
-	}while (*userNum != 7);
+	}while (*userNum != 8);
 
 	return 0;
 }
