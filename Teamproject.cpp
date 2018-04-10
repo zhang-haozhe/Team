@@ -28,12 +28,14 @@ int List::deleteTerm(string term) {
 	while(temp != NULL) {
 		if(temp->value == term) {
 			temp->value = "Free";
-			break;
+			return index;
 		}
 		temp = temp->next;
 		index++;
 	}
-	return index;
+	//Note: if term is not found, return -1, then where the method was called, if index = -1, then
+	//term does not exist and don't do the other deletion method calls.
+	return -1;
 }
 
 void List::deleteTermDetails(int index) {
