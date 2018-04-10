@@ -1,3 +1,9 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
 void creditList(int* userNum);
 void userMenu(int* userNum);
 void addition(int* userNum);
@@ -12,12 +18,13 @@ public:
     string value;
 };
 
-class List() {
+class List {
 private:
   int size;
   Node* head;
 public:
     List();
     void addTerm(string term);
-    void deleteTerm(string term);
-}
+    int deleteTerm(string term);
+	void deleteTermDetails(int index);
+};
