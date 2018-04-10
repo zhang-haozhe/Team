@@ -1,4 +1,4 @@
-#include"Header.h"
+﻿#include"Header.h"
 
 using namespace std;
 
@@ -61,12 +61,24 @@ void List::print() {
 	Node *temp = new Node;
 	temp = head;
 	int counter = 0;
+	string tempString;
 	while (temp != NULL) {
 		//cout << temp->value << flush;
 		if (temp->value != "Free") {
 			while (counter < temp->value.length()) {
 				if (temp->value.at(counter) == '[') {
 					cout << endl;
+				}
+				else if (temp->value.at(counter) == '\\') {
+					tempString += "\\";
+					while ((temp->value.at(counter) != ' ')&&(counter!=temp->value.length())) {
+						counter++;
+						tempString += temp->value.at(counter);
+					}
+					if (tempString == "\u00AC") {
+						cout << "\u00AC" << endl;
+					}
+					tempString = "";
 				}
 				else {
 					cout << temp->value.at(counter);
@@ -206,10 +218,12 @@ int main() {
 	int* userNum = &userInput;
 	List definition;
 	List term;
-	definition.load("Definitions.txt");
+	string testing = "\u00AC";
+	definition.load("test.txt");
 	term.load("Terms.txt");
-	definition.print();
-	
+	//definition.print();
+	//cout << "\u00AC" << endl;
+	cout << testing << endl;
 	do {
 		userMenu(userNum);
 		switch (*userNum) {

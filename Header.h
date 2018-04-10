@@ -14,6 +14,7 @@ void sort(int* userNum);
 void previous(int* userNum);
 void search(int* userNum);
 
+
 class Node {
 public:
 	Node * next;
@@ -31,5 +32,7 @@ public:
 	void deleteTermDetails(int index);
 	void load(string fileName);
 	void print();
+	Node*merge(Node*h1, Node*h2);
+	void MergeSort(Node**head);
 };
 #pragma once
