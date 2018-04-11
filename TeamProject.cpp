@@ -63,20 +63,28 @@ void List::print() {
 	int counter = 0;
 	string tempString;
 	while (temp != NULL) {
-		//cout << temp->value << flush;
 		if (temp->value != "Free") {
 			while (counter < temp->value.length()) {
 				if (temp->value.at(counter) == '[') {
 					cout << endl;
 				}
-				else if (temp->value.at(counter) == '\\') {
-					tempString += "\\";
-					while ((temp->value.at(counter) != ' ')&&(counter!=temp->value.length())) {
+				else if (temp->value.at(counter) == '|') {
+					tempString += "|";
+					while ((temp->value.at(counter+1) != ' ')&&(counter+1!=temp->value.length())) {
 						counter++;
 						tempString += temp->value.at(counter);
 					}
-					if (tempString == "\u00AC") {
-						cout << "\u00AC" << endl;
+					if (tempString == "|u00AC") {
+						cout << "\u00AC";
+					}
+					else if (tempString == "|u2194") {
+						cout << "\u2194";
+					}
+					else if (tempString == "|u2219") {
+						cout << "\u2219";
+					}
+					else if (tempString == "|u220A") {
+						cout << "\u220A";
 					}
 					tempString = "";
 				}
@@ -218,12 +226,10 @@ int main() {
 	int* userNum = &userInput;
 	List definition;
 	List term;
-	string testing = "\u00AC";
-	definition.load("test.txt");
+	definition.load("Definitions5.txt");
 	term.load("Terms.txt");
-	//definition.print();
-	//cout << "\u00AC" << endl;
-	cout << testing << endl;
+	definition.print();
+
 	do {
 		userMenu(userNum);
 		switch (*userNum) {
