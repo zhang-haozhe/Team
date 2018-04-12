@@ -68,23 +68,26 @@ void List::print() {
 				if (temp->value.at(counter) == '[') {
 					cout << endl;
 				}
-				else if (temp->value.at(counter) == '|') {
-					tempString += "|";
-					while ((temp->value.at(counter+1) != ' ')&&(counter+1!=temp->value.length())) {
+				else if (temp->value.at(counter) == '@') {
+					tempString += "@";
+					for (int i = 0; i < 5; i++) {
 						counter++;
 						tempString += temp->value.at(counter);
 					}
-					if (tempString == "|u00AC") {
+					if (tempString == "@u00AC") {
 						cout << "\u00AC";
 					}
-					else if (tempString == "|u2194") {
+					else if (tempString == "@u2194") {
 						cout << "\u2194";
 					}
-					else if (tempString == "|u2219") {
+					else if (tempString == "@u2219") {
 						cout << "\u2219";
 					}
-					else if (tempString == "|u220A") {
+					else if (tempString == "@u220A") {
 						cout << "\u220A";
+					}
+					else if (tempString == "@u0044") {
+						cout << "\u0044";
 					}
 					tempString = "";
 				}
@@ -226,7 +229,7 @@ int main() {
 	int* userNum = &userInput;
 	List definition;
 	List term;
-	definition.load("Definitions5.txt");
+	definition.load("test.txt");
 	term.load("Terms.txt");
 	definition.print();
 
