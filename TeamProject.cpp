@@ -1,8 +1,10 @@
 ﻿#include"Header.h"
 
 using namespace std;
-
 List::List() { this->head = NULL; }
+
+static List definition;
+static List term;
 
 void List::addTerm(string term) {
 	if (head == NULL) {
@@ -156,17 +158,16 @@ void addition(int *userNum) {
 			cout << "Your input is invalid." << endl;
 			cin.clear();
 			cin.ignore(1024, '\n');
-			*userNum = 0;
 			cout << endl;
 		}
-		if ((chap != 2) && (chap != 1) && (chap != 3) && (chap != 4) && (chap != 5) && (chap != 6) && (chap != 7) && (chap != 9) && (chap != 10) && (chap != 11) && (chap != 13)) {
+		if ((chap != 2) && (chap != 1) && (chap != 3) && (chap != 4) && (chap != 5) && (chap != 6) && (chap != 7) && (chap != 9) && (chap != 10) && (chap != 11) ) {
 			cout << "Chapter # misinput. " << endl;
-			cin.clear();
-			cin.ignore(1024, '\n');
-			*userNum = 0;
 			cout << endl;
 		}
-	} while ((cin.fail()) || ((chap != 2) && (chap != 1) && (chap != 3) && (chap != 4) && (chap != 5) && (chap != 6) && (chap != 7) && (chap != 9) && (chap != 10) && (chap != 11) && (chap != 13)));
+	} while ((cin.fail()) || ((chap != 2) && (chap != 1) && (chap != 3) && (chap != 4) && (chap != 5) && (chap != 6) && (chap != 7) && (chap != 9) && (chap != 10) && (chap != 11) ));
+	term.addTerm(word);
+	definition.addTerm(def);
+	cout << "Term " << word << " successfully added." << endl;
 	cout << endl;
 	*userNum = 0;
 }
@@ -175,8 +176,17 @@ void deletion(int *userNum) {
 	string weebs;
 	cout << "Which word do you want to remove?" << endl;
 	cin >> weebs;
+	int index = term.deleteTerm(weebs);
 
+	if (index == -1) {
+		cout << "This term does not exist." << endl;
+	}
+	else {
+		definition.deleteTermDetails(index);
+		cout << weebs << " removed successfully." << endl;
+	}
 	//some searching and removing function here you are welcome
+	cout << endl;
 	*userNum = 0;
 }
 
@@ -227,11 +237,9 @@ void previous(int *userNum) {
 int main() {
 	int userInput;
 	int* userNum = &userInput;
-	List definition;
-	List term;
-	definition.load("test.txt");
+	
+	definition.load("Definitions5.txt");
 	term.load("Terms.txt");
-	definition.print();
 
 	do {
 		userMenu(userNum);
