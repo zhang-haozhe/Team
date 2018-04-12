@@ -168,20 +168,6 @@ void addition(int *userNum) {
 	cout << "Input the definition of this word: " << endl;
 	cin.ignore();//Important!!!
 	getline(cin, def);
-	do {
-		cout << "Input the chapter that this word is located: " << endl;
-		cin >> chap;
-		if (cin.fail()) {
-			cout << "Your input is invalid." << endl;
-			cin.clear();
-			cin.ignore(1024, '\n');
-			cout << endl;
-		}
-		if ((chap != 2) && (chap != 1) && (chap != 3) && (chap != 4) && (chap != 5) && (chap != 6) && (chap != 7) && (chap != 9) && (chap != 10) && (chap != 11) ) {
-			cout << "Chapter # misinput. " << endl;
-			cout << endl;
-		}
-	} while ((cin.fail()) || ((chap != 2) && (chap != 1) && (chap != 3) && (chap != 4) && (chap != 5) && (chap != 6) && (chap != 7) && (chap != 9) && (chap != 10) && (chap != 11) ));
 	term.addTerm(word);
 	definition.addTerm(def);
 	cout << "Term " << word << " successfully added." << endl;
@@ -202,7 +188,6 @@ void deletion(int *userNum) {
 		definition.deleteTermDetails(index);
 		cout << weebs << " removed successfully." << endl;
 	}
-	//some searching and removing function here you are welcome
 	cout << endl;
 	*userNum = 0;
 }
