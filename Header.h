@@ -36,5 +36,6 @@ public:
 	void print();
 	Node*merge(Node*h1, Node*h2);
 	void MergeSort(Node**head);
+	bool checkexistence(string pagename);
 };
 #pragma once

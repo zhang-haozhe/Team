@@ -105,6 +105,17 @@ void List::print() {
 		cout << endl;
 	}
 }
+bool List::checkexistence(string pagename) {//check if there is a node with such a name
+	Node * temp = new Node;
+	temp = head;
+	while (temp != NULL) {
+		if (temp->value == pagename) {
+			return true;
+		}
+		temp = temp->next;
+	}
+	return false;
+}
 
 void creditList(int *userNum) {
 	cout << "1. Nhi Dinh" << endl;
@@ -148,6 +159,12 @@ void addition(int *userNum) {
 	string word = "?";
 	cout << "Input your word: " << endl;
 	cin >> word;
+	if (term.checkexistence(word)) {
+		while (term.checkexistence(word)) {
+			cout << word << " already exists. Pick another one." << endl;
+			cin >> word;
+		}
+	}
 	cout << "Input the definition of this word: " << endl;
 	cin.ignore();//Important!!!
 	getline(cin, def);
