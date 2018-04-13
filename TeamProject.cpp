@@ -191,7 +191,7 @@ void userMenu(int* userNum) {
 		cout << "6. Credits " << endl;
 		cout << "7. Sort and Print " << endl;
 		cout << "8. Table of Contents" << endl;
-		cout << "8. Quit " << endl;
+		cout << "9. Quit " << endl;
 		cout << endl;
 		cout << "choice - ";
 		cin >> *userNum;
@@ -217,6 +217,13 @@ void addition(int *userNum) {
 	cin.ignore();//Important!!!
 	getline(cin, def);
 	
+	if (term.checkexistence(word)) {
+		cout << word << " already exists." << endl;
+	}
+	else {
+		definition.addTerm(def);
+		term.addTerm(word);
+	}
 	cout << endl;
 	*userNum = 0;
 }
