@@ -1,10 +1,8 @@
-﻿#include"Header.h"
+#include"Header.h"
 
 using namespace std;
-List::List() { this->head = NULL; }
 
-static List definition;
-static List term;
+List::List() { this->head = NULL; }
 
 void List::addTerm(string term) {
 	if (head == NULL) {
@@ -72,24 +70,66 @@ void List::print() {
 				}
 				else if (temp->value.at(counter) == '@') {
 					tempString += "@";
-					for (int i = 0; i < 5; i++) {
+					while ((temp->value.at(counter + 1) != ' ') && (counter + 1 != temp->value.length())) {
 						counter++;
 						tempString += temp->value.at(counter);
 					}
-					if (tempString == "@u00AC") {
+					if (tempString == "@u00AC") { //negation
 						cout << "\u00AC";
 					}
-					else if (tempString == "@u2194") {
+					else if (tempString == "@u2194") { //biconditional
 						cout << "\u2194";
 					}
-					else if (tempString == "@u2219") {
+					else if (tempString == "@u2219") { //dot
 						cout << "\u2219";
 					}
-					else if (tempString == "@u220A") {
+					else if (tempString == "@u220A") { //subset of (tiny curvy e)
 						cout << "\u220A";
 					}
-					else if (tempString == "@u0044") {
-						cout << "\u0044";
+					else if (tempString == "@u2211") { //sigma
+						cout << "u2211";
+					}
+					else if (tempString == "@u222a") { //union
+						cout << "u222a";
+					}
+					else if (tempString == "@u2229") { //intersection
+						cout << "u2229";
+					}
+					else if (tempString == "@u2295") {//exclusive or
+						cout << "u2295";
+					}
+					else if (tempString == "@u2192") { //right arrow
+						cout << "u2192";
+					}
+					else if (tempString == "@u2286") { // subset of
+						cout << "u2286";
+					}
+					else if (tempString == "@u2261") { // equivalent (three lines)
+						cout << "u2261";
+					}
+					else if (tempString == "@u2200") { // for all
+						cout << "u2200";
+					}
+					else if (tempString == "@u2203") { // there exists
+						cout << "u2203";
+					}
+					else if (tempString == "@u2081") { // subscript 1
+						cout << "u2081";
+					}
+					else if (tempString == "@u2082") { // subscript 2
+						cout << "u2082";
+					}
+					else if (tempString == "@u2099") { // subscript n
+						cout << "u2099";
+					}
+					else if (tempString == "@u2308") { // left ceiling
+						cout << "u2308";
+					}
+					else if (tempString == "@u2309") { // right ceiling
+						cout << "u2309";
+					}
+					else if (tempString == "@u2260") { //not equal sign
+						cout << "u2260";
 					}
 					tempString = "";
 				}
@@ -104,17 +144,6 @@ void List::print() {
 		cout << endl;
 		cout << endl;
 	}
-}
-bool List::checkexistence(string pagename) {//check if there is a node with such a name
-	Node * temp = new Node;
-	temp = head;
-	while (temp != NULL) {
-		if (temp->value == pagename) {
-			return true;
-		}
-		temp = temp->next;
-	}
-	return false;
 }
 
 void creditList(int *userNum) {
@@ -159,18 +188,27 @@ void addition(int *userNum) {
 	string word = "?";
 	cout << "Input your word: " << endl;
 	cin >> word;
-	if (term.checkexistence(word)) {
-		while (term.checkexistence(word)) {
-			cout << word << " already exists. Pick another one." << endl;
-			cin >> word;
-		}
-	}
 	cout << "Input the definition of this word: " << endl;
 	cin.ignore();//Important!!!
 	getline(cin, def);
-	term.addTerm(word);
-	definition.addTerm(def);
-	cout << "Term " << word << " successfully added." << endl;
+	do {
+		cout << "Input the chapter that this word is located: " << endl;
+		cin >> chap;
+		if (cin.fail()) {
+			cout << "Your input is invalid." << endl;
+			cin.clear();
+			cin.ignore(1024, '\n');
+			*userNum = 0;
+			cout << endl;
+		}
+		if ((chap != 2) && (chap != 1) && (chap != 3) && (chap != 4) && (chap != 5) && (chap != 6) && (chap != 7) && (chap != 9) && (chap != 10) && (chap != 11) && (chap != 13)) {
+			cout << "Chapter # misinput. " << endl;
+			cin.clear();
+			cin.ignore(1024, '\n');
+			*userNum = 0;
+			cout << endl;
+		}
+	} while ((cin.fail()) || ((chap != 2) && (chap != 1) && (chap != 3) && (chap != 4) && (chap != 5) && (chap != 6) && (chap != 7) && (chap != 9) && (chap != 10) && (chap != 11) && (chap != 13)));
 	cout << endl;
 	*userNum = 0;
 }
@@ -179,16 +217,8 @@ void deletion(int *userNum) {
 	string weebs;
 	cout << "Which word do you want to remove?" << endl;
 	cin >> weebs;
-	int index = term.deleteTerm(weebs);
 
-	if (index == -1) {
-		cout << "This term does not exist." << endl;
-	}
-	else {
-		definition.deleteTermDetails(index);
-		cout << weebs << " removed successfully." << endl;
-	}
-	cout << endl;
+	//some searching and removing function here you are welcome
 	*userNum = 0;
 }
 
@@ -239,9 +269,11 @@ void previous(int *userNum) {
 int main() {
 	int userInput;
 	int* userNum = &userInput;
-	
-	definition.load("Definitions5.txt");
-	term.load("Terms.txt");
+	List definition;
+	List term;
+	definition.load("1Definitions.txt");
+	term.load("1Terms.txt");
+	definition.print();
 
 	do {
 		userMenu(userNum);
