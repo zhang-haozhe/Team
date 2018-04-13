@@ -40,4 +40,28 @@ public:
 	int getSize();
 	void print();
 };
+
+//stack implementation
+struct node
+{
+	string data;
+	struct node *next;
+};
+
+class stack
+{
+	struct node *top;
+public:
+	stack() {
+		struct node *top = NULL;
+	}
+	void push(string value);
+	void pop();
+	void display();
+	bool empty();
+	string topOfStack();
+	string checkTop();
+	bool checkStack(string value);
+};
+
 #pragma once
