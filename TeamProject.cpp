@@ -2,6 +2,81 @@
 
 using namespace std;
 
+//stack method implementation
+
+void stack::push(string value) {
+	struct node *ptr = new node;
+	ptr->data = value;
+	if (top == NULL) {
+		ptr->next = NULL;
+	}
+	else {
+		ptr->next = top;
+	}
+	top = ptr;
+}
+
+void stack::pop() {
+	struct node *temp;
+	if (top == NULL) {
+		cout << "Stack is empty." << endl;
+	}
+	temp = top;
+	top = top->next;
+	delete temp;
+}
+
+void stack::display() {
+	struct node *temp = top;
+	while (temp != NULL) {
+		cout << temp->data << " ";
+		temp = temp->next;
+	}
+	cout << endl;
+}
+
+bool stack::empty()
+{
+	if (top == NULL)
+	{
+		return true;
+	}
+	else return false;
+}
+
+string stack::topOfStack()
+{
+	struct node *temp;
+	if (top == NULL) {
+		cout << "Stack is empty." << endl;
+	}
+	temp = top;
+	top = top->next;
+	return temp->data;
+}
+
+string stack::checkTop()
+{
+	struct node *temp;
+	if (top == NULL) {
+		cout << "Stack is empty." << endl;
+	}
+	temp = top;
+	return temp->data;
+}
+
+bool stack::checkStack(string value) {
+	struct node *ptr = new node;
+	ptr = top;
+	while (true)
+	{
+		if (ptr == NULL) return false;
+		if (ptr->data == value) return true;
+		ptr = ptr->next;
+	}
+
+}
+
 List::List(){ this->head = NULL; }
 
 void List::addTerm(string term) {
