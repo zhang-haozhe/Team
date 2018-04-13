@@ -57,6 +57,15 @@ void List::load(string fileName) {
 
 	read.close();
 }
+
+Node* List::getHead() {
+	return this->head;
+}
+
+int List::getSize() {
+	return this->size; 
+}
+
 void List::print() {
 	Node *temp = new Node;
 	temp = head;
