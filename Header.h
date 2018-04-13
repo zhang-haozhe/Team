@@ -1,8 +1,6 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include<io.h>
-#include<fcntl.h>
 
 
 using namespace std;
@@ -33,11 +31,9 @@ public:
 	int deleteTerm(string term);
 	void deleteTermDetails(int index);
 	void load(string fileName);
+	void print();
 	Node*merge(Node*h1, Node*h2);
 	void MergeSort(Node**head);
 	bool checkexistence(string pagename);
-	Node*getHead();
-	int getSize();
-	void print();
 };
 #pragma once
