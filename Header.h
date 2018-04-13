@@ -13,6 +13,8 @@ void deletion(int* userNum);
 void sort(int* userNum);
 void previous(int* userNum);
 void search(int* userNum);
+void table(int* userNum);
+void sortAndPrint(int* userNum);
 
 
 class Node {
@@ -31,9 +33,11 @@ public:
 	int deleteTerm(string term);
 	void deleteTermDetails(int index);
 	void load(string fileName);
-	void print();
 	Node*merge(Node*h1, Node*h2);
 	void MergeSort(Node**head);
 	bool checkexistence(string pagename);
+	Node*getHead();
+	int getSize();
+	void print();
 };
 #pragma once
