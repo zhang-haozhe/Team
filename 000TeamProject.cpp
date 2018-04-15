@@ -1,5 +1,7 @@
 #include"Header.h"
-
+#include <iostream>
+#include <fstream>
+#include <string>
 using namespace std;
 
 //stack method implementation
@@ -120,7 +122,37 @@ void List::deleteTermDetails(int index) {
 	}
 	temp->value = "";
 }
-
+void List::insertAtBeginning(Node**start) {
+	Node*temp = new Node;
+	temp->value;
+	temp->next = *start;
+	*start = temp;
+}
+void List::bubbleSort(Node*start) {
+	int swapped, i;
+	Node *ptr = head;
+	Node *temp = NULL;
+	if (ptr == NULL) {
+		return;
+	}
+	do {
+		swapped = 0;
+		ptr = start;
+		while (ptr->next != temp) {
+			if (ptr->value > ptr->next->value) {
+				swap(ptr, ptr->next);
+				swapped = 1;
+			}
+			ptr = ptr->next;
+		}
+		temp = ptr;
+	} while (swapped);
+}
+void List::swap(Node*a, Node*b) {
+	string temp = a->value;
+	a->value = b->value;
+	b->value = temp;
+}
 
 void creditList(int *userNum) {
 	cout << "1. Nhi Dinh" << endl;
