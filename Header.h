@@ -29,16 +29,19 @@ private:
 	Node* head;
 public:
 	List();
+	Node*getHead();
+	int getSize();
 	void addTerm(string term);
 	int deleteTerm(string term);
 	void deleteTermDetails(int index);
 	void load(string fileName);
-	Node*merge(Node*h1, Node*h2);
-	void MergeSort(Node**head);
 	bool checkexistence(string pagename);
-	Node*getHead();
-	int getSize();
 	void print();
+
+	//bubblesort methods
+	void insertAtBeginning(Node**start);
+	void bubbleSort(Node*start);
+	void swap(Node*a, Node*b);
 };
 
 //stack implementation
