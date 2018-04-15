@@ -104,78 +104,6 @@ void List::print() {
 		cout << endl;
 	}
 }
-//mergesort, some extra bs, delete later maybe
-Node*List::merge(Node* h1, Node*h2) {
-	Node*t1 = new Node;
-	Node*t2 = new Node;
-	Node*temp = new Node;
-
-	if (h1 == NULL) return h2; //return if first list is empty
-	if (h2 == NULL) return h1; //return if second list is empty
-
-	t1 = h1;
-
-	while (h2 != NULL) {
-		t2 = h2; //taking head node of second list as t2
-		h2 = h2->next; //shifting 2nd list head to the next
-		t2->next = NULL;
-		//If the data value is less than the head of the first list, add that node at the beginning
-		if (h1->value > t2->value) {
-			t2->next = h1;
-			h1 = t2;
-			t1 = h1;
-			continue;
-		}
-		//Traverse the first list
-	flag:
-		if (t1->next == NULL) {
-			t1->next = t2;
-			t1 = t1->next;
-		}
-		//traverse first list until t2->value is more than node's value
-		else if ((t1->value) <= t2->value) {
-			t1 = t1->next;
-			goto flag;
-		}
-		//insert the node as t2->data is less than the next node
-		else {
-			temp = t1->next;
-			t1->next = t2;
-			t2->next = temp;
-		}
-	}
-	//return head of new sorted list
-	return h1;
-}
-void List::MergeSort(Node**head) {
-	Node*first = new Node;
-	Node*second = new Node;
-	Node*temp = new Node;
-	first = *head;
-	temp = *head;
-	//return if list has less than 2 nodes
-	if (first == NULL || first->next == NULL) {
-		return;
-	}
-	else {
-		//Break the list into 2 halves with first and second as head of list
-		while (first->next != NULL) {
-			first = first->next;
-			if (first->next != NULL) {
-				temp = temp->next;
-				first = first->next;
-			}
-		}
-		second = temp->next;
-		temp->next = NULL;
-		first = *head;
-	}
-	//divide and conquer
-	MergeSort(&first);
-	MergeSort(&second);
-	//merge the 2 parts of the list into a sorted one
-	*head = merge(first, second);
-}
 //bubblesort
 void List::insertAtBeginning(Node**start) {
 	Node*temp = new Node;
@@ -212,8 +140,8 @@ void List::swap(Node*a, Node*b) {
 int main() {
 	//Node**head = NULL;
 	
-	string termsFile = "terms.txt";
-	string defFile = "definitions.txt";
+	string termsFile = "termsSample.txt";
+	string defFile = "definitionsSample.txt";
 
 	//declare linked lists
 	List *termsList = new List();
