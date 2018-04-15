@@ -1,0 +1,25 @@
+﻿a connected undirected graph with no simple circuits
+the property that each of their connected component is a tree
+an undirected graph is a tree if and only if there is a unique simple path between any two of its vertices
+a vertex of a tree
+a tree in which one vertex has been designated as the rot and every edge is directed away from the root.
+If v is a vertex in T other than the root, the parent of v is the unique vertex u such that there is a directed edge from u to v.
+Vertices are u and v. When u is the parent of v, v is called a child of u.
+Vertices with the same parent are called siblings.
+The ancestors of a vertex other than the root are the vertices in the path from the root to this vertex.
+The descendants of a vertex v are those vertices that have v as an ancestor.
+A vertex of a rooted tree if it has no children.
+Vertices that have children.
+When every internal vertex has no more than m children.
+When every internal vertex has exactly m children.
+a rooted tree where the children of each internal vertex are ordered
+if an internal vertex has two children
+first child of a binary tree
+second child of a binary tree
+tree rooted at the left child
+tree rooted at the right child
+a tree with n vertices has n-1 edges
+a full m-ary tree with i internal vertices contains n = mi + 1 vertices
+A full m-ary tree with (i ) n vertices has i = (n − 1)/m internal vertices and l = [(m − 1)n + 1]/m leaves, (ii ) i internal vertices has n = mi + 1 vertices and l = (m − 1)i + 1 leaves, (iii ) l leaves has n = (ml − 1)/(m − 1) vertices and i = (l − 1)/(m − 1) internal vertices.
+a rooted m-ary tree of height h is balanced if all leaves are at levels h or h - 1
+there are at most mh leaves in a m-ary tree of height h
