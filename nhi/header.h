@@ -31,19 +31,31 @@ public:
 	int deleteTerm(string data);
 	void deleteTermDetails(int index);
 	void load(string fileName);
+	Node*getHead();
+	Node*getTail();
+	//string getValue();
+	Node*getNext();
+	int getSize();
+
+	//bubble sort
 	void insertAtBeginning(Node**start);
 	void bubbleSort(Node*start);
 	void swap(Node*a, Node*b);
-	Node*getHead();
-	Node*getTail();
-	string getValue();
-	Node*getNext();
-	int getSize();
-	void print();
-
+	void insertAtBeginningDef(Node**start);
+	void bubbleSortDef(Node*start);
+	void swapDef(Node*a, Node*b);
+	
 	//mergesort, extra shit
 	Node*merge(Node*h1, Node*h2);
 	void MergeSort(Node**head);
+
+	//search
+	bool search(Node*head, string term);
+	void printSearch(string term);
+
+	//printing
+	void printDef();
+	void printTerms(); 
 };
 
-void printTermAndDef();
+void printTermAndDef(List*terms, List*definitions);
