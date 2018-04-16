@@ -154,6 +154,44 @@ void List::swap(Node*a, Node*b) {
 	b->value = temp;
 }
 
+bool List::search(Node*head, string term) {
+	Node*current = head;
+	while (current != NULL) {
+		if (current->value == term) {
+			return true;
+		}
+		current = current->next;
+	}
+	return false;
+}
+void List::printSearch(string term) {
+	if (search(this->head, term)) {
+		cout << term << endl;
+	}
+	else {
+		cout << term << " does not exist in this dictionary" << endl;
+	}
+}
+void List::printSearchDef(string term) {
+	Node*current = this->head;
+	string temp;
+	int parenIdx;
+	string printOut = "";
+	while (current != NULL) {
+		parenIdx = current->value.find_first_of(":");
+		temp = current->value.substr(0, parenIdx);
+		if (temp == term) {
+			cout << current->value << endl;
+			printOut = current->value;
+		}
+		current = current->next;
+	}
+	if (printOut == "" ) {
+		cout << term << " does not exist in this dictionary" << endl;
+	}
+}
+
+
 void creditList(int *userNum) {
 	cout << "1. Nhi Dinh" << endl;
 	cout << "2. Haozhe Zhang" << endl;
