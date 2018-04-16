@@ -52,6 +52,7 @@ public:
 	//search
 	bool search(Node*head, string term);
 	void printSearch(string term);
+	void printSearchDef(string term);
 
 	//printing
 	void printDef();
