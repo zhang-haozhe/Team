@@ -229,6 +229,24 @@ void List::printSearch(string term) {
 		cout << term << " does not exist in this dictionary" << endl;
 	}
 }
+void List::printSearchDef(string term) {
+	Node*current = this->head;
+	string temp;
+	int parenIdx;
+	string printOut = "";
+	while (current != NULL) {
+		parenIdx = current->value.find_first_of(":");
+		temp = current->value.substr(0, parenIdx);
+		if (temp == term) {
+			cout << current->value << endl;
+			printOut = current->value;
+		}
+		current = current->next;
+	}
+	if (printOut == "" ) {
+		cout << term << " does not exist in this dictionary" << endl;
+	}
+}
 
 //print
 void List::printDef() {
@@ -332,7 +350,10 @@ int main() {
 	//search testing
 	termsList->printSearch("Descendants");
 	termsList->printSearch("Left Child");
-	termsList->printSearch("Bowcher");
+	termsList->printSearch("Kavalan Sux Lolz");
+	cout << endl;
+	defList->printSearchDef("Descendants");
+	defList->printSearchDef("Bowcher");
 	
 	system("pause");
 	return 0;
