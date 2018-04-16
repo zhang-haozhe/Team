@@ -42,6 +42,11 @@ public:
 	void insertAtBeginning(Node**start);
 	void bubbleSort(Node*start);
 	void swap(Node*a, Node*b);
+	
+	//search
+	bool search(Node*head, string term);
+	void printSearch(string term);
+	void printSearchDef(string term);
 };
 
 //stack implementation
