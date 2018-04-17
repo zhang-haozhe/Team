@@ -47,6 +47,8 @@ public:
 	bool search(Node*head, string term);
 	void printSearch(string term);
 	void printSearchDef(string term);
+	string strToUpper(string str);
+	
 };
 
 //stack implementation
