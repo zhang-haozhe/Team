@@ -200,8 +200,11 @@ void List::swap(Node*a, Node*b) {
 }
 bool List::search(Node*head, string term) {
 	Node*current = head;
+	//int compareStr;
 	while (current != NULL) {
-		if (current->value == term) {
+		string currUpper = strToUpper(current->value);
+		string termUpper = strToUpper(term);
+		if (currUpper == termUpper) {
 			return true;
 		}
 		current = current->next;
@@ -224,9 +227,85 @@ void List::printSearchDef(string term) {
 	while (current != NULL) {
 		parenIdx = current->value.find_first_of(":");
 		temp = current->value.substr(0, parenIdx);
-		if (temp == term) {
-			cout << current->value << endl;
+		if (strToUpper(temp) == strToUpper(term)) {
+			//cout << current->value << endl;
 			printOut = current->value;
+			int counter = 0;
+			string tempString = "";
+			while (counter != current->value.length()) {
+				if (current->value.at(counter) == '[') {
+					cout << endl;
+				}
+				else if (current->value.at(counter) == '@') {
+					tempString += "@";
+					while ((current->value.at(counter + 1) != ' ') && (counter + 1 != current->value.length())) {
+						counter++;
+						tempString += current->value.at(counter);
+					}
+					if (tempString == "@u00AC") { //negation
+						cout << "\u00AC";
+					}
+					else if (tempString == "@u2194") { //biconditional
+						cout << "\u2194";
+					}
+					else if (tempString == "@u2219") { //dot
+						cout << "\u2219";
+					}
+					else if (tempString == "@u220A") { //subset of (tiny curvy e)
+						cout << "\u220A";
+					}
+					else if (tempString == "@u2211") { //sigma
+						cout << "\u2211";
+					}
+					else if (tempString == "@u222a") { //union
+						cout << "\u222a";
+					}
+					else if (tempString == "@u2229") { //intersection
+						cout << "\u2229";
+					}
+					else if (tempString == "@u2295") {//exclusive or
+						cout << "\u2295";
+					}
+					else if (tempString == "@u2192") { //right arrow
+						cout << "\u2192";
+					}
+					else if (tempString == "@u2286") { // subset of
+						cout << "\u2286";
+					}
+					else if (tempString == "@u2261") { // equivalent (three lines)
+						cout << "\u2261";
+					}
+					else if (tempString == "@u2200") { // for all
+						cout << "\u2200";
+					}
+					else if (tempString == "@u2203") { // there exists
+						cout << "\u2203";
+					}
+					else if (tempString == "@u2081") { // subscript 1
+						cout << "\u2081";
+					}
+					else if (tempString == "@u2082") { // subscript 2
+						cout << "\u2082";
+					}
+					else if (tempString == "@u2099") { // subscript n
+						cout << "\u2099";
+					}
+					else if (tempString == "@u2308") { // left ceiling
+						cout << "\u2308";
+					}
+					else if (tempString == "@u2309") { // right ceiling
+						cout << "\u2309";
+					}
+					else if (tempString == "@u2260") { //not equal sign
+						cout << "\u2260";
+					}
+					tempString = "";
+				}
+				else {
+					cout << current->value.at(counter);
+				}
+				counter++;
+			}
 		}
 		current = current->next;
 	}
@@ -234,49 +313,47 @@ void List::printSearchDef(string term) {
 		cout << term << " does not exist in this dictionary" << endl;
 	}
 }
+string List::strToUpper(string str) {
+	for (int i = 0; i < str.size(); i++) {
+		str.at(i) = toupper(str.at(i));
+	}
+	return str;
+}
+
 
 void creditList(int *userNum) {
-	cout << "Credits To:" << endl;
+	cout << "\n------------------------------";
+	cout << "\n           CREDITS";
+	cout << "\n------------------------------";
+	cout << "\nCONTRIBUTORS" << endl;
 	cout << "1. Nhi Dinh" << endl;
 	cout << "2. Haozhe Zhang" << endl;
 	cout << "3. Jessie Huang" << endl;
 	cout << "4. Teresa Cheung" << endl;
 	cout << "5. James Boultinghouse" << endl;
 	cout << "6. Thien Pham" << endl;
-	cout << "7. Christina Boucher's Powerpoints from COT3100" << endl;
-	cout << "8. Textbook: Discrete Mathematics and its Applications, Rosen, 7th Edition, McGraw-Hill, 2012." << endl;
-	*userNum = 0;
-}
-void help(int *userNum) {
-	cout << "1. Search Term: searches for a term that is inputted by the user." << endl;
-	cout << "2. Previous Searches: when selected, a list of terms that were previously searched for will be displayed." << endl;
-	cout << "3. Sort Dictionary: sorts the words in the dictionary by chapters, sections or entire dictionary - determined by user input." << endl;
-	cout << "4. View Dictionary: prints dictionary by chapter, a selection of chapters, section, a selection of sections or entire dictionary. " << endl;
-	cout << "5. Modifiable Dictionary: Sort by chapters, sections, or the entire dictionary." << endl;
-	cout << "6. Table of Contents: prints out a list of chapters and their respective sections in the textbook." << endl;
-	cout << "7. Navigation Help: prints out a help menu navigating through the user menu." << endl;
-	cout << "8. Credits: prints out the students working on this project and references" << endl;
-	cout << "9. Quit: exits the program.";
 	*userNum = 0;
 }
 void userMenu(int* userNum) {
 	while (!((*userNum == 1) || (*userNum == 2) || (*userNum == 3) || (*userNum == 4) || (*userNum == 5) || (*userNum == 6) || (*userNum == 7) || (*userNum == 8) || (*userNum == 9))) {
+		cout << "\n-------------------------";
+		cout << "\n        MAIN MENU";
+		cout << "\n-------------------------\n";
 		cout << "1. Search Term" << endl;
 		cout << "2. Previous Searches" << endl;
 		cout << "3. Sort Dictionary" << endl;
 		cout << "4. View Dictionary" << endl;
 		cout << "5. Modifiable Dictionary" << endl;
 		cout << "6. Table of Contents" << endl;
-		cout << "7. Navigation Help" << endl;
+		cout << "7. About and Help" << endl;
 		cout << "8. Credits" << endl;
 		cout << "9. Quit" << endl;
 		cout << endl;
 		cout << "choice - ";
 		cin >> *userNum;
 		if (!((*userNum == 1) || (*userNum == 2) || (*userNum == 3) || (*userNum == 4) || (*userNum == 5) || (*userNum == 6) || (*userNum == 7) || (*userNum == 8) || (*userNum == 9))) {
-
 			cout << endl;
-			cout << "Be serious." << endl;
+			cout << "Invalid Input." << endl;
 			cin.clear();
 			cin.ignore(1024, '\n');
 			*userNum = 0;
@@ -327,30 +404,27 @@ void sort(int *userNum) {
 	int numSec = 0;
 	char subSelection = 0;
 	do {
+		cout << "\n------------------------------";
+		cout << "\n         SORT TERMS";
+		cout << "\n------------------------------\n";
 		cout << "1. Individual Section" << endl;
 		cout << "2. Individual Chapter" << endl;
-		cout << "3.Selection of Sections" << endl;
+		cout << "3. Selection of Sections" << endl;
 		cout << "4. Selection of Chapters" << endl;
-		cout << "5.Sort Entire Dictionary" << endl;
-		cout << "6. Quit" << endl;
+		cout << "5. Sort Entire Dictionary" << endl;
+		cout << "6. Go Back" << endl;
 		cin >> selection;
-		if (cin.fail()) {
+		if (cin.fail() || (selection != 1) && (selection != 2) && (selection != 3) && (selection != 4) && (selection != 5) && (selection != 6)) {
 			cout << "Invalid input." << endl;
 			cin.clear();
 			cin.ignore(1024, '\n');
-			*userNum = 0;
-			cout << endl;
-		}
-		if ((selection != 1) && (selection != 2) && (selection != 3) && (selection != 4) && (selection != 5) && (selection != 6)) {
-			cout << "Wrong number." << endl;
-			cin.clear();
-			cin.ignore(1024, '\n');
-			*userNum = 0;
+			*userNum = 3;
 			cout << endl;
 		}
 		if (selection == 1) {
 			cout << "Enter the section number: " << endl;
 			cin >> numSec;
+			*userNum = 3;
 		}
 		if (selection == 2) {
 			cout << "Input the number of Chapter:" << endl;
@@ -369,7 +443,7 @@ void sort(int *userNum) {
 			cin >> subSelection;
 			if ((subSelection != 'a') || (subSelection != 'b')) {
 				cout << "Invalid input." << endl;
-				selection = 6;
+				*userNum = 3;
 			}
 		}
 		if (selection == 4) {
@@ -379,7 +453,7 @@ void sort(int *userNum) {
 			cin >> subSelection;
 			if ((subSelection != 'a') || (subSelection != 'b') || (subSelection != 'c')) {
 				cout << "Invalid input." << endl;
-				selection = 6;
+				*userNum = 3;
 			}
 		}
 		if (selection == 5) {
@@ -389,47 +463,50 @@ void sort(int *userNum) {
 			cin >> subSelection;
 			if ((subSelection != 'a') || (subSelection != 'b') || (subSelection != 'c')) {
 				cout << "Invalid input." << endl;
-				selection = 6;
+				*userNum = 3;
 			}
 		}
+		if (selection == 6) {
+			*userNum = 0;
+		}
 	} while ((cin.fail()) || ((selection != 1) && (selection != 2) && (selection != 3) && (selection != 4) && (selection != 5)));
-	*userNum = 0;
+	*userNum = 3;
 }
 
 void search(int *userNum) {
+	//declare linkedLists
 	List *termsList = new List(); //change to *defList later
 	List *defList = new List();
-	//Node*head = termsList->getHead();
-
+	List *allTerms = new List();
+	//load
+	allTerms->load("allTerms.txt");
+	cout << "\n------------------------------";
+	cout << "\n         SEARCH TERM";
+	cout << "\n------------------------------";
 	cout << "\n1. Search Entire Dictionary";
 	cout << "\n2. Search by Chapter";
 	cout << "\n3. Go Back";
 	cout << "\n\nchoice - ";
 	int select; cin >> select;
-	if (cin.fail()) {
+	if (cin.fail() || (select != 1) && (select != 2) && (select != 3)) {
 		cout << "Invalid input." << endl;
 		cin.clear();
 		cin.ignore(1024, '\n');
-		*userNum = 0;
-		cout << endl;
-	}
-	if ((select != 1) && (select != 2) && (select != 3)) {
-		cout << "Invalid input." << endl;
-		cin.clear();
-		cin.ignore(1024, '\n');
-		*userNum = 0;
-		cout << endl;
+		*userNum = 1;
 	}
 	if (select == 1) {
 		cout << "Enter term - ";
 		string searchTerm; cin >> searchTerm;
+		allTerms->printSearch(searchTerm);
+		cout << endl;
+		*userNum = 1;
 	}
 	if (select == 2) {
 		cout << "Enter Chapter Number - ";
 		int chIn; cin >> chIn;
 		if (chIn == 1) {
 			termsList->load("1terms.txt");
-			cout << "\nEnter term - ";
+			cout << "Enter term - ";
 			string searchInCh; cin >> searchInCh;
 			termsList->printSearch(searchInCh);
 			cout << endl;
@@ -441,7 +518,12 @@ void search(int *userNum) {
 			termsList->load("3terms.txt");
 		}
 		else if (chIn == 4) {
-			termsList->load("1terms.txt");
+			termsList->load("4Def.txt");
+			cout << "Enter term - ";
+			string searchInCh; cin >> searchInCh;
+			cout << endl;
+			termsList->printSearchDef(searchInCh);
+			cout << endl;
 		}
 		else if (chIn == 5) {
 			termsList->load("5terms.txt");
@@ -450,7 +532,12 @@ void search(int *userNum) {
 			termsList->load("6terms.txt");
 		}
 		else if (chIn == 7) {
-			termsList->load("7terms.txt");
+			termsList->load("7Def.txt");
+			cout << "Enter term - ";
+			string searchInCh; cin >> searchInCh;
+			cout << endl;
+			termsList->printSearchDef(searchInCh);
+			cout << endl;
 		}
 		else if (chIn == 9) {
 			termsList->load("9terms.txt");
@@ -464,15 +551,22 @@ void search(int *userNum) {
 		else {
 			cout << "Chapter does not exist";
 		}
+		*userNum = 1;
 	}
-	*userNum = 0;
+	if (select == 3) {
+		*userNum = 0;
+	}
 }
 void previous(int *userNum) {
-
+	cout << "\n---------------------------------------------------";
+	cout << "\n                PREVIOUS SEARCHES";
+	cout << "\n---------------------------------------------------\n";
 	*userNum = 0;
 }
 void table(int *userNum) {
-	cout << "\nTABLE OF CONTENTS" << endl;
+	cout << "\n---------------------------------------------------";
+	cout << "\n                 TABLE OF CONTENTS";
+	cout << "\n---------------------------------------------------\n";
 	cout << "1. The Foundations: Logic and Proofs" << endl;
 	cout << "\t Section 1.1: Propositional Logic" << endl;
 	cout << "\t Section 1.2: Applications of Propositional Logic" << endl;
@@ -535,9 +629,34 @@ void table(int *userNum) {
 	cout << endl;
 	*userNum = 0;
 }
-void sortAndPrint(int *userNum) {
+void view(int *userNum) {
+	cout << "\n---------------------------------------------------";
+	cout << "\n                VIEW DICTIONARY";
+	cout << "\n---------------------------------------------------\n";
 	*userNum = 0;
 }
+void modifiable(int*userNum) {
+	cout << "\n---------------------------------------------------";
+	cout << "\n                USER INPUTTED TERMS";
+	cout << "\n---------------------------------------------------\n";
+	*userNum = 0;
+}
+void help(int*userNum) {
+	cout << "\n---------------------------------------------------";
+	cout << "\n                 ABOUT AND HELP";
+	cout << "\n---------------------------------------------------\n";
+	cout << "1. Search Term: searches for a term that is inputted by the user." << endl;
+	cout << "2. Previous Searches: when selected, a list of terms that were previously searched for will be displayed." << endl;
+	cout << "3. Sort Dictionary: sorts the words in the dictionary by chapters, sections or entire dictionary - determined by user input." << endl;
+	cout << "4. View Dictionary: prints dictionary by chapter, a selection of chapters, section, a selection of sections or entire dictionary. " << endl;
+	cout << "5. Modifiable Dictionary: Sort by chapters, sections, or the entire dictionary." << endl;
+	cout << "6. Table of Contents: prints out a list of chapters and their respective sections in the textbook." << endl;
+	cout << "7. Navigation Help: prints out a help menu navigating through the user menu." << endl;
+	cout << "8. Credits: prints out the students working on this project and references" << endl;
+	cout << "9. Quit: exits the program." << endl;
+	*userNum = 0;
+}
+
 
 int main() {
 	int userInput;
@@ -553,27 +672,23 @@ int main() {
 			search(userNum);
 			break;
 		}case 2: {
-			//deletion(userNum);
-			cout << "this should print previous searches \n";
+			previous(userNum);
 			break;
 		}case 3: {
 			sort(userNum);
 			break;
 		}case 4: {
-			//previous(userNum);
-			cout << "previous searches" << endl;
+			view(userNum);
 			break;
 		}case 5: {
-			//search(userNum);
-			cout << "modifiable dictionary" << endl;
+			modifiable(userNum);
 			break;
 		}case 6: {
 			table(userNum);
 			break;
 		}
 		case 7: {
-			//creditList(userNum);
-			cout << "navigation help" << endl;
+			help(userNum);
 			break;
 		}
 		case 8: {
