@@ -191,6 +191,68 @@ void List::printSearchDef(string term) {
 	}
 }
 
+void table(int *userNum) {
+	cout << "1. The Foundations: Logic and Proofs" << endl;
+	cout << "\t Section 1.1: Propositional Logic" << endl;
+	cout << "\t Section 1.2: Applications of Propositional Logic" << endl;
+	cout << "\t Section 1.3: Propositional Equivalences" << endl;
+	cout << "\t Section 1.4: Predicates and Quantifiers" << endl;
+	cout << "\t Section 1.5: Nested Quantifiers" << endl;
+	cout << "\t Section 1.6: Rules of Inference" << endl;
+	cout << "\t Section 1.7: Introduction to Proofs" << endl;
+	cout << "\t Section 1.8: Proof Methods and Strategy" << endl;
+	cout << endl;
+	cout << "2. Basic Structures: Sets, Functions, Sequences, Sums, and Matrices" << endl;
+	cout << "\t Section 2.1: Sets" << endl;
+	cout << "\t Section 2.2: Set Operations" << endl;
+	cout << "\t Section 2.3: Functions" << endl;
+	cout << "\t Section 2.4: Sequences and Summations" << endl;
+	cout << "\t Section 2.6: Matrices" << endl;
+	cout << endl;
+	cout << "3. Algorithms" << endl;
+	cout << "\t Section 3.1: Algorithms" << endl;
+	cout << "\t Section 3.2: The Growth of Functions" << endl;
+	cout << "\t Section 3.3: Complexity of Algorithms" << endl;
+	cout << endl;
+	cout << "4. Number theory and cryptography" << endl;
+	cout << "\t Section 4.1: Divisibility and Modular Arithmetic" << endl;
+	cout << "\t Section 4.2: Integer Representations and Algorithms" << endl;
+	cout << "\t Section 4.3: Primes and Greatest Common Divisors" << endl;
+	cout << endl;
+	cout << "5. Induction and Recursion" << endl;
+	cout << "\t Section 5.1: Mathematical Induction" << endl;
+	cout << "\t Section 5.2: Strong Induction and Well Ordering" << endl;
+	cout << "\t Section 5.3: Recursive Definitions and Structural Induction" << endl;
+	cout << endl;
+	cout << "6. Counting" << endl;
+	cout << "\t Section 6.1: The Basics of Counting" << endl;
+	cout << "\t Section 6.2: The Pigeonhole Principle" << endl;
+	cout << "\t Section 6.3: Permutations and Combinations" << endl;
+	cout << endl;
+	cout << "7. Discrete Probability" << endl;
+	cout << "\t Section 7.1: An Introduction to Discrete Probability" << endl;
+	cout << "\t Section 7.2: Probability Theory" << endl;
+	cout << "\t Section 7.3: Bayes' Theorem" << endl;
+	cout << endl;
+	cout << "9. Relations" << endl;
+	cout << "\t Section 9.1: Relations and their Properties" << endl;
+	cout << "\t Section 9.3: Representing Relations" << endl;
+	cout << "\t Section 9.5: Equivalence Relations" << endl;
+	cout << endl;
+	cout << "10. Graphs" << endl;
+	cout << "\t Section 10.1 & 10.2: Graphs and Graph Models, Graph Terminology and Special Types of Graphs" << endl;
+	cout << "\t Section 10.3: Representing Graphs and Graph Isomorphism" << endl;
+	cout << "\t Section 10.4: Connectivity" << endl;
+	cout << endl;
+	cout << "11. Trees" << endl;
+	cout << "\t Section 11.1: Introduction to Trees" << endl;
+	cout << "\t Section 11.2: Application of Trees" << endl;
+	cout << "\t Section 11.3: Tree Traversal" << endl;
+	cout << "\t Section 11.4: Spanning Trees" << endl;
+	cout << endl;
+	cout << "NOTE: Chapter 8 not covered in Spring 2018" << endl;
+}
+
 
 void creditList(int *userNum) {
 	cout << "1. Nhi Dinh" << endl;
