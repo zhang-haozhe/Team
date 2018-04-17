@@ -316,6 +316,9 @@ void deletion(int *userNum) {
 
 void sort(int *userNum) {
 	int selection = 0;
+	int numChap = 0;
+	int numSec = 0;
+	char subSelection = 0;
 	do {
 		cout << "1. Individual Section" << endl;
 		cout << "2. Individual Chapter" << endl;
@@ -339,19 +342,48 @@ void sort(int *userNum) {
 			cout << endl;
 		}
 		if (selection == 1) {
-			cout << "Oy" << endl;
+			cout << "Enter the section number: " << endl;
+			cin >> numSec;
 		}
 		if (selection == 2) {
-			cout << "Oy Oy" << endl;
+			cout << "Input the number of Chapter:" << endl;
+			cin >> numChap;
+			cout << "a. Sort Chpater by Section" << endl;
+			cout << "b. Sort Entire Chapter" << endl;
+			cin >> subSelection;
+			if ((subSelection != 'a') || (subSelection != 'b')) {
+				cout << "Invalid input." << endl;
+				selection = 6;
+			}
 		}
 		if (selection == 3) {
-
+			cout << "a. Sort by Order of Sections" << endl;
+			cout << "b. Sort Entire Selection" << endl;
+			cin >> subSelection;
+			if ((subSelection != 'a') || (subSelection != 'b')) {
+				cout << "Invalid input." << endl;
+				selection = 6;
+			}
 		}
 		if (selection == 4) {
-
+			cout << "a. Sort by Order of Chapters" << endl;
+			cout << "b. Sort by Order of Sections" << endl;
+			cout << "c. Sort Entire Selection" << endl;
+			cin >> subSelection;
+			if ((subSelection != 'a') || (subSelection != 'b')||(subSelection!='c')) {
+				cout << "Invalid input." << endl;
+				selection = 6;
+			}
 		}
 		if (selection == 5) {
-
+			cout << "a. Sort by Chapters" << endl;
+			cout << "b. Sort by Sections" << endl;
+			cout << "c. Sort All" << endl;
+			cin >> subSelection;
+			if ((subSelection != 'a') || (subSelection != 'b') || (subSelection != 'c')) {
+				cout << "Invalid input." << endl;
+				selection = 6;
+			}
 		}
 	} while ((cin.fail()) || ((selection != 1) && (selection != 2) && (selection != 3) && (selection != 4) && (selection != 5)));
 	*userNum = 0;
