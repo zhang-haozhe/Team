@@ -214,7 +214,7 @@ void table(int *userNum) {
 	cout << "\t Section 3.2: The Growth of Functions" << endl;
 	cout << "\t Section 3.3: Complexity of Algorithms" << endl;
 	cout << endl;
-	cout << "4. Number theory and cryptography" << endl;
+	cout << "4. Number Theory and Cryptography" << endl;
 	cout << "\t Section 4.1: Divisibility and Modular Arithmetic" << endl;
 	cout << "\t Section 4.2: Integer Representations and Algorithms" << endl;
 	cout << "\t Section 4.3: Primes and Greatest Common Divisors" << endl;
