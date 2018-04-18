@@ -19,7 +19,9 @@ int countWhiteSpace(string& str)
 // Driver Code
 int main()
 {
-	string str = "arbitrary string";
+	string str = "";
+	cin >> str;
+	getline(cin, str);
 	cout << countWhiteSpace(str) << endl;
 	system("pause");
 	return 0;
