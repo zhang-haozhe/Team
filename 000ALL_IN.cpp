@@ -629,12 +629,61 @@ void table(int *userNum) {
 	cout << endl;
 	*userNum = 0;
 }
+
 void view(int *userNum) {
-	cout << "\n---------------------------------------------------";
-	cout << "\n                VIEW DICTIONARY";
-	cout << "\n---------------------------------------------------\n";
-	*userNum = 0;
+	int VDSelection = 0;
+	int VDnumChap = 0;
+	int VDnumSec = 0;
+
+	do {
+		cout << "\n---------------------------------------------------";
+		cout << "\n                VIEW DICTIONARY";
+		cout << "\n---------------------------------------------------\n";
+		cout << "1. Individual Section" << endl;
+		cout << "2. Individual Chapter" << endl;
+		cout << "3. Selection of Sections" << endl;
+		cout << "4. Selection of Chapters" << endl;
+		cout << "5. View Entire Dictionary" << endl;
+		cout << "6. Go Back" << endl;
+		cin >> VDSelection;
+		if (cin.fail() || (VDSelection != 1) && (VDSelection != 2) && (VDSelection != 3) && (VDSelection != 4) && (VDSelection != 5) && (VDSelection != 6)) {
+			cout << "Invalid input." << endl;
+			cin.clear();
+			cin.ignore(1024, '\n');
+			*userNum = 4;
+			cout << endl;
+		}
+		if (VDSelection == 1) {
+			cout << "Enter the section number: " << endl;
+			cin >> VDnumSec;
+			*userNum = 4;
+		}
+		if (VDSelection == 2) {
+			cout << "Input the chapter number:" << endl;
+			cin >> VDnumChap;
+			*userNum = 4;
+		}
+		if (VDSelection == 3) {
+			cout << "Input which sections you want to view: " << endl;
+			//FIXME: create method that allows user to print out only requested sections  
+			*userNum = 0;
+		}
+		if (VDSelection == 4) {
+			cout << "Input which chapters you want to view: " << endl;
+			//FIXME: create method that allows user to print out only requested chapters 
+			*userNum = 0;
+		}
+		if (VDSelection == 5) {
+			//FIXME: create method that prints out entire dictionary 
+			*userNum = 0;
+		}
+		if (VDSelection == 6) {
+			*userNum = 0;
+		}
+	} while ((cin.fail()) || ((VDSelection != 1) && (VDSelection != 2) && (VDSelection != 3) && (VDSelection != 4) && (VDSelection != 5)));
+	*userNum = 4;
 }
+
 void modifiable(int*userNum) {
 	cout << "\n---------------------------------------------------";
 	cout << "\n                USER INPUTTED TERMS";
