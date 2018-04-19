@@ -74,6 +74,16 @@ static List sec91;
 static List sec92;
 static List sec93;
 
+//ch.10 sections
+static List sec101;
+static List sec102;
+static List sec103;
+static List sec104;
+static List sec105;
+static List sec106;
+static List sec107;
+static List sec108;
+
 void List::addTerm(string term) {
     if (head == NULL) {
         head = new Node();
@@ -895,7 +905,33 @@ void viewBySection() {
 		}
     }
     else if (chp == 10) {
-
+ 	if (section == 1) {
+            sec101.print();
+        }
+        else if (section == 2) {
+            sec102.print();
+        }
+        else if (section == 3) {
+            sec103.print();
+        }
+        else if (section == 4) {
+            sec104.print();
+        }
+        else if (section == 5) {
+            sec105.print();
+        }
+        else if (section == 6) {
+            sec106.print();
+        }
+        else if (section == 7) {
+            sec107.print();
+        }
+        else if (section == 8) {
+            sec108.print();
+        }
+        else {
+            cout << "Section does not exist." << endl;
+        }
     }
     else if (chp == 11) {
 
@@ -1263,14 +1299,24 @@ int main() {
     sec65.load("sec65.txt");
     
     //ch.7 sections
-	sec71.load("sec71.txt");
-	sec72.load("sec72.txt");
-	sec73.load("sec73.txt");
+    sec71.load("sec71.txt");
+    sec72.load("sec72.txt");
+    sec73.load("sec73.txt");
 	
-	//ch.9 sections
-	sec91.load("sec91.txt");
-	sec92.load("sec92.txt");
-	sec93.load("sec93.txt");
+    //ch.9 sections
+    sec91.load("sec91.txt");
+    sec92.load("sec92.txt");
+    sec93.load("sec93.txt");
+	
+    //ch.10 sections
+    sec101.load("sec101.txt");
+    sec102.load("sec102.txt");
+    sec103.load("sec103.txt");
+    sec104.load("sec104.txt");
+    sec105.load("sec105.txt");
+    sec106.load("sec106.txt");
+    sec107.load("sec107.txt");
+    sec108.load("sec108.txt");
     
     do {
         userMenu(userNum);
