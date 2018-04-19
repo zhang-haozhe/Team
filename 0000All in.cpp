@@ -49,6 +49,11 @@ static List sec71;
 static List sec72;
 static List sec73;
 
+//ch.9 sections
+static List sec91;
+static List sec92;
+static List sec93;
+
 void List::addTerm(string term) {
     if (head == NULL) {
         head = new Node();
@@ -1075,10 +1080,18 @@ cout << "Input the chapter number:" << endl;
 		}
 	}
 	else if (chp == 9) {
-		cout << "\n------------------------------------------------------------------------------";
-		cout << "\nCHAPTER 9 - RELATIONS";
-		cout << "\n------------------------------------------------------------------------------\n";
-		def09.print();
+		if (section == 1) {
+			sec91.print();
+		}
+		else if (section == 2) {
+			sec92.print();
+		}
+		else if (section == 3) {
+			sec93.print();
+		}
+		else {
+			cout << "Section does not exist." << endl;
+		}
 	}
 	else if (chp == 10) {
 		cout << "\n------------------------------------------------------------------------------";
@@ -1438,6 +1451,11 @@ int main() {
 	sec71.load("sec71.txt");
 	sec72.load("sec72.txt");
 	sec73.load("sec73.txt");
+	
+	//ch.9 sections
+	sec91.load("sec91.txt");
+	sec92.load("sec92.txt");
+	sec93.load("sec93.txt");
     
     sort01.load("1Def.txt");
 	sort02.load("2Def.txt");
