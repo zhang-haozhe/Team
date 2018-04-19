@@ -25,15 +25,6 @@ static List def09;
 static List def10;
 static List def11;
 
-//ch.1 sections
-static List sec11;
-static List sec12;
-static List sec13;
-static List sec14;
-static List sec15;
-static List sec16;
-static List sec17;
-
 void List::addTerm(string term) {
     if (head == NULL) {
         head = new Node();
@@ -106,14 +97,20 @@ void List::print() {
     temp = head;
     int counter = 0;
     string tempString;
+    char tempChar;
     while (temp != NULL) {
         if (temp->value != "Free") {
             while (counter != temp->value.length()) {
+                tempChar=temp->value.at(counter);
                 if (temp->value.at(counter) == '[') {
                     cout << endl;
                 }
                 else if (temp->value.at(counter) == '@') {
                     tempString += "@";
+                    //while ((temp->value.at(counter + 1) != ' ') && (counter + 1 != temp->value.length())) {
+                    //  counter++;
+                    // tempString += temp->value.at(counter);
+                    //}
                     for (int i = 0; i < 5; i++) {
 
                         counter++;
@@ -272,9 +269,12 @@ void List::printSearchDef(string term) {
                 }
                 else if (current->value.at(counter) == '@') {
                     tempString += "@";
-                    while ((current->value.at(counter + 1) != ' ') && (counter + 1 != current->value.length())) {
+                    for (int i = 0; i < 5; i++) {
+
                         counter++;
+
                         tempString += current->value.at(counter);
+
                     }
                     if (tempString == "@u00AC") { //negation
                         cout << "\u00AC";
@@ -333,6 +333,13 @@ void List::printSearchDef(string term) {
                     else if (tempString == "@u2260") { //not equal sign
                         cout << "\u2260";
                     }
+                    else if (tempString == "@u0027") { //apostrophe
+                        cout << "\u0027";
+                    }
+                    else if (tempString == "@u221A") { //root
+                        cout << "\u221A";
+                    }
+
                     tempString = "";
                 }
                 else {
@@ -380,98 +387,7 @@ void List::printMemory() {
         cout << temp->value << endl;
         temp = temp->next;
     }
-}
-void List::printSection(string section) {
-    Node *current = this->head;
-    string temp;
-    int colIdx;
-    int len;
-    string printOut = "";
-    while (current != NULL) {
-        colIdx = current->value.find_last_of(":");
-        len = current->value.length() - 1;
-        temp = current->value.substr(colIdx, len);
-        if (temp == section) {
-            printOut = current->value.substr(0, colIdx);
-            int counter = 0;
-            string tempString = "";
-            while (counter != printOut.length()) {
-                if (printOut.at(counter) == '[') {
-                    cout << endl;
-                }
-                else if (printOut.at(counter) == '@') {
-                    tempString += "@";
-                    while ((printOut.at(counter + 1) != ' ') && (counter + 1 != printOut.length())) {
-                        counter++;
-                        tempString += printOut.at(counter);
-                    }
-                    if (tempString == "@u00AC") { //negation
-                        cout << "\u00AC";
-                    }
-                    else if (tempString == "@u2194") { //biconditional
-                        cout << "\u2194";
-                    }
-                    else if (tempString == "@u2219") { //dot
-                        cout << "\u2219";
-                    }
-                    else if (tempString == "@u220A") { //subset of (tiny curvy e)
-                        cout << "\u220A";
-                    }
-                    else if (tempString == "@u2211") { //sigma
-                        cout << "\u2211";
-                    }
-                    else if (tempString == "@u222a") { //union
-                        cout << "\u222a";
-                    }
-                    else if (tempString == "@u2229") { //intersection
-                        cout << "\u2229";
-                    }
-                    else if (tempString == "@u2295") {//exclusive or
-                        cout << "\u2295";
-                    }
-                    else if (tempString == "@u2192") { //right arrow
-                        cout << "\u2192";
-                    }
-                    else if (tempString == "@u2286") { // subset of
-                        cout << "\u2286";
-                    }
-                    else if (tempString == "@u2261") { // equivalent (three lines)
-                        cout << "\u2261";
-                    }
-                    else if (tempString == "@u2200") { // for all
-                        cout << "\u2200";
-                    }
-                    else if (tempString == "@u2203") { // there exists
-                        cout << "\u2203";
-                    }
-                    else if (tempString == "@u2081") { // subscript 1
-                        cout << "\u2081";
-                    }
-                    else if (tempString == "@u2082") { // subscript 2
-                        cout << "\u2082";
-                    }
-                    else if (tempString == "@u2099") { // subscript n
-                        cout << "\u2099";
-                    }
-                    else if (tempString == "@u2308") { // left ceiling
-                        cout << "\u2308";
-                    }
-                    else if (tempString == "@u2309") { // right ceiling
-                        cout << "\u2309";
-                    }
-                    else if (tempString == "@u2260") { //not equal sign
-                        cout << "\u2260";
-                    }
-                    tempString = "";
-                }
-                else {
-                    cout << printOut.at(counter);
-                }
-                counter++;
-            }
-        }
-        current = current->next;
-    }
+
 }
 
 
@@ -707,95 +623,95 @@ void view(int *userNum) {
     }
 }
 void viewBySection() {
-	cout << "Input the chapter number:" << endl;
-	int chp; cin >> chp;
-
-	cout << "\nEnter the section number (1-7) for chapter " << chp << ": ";
-	int section; cin >> section;
-	if (chp == 1) {
-		if (section == 1) {
-			sec11.print();
-		}
-		else if (section == 2) {
-			sec12.print();
-		}
-		else if (section == 3) {
-			sec13.print();
-		}
-		else if (section == 4) {
-			sec14.print();
-		}
-		else if (section == 5) {
-			sec15.print();
-		}
-		else if (section == 6) {
-			sec16.print();
-		}
-		else if (section == 7) {
-			sec17.print();
-		}
-		else {
-			cout << "Section does not exist." << endl;
-		}
-	}
-	else if (chp == 2) {
-		cout << "\n------------------------------------------------------------------------------";
-		cout << "\nCHAPTER 2 - BASIC STRUCTURES: SETS, FUNCTIONS, SEQUENCES";
-		cout << "\n------------------------------------------------------------------------------\n";
-		def02.print();
-	}
-	else if (chp == 3) {
-		cout << "\n------------------------------------------------------------------------------";
-		cout << "\nCHAPTER 3 - ALGORITHMS";
-		cout << "\n------------------------------------------------------------------------------\n";
-		def03.print();
-	}
-	else if (chp == 4) {
-		cout << "\n------------------------------------------------------------------------------";
-		cout << "\nCHAPTER 4 - NUMBER THEORY AND CRYPTOLOGY";
-		cout << "\n------------------------------------------------------------------------------\n";
-		cout << "\nchapter 4 faulty asf, pls fix\n";
-		//def04.print();
-	}
-	else if (chp == 5) {
-		cout << "\n------------------------------------------------------------------------------";
-		cout << "\nCHAPTER 5 - INDUCTION AND RECURSION";
-		cout << "\n------------------------------------------------------------------------------\n";
-		def05.print();
-	}
-	else if (chp == 6) {
-		cout << "\n------------------------------------------------------------------------------";
-		cout << "\nCHAPTER 6 - COUNTING";
-		cout << "\n------------------------------------------------------------------------------\n";
-		def06.print();
-	}
-	else if (chp == 7) {
-		cout << "\n------------------------------------------------------------------------------";
-		cout << "\nCHAPTER 7 - DISCRETE PROBABILITY";
-		cout << "\n------------------------------------------------------------------------------\n";
-		def07.print();
-	}
-	else if (chp == 9) {
-		cout << "\n------------------------------------------------------------------------------";
-		cout << "\nCHAPTER 9 - RELATIONS";
-		cout << "\n------------------------------------------------------------------------------\n";
-		def09.print();
-	}
-	else if (chp == 10) {
-		cout << "\n------------------------------------------------------------------------------";
-		cout << "\nCHAPTER 10 - GRAPHS";
-		cout << "\n------------------------------------------------------------------------------\n";
-		def10.print();
-	}
-	else if (chp == 11) {
-		cout << "\n------------------------------------------------------------------------------";
-		cout << "\nCHAPTER 11 - TREES";
-		cout << "\n------------------------------------------------------------------------------\n";
-		def11.print();
-	}
-	else {
-		cout << "Chapter does not exist";
-	}
+    string inSec;
+    int chp;
+    cout << "\nEnter the chapter number: ";
+    cin >> chp;
+    if ((chp >= 1 && chp <= 7) || (chp >= 9 && chp <= 11)) {
+        cout << "\nEnter the section number for chapter " << chp << ": ";
+        int section; cin >> section;
+        if (chp == 1) {
+            if (section >= 1 && section <= 8) {
+                inSec = "01" + section;
+                //numDef.printSection(inSec);
+                cout << endl;
+            }
+            else cout << "\nThis section does not exist in Chapter 1\n";
+        }
+        if (chp == 2) {
+            if ((section >= 1 && section <= 4) || section == 6) {
+                inSec = "02" + section;
+                //numDef.printSection(inSec);
+                cout << endl;
+            }
+            else cout << "\nThis section does not exist in Chpater 2\n";
+        }
+        if (chp == 3) {
+            if (section >= 1 && section <= 3) {
+                inSec = "03" + section;
+                //numDef.printSection(inSec);
+                cout << endl;
+            }
+            else cout << "\nThis section does not exist in Chapter 3\n";
+        }
+        if (chp == 4) {
+            if (section >= 1 && section <= 3) {
+                inSec = "04" + section;
+                //numDef.printSection(inSec);
+                cout << endl;
+            }
+            else cout << "\nThis section does not exist in Chapter 4\n";
+        }
+        if (chp == 5) {
+            if (section >= 1 && section <= 3) {
+                inSec = "05" + section;
+                //numDef.printSection(inSec);
+                cout << endl;
+            }
+            else cout << "\nThis section does not exist in Chapter 5\n";
+        }
+        if (chp == 6) {
+            if (section >= 1 && section <= 3) {
+                inSec = "06" + section;
+                //numDef.printSection(inSec);
+                cout << endl;
+            }
+            else cout << "\nThis section does exist in Chapter 6\n";
+        }
+        if (chp == 7) {
+            if (section >= 1 && section <= 3) {
+                inSec = "07" + section;
+                //numDef.printSection(inSec);
+                cout << endl;
+            }
+            else cout << "\nThis section does not exist in Chapter 7\n";
+        }
+        if (chp == 9) {
+            if (section == 1 || section == 3 || section == 5) {
+                inSec = "09" + section;
+                //numDef.printSection(inSec);
+                cout << endl;
+            }
+            else cout << "\nThis section does not exist in Chapter 9\n";
+        }
+        if (chp == 10) {
+            if (section >= 1 && section <= 8) {
+                inSec = "10" + section;
+                //numDef.printSection(inSec);
+                cout << endl;
+            }
+            else cout << "\nThis section does not exist in Chapter 10\n";
+        }
+        if (chp == 11) {
+            if (section >= 1 && section <= 5) {
+                inSec = "11" + section;
+                //numDef.printSection(inSec);
+                cout << endl;
+            }
+            else cout << "\nThis section does not exist in Chapter 11\n";
+        }
+    }
+    else cout << "\nInvalid Input";
 }
 void viewByCh() {
     cout << "Input the chapter number:" << endl;
@@ -1115,15 +1031,6 @@ int main() {
     def09.load("9Def.txt");
     def10.load("10Def.txt");
     def11.load("11Def.txt");
-
-	//ch.1 sections
-	sec11.load("sec11.txt");
-	sec12.load("sec12.txt");
-	sec13.load("sec13.txt");
-	sec14.load("sec14.txt");
-	sec15.load("sec15.txt");
-	sec16.load("sec16.txt");
-	sec17.load("sec17.txt");
 
     do {
         userMenu(userNum);
