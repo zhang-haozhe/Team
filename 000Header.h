@@ -11,6 +11,7 @@ void userMenu(int* userNum);
 void sort(int* userNum);
 void previous(int* userNum);
 void search(int* userNum);
+void searchByCh(int chIn);
 void toc(int* userNum);
 
 void view(int* userNum);
