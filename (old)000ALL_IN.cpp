@@ -25,6 +25,20 @@ static List def09;
 static List def10;
 static List def11;
 
+//ch.1 sections
+static List sec11;
+static List sec12;
+static List sec13;
+static List sec14;
+static List sec15;
+static List sec16;
+static List sec17;
+
+//ch.3 sections
+static List sec31;
+static List sec32;
+static List sec33;
+
 void List::addTerm(string term) {
 	if (head == NULL) {
 		head = new Node();
@@ -650,8 +664,6 @@ void view(int *userNum) {
 		cout << endl;
 	}
 	if (VDSelection == 1) {
-		//cout << "Enter the section number: " << endl;
-		//cin >> VDnumSec;
 		viewBySection();
 		*userNum = 3;
 	}
@@ -695,95 +707,103 @@ void view(int *userNum) {
 	}
 }
 void viewBySection() {
-	string inSec;
-	int chp;
-	cout << "\nEnter the chapter number: ";
-	cin >> chp;
-	if ((chp >= 1 && chp <= 7) || (chp >= 9 && chp <= 11)) {
-		cout << "\nEnter the section number for chapter " << chp << ": ";
-		int section; cin >> section;
-		if (chp == 1) {
-			if (section >= 1 && section <= 8) {
-				inSec = "01" + section;
-				numDef.printSection(inSec);
-				cout << endl;
-			}
-			else cout << "\nThis section does not exist in Chapter 1\n";
+	cout << "Input the chapter number:" << endl;
+	int chp; cin >> chp;
+
+	cout << "\nEnter the section number for chapter " << chp << ": ";
+	int section; cin >> section;
+	if (chp == 1) {
+		if (section == 1) {
+			sec11.print();
 		}
-		if (chp == 2) {
-			if ((section >= 1 && section <= 4) || section == 6) {
-				inSec = "02" + section;
-				numDef.printSection(inSec);
-				cout << endl;
-			}
-			else cout << "\nThis section does not exist in Chpater 2\n";
+		else if (section == 2) {
+			sec12.print();
 		}
-		if (chp == 3) {
-			if (section >= 1 && section <= 3) {
-				inSec = "03" + section;
-				numDef.printSection(inSec);
-				cout << endl;
-			}
-			else cout << "\nThis section does not exist in Chapter 3\n";
+		else if (section == 3) {
+			sec13.print();
 		}
-		if (chp == 4) {
-			if (section >= 1 && section <= 3) {
-				inSec = "04" + section;
-				numDef.printSection(inSec);
-				cout << endl;
-			}
-			else cout << "\nThis section does not exist in Chapter 4\n";
+		else if (section == 4) {
+			sec14.print();
 		}
-		if (chp == 5) {
-			if (section >= 1 && section <= 3) {
-				inSec = "05" + section;
-				numDef.printSection(inSec);
-				cout << endl;
-			}
-			else cout << "\nThis section does not exist in Chapter 5\n";
+		else if (section == 5) {
+			sec15.print();
 		}
-		if (chp == 6) {
-			if (section >= 1 && section <= 3) {
-				inSec = "06" + section;
-				numDef.printSection(inSec);
-				cout << endl;
-			}
-			else cout << "\nThis section does exist in Chapter 6\n";
+		else if (section == 6) {
+			sec16.print();
 		}
-		if (chp == 7) {
-			if (section >= 1 && section <= 3) {
-				inSec = "07" + section;
-				numDef.printSection(inSec);
-				cout << endl;
-			}
-			else cout << "\nThis section does not exist in Chapter 7\n";
+		else if (section == 7) {
+			sec17.print();
 		}
-		if (chp == 9) {
-			if (section == 1 || section == 3 || section == 5) {
-				inSec = "09" + section;
-				numDef.printSection(inSec);
-				cout << endl;
-			}
-			else cout << "\nThis section does not exist in Chapter 9\n";
-		}
-		if (chp == 10) {
-			if (section >= 1 && section <= 8) {
-				inSec = "10" + section;
-				numDef.printSection(inSec);
-				cout << endl;
-			}
-			else cout << "\nThis section does not exist in Chapter 10\n";
-		}
-		if (chp == 11) {
-			if (section >= 1 && section <= 5) {
-				inSec = "11" + section;
-				numDef.printSection(inSec);
-				cout << endl;
-			}
-			else cout << "\nThis section does not exist in Chapter 11\n";
+		else {
+			cout << "Section does not exist." << endl;
 		}
 	}
-	else cout << "\nInvalid Input"; 
+	else if (chp == 2) {
+		cout << "\n------------------------------------------------------------------------------";
+		cout << "\nCHAPTER 2 - BASIC STRUCTURES: SETS, FUNCTIONS, SEQUENCES";
+		cout << "\n------------------------------------------------------------------------------\n";
+		def02.print();
+	}
+	else if (chp == 3) {
+		if (section == 1) {
+			sec31.print();
+		}
+		else if (section == 2) {
+			sec32.print();
+		}
+		else if (section == 3) {
+			sec33.print();
+		}
+		else {
+			cout << "Section does not exist." << endl;
+		}
+	}
+	else if (chp == 4) {
+		cout << "\n------------------------------------------------------------------------------";
+		cout << "\nCHAPTER 4 - NUMBER THEORY AND CRYPTOLOGY";
+		cout << "\n------------------------------------------------------------------------------\n";
+		cout << "\nchapter 4 faulty asf, pls fix\n";
+		//def04.print();
+	}
+	else if (chp == 5) {
+		cout << "\n------------------------------------------------------------------------------";
+		cout << "\nCHAPTER 5 - INDUCTION AND RECURSION";
+		cout << "\n------------------------------------------------------------------------------\n";
+		def05.print();
+	}
+	else if (chp == 6) {
+		cout << "\n------------------------------------------------------------------------------";
+		cout << "\nCHAPTER 6 - COUNTING";
+		cout << "\n------------------------------------------------------------------------------\n";
+		def06.print();
+	}
+	else if (chp == 7) {
+		cout << "\n------------------------------------------------------------------------------";
+		cout << "\nCHAPTER 7 - DISCRETE PROBABILITY";
+		cout << "\n------------------------------------------------------------------------------\n";
+		def07.print();
+	}
+	else if (chp == 9) {
+		cout << "\n------------------------------------------------------------------------------";
+		cout << "\nCHAPTER 9 - RELATIONS";
+		cout << "\n------------------------------------------------------------------------------\n";
+		def09.print();
+	}
+	else if (chp == 10) {
+		cout << "\n------------------------------------------------------------------------------";
+		cout << "\nCHAPTER 10 - GRAPHS";
+		cout << "\n------------------------------------------------------------------------------\n";
+		def10.print();
+	}
+	else if (chp == 11) {
+		cout << "\n------------------------------------------------------------------------------";
+		cout << "\nCHAPTER 11 - TREES";
+		cout << "\n------------------------------------------------------------------------------\n";
+		def11.print();
+	}
+	else {
+		cout << "Chapter does not exist";
+	}
 }
 void viewByCh() {
 	cout << "Input the chapter number:" << endl;
@@ -1103,6 +1123,20 @@ int main() {
 	def09.load("9Def.txt");
 	def10.load("10Def.txt");
 	def11.load("11Def.txt");
+
+	//ch.1 sections
+	sec11.load("sec11.txt");
+	sec12.load("sec12.txt");
+	sec13.load("sec13.txt");
+	sec14.load("sec14.txt");
+	sec15.load("sec15.txt");
+	sec16.load("sec16.txt");
+	sec17.load("sec17.txt");
+
+	//ch.3 sections
+	sec31.load("sec31.txt");
+	sec32.load("sec32.txt");
+	sec33.load("sec33.txt");
 
 	do {
 		userMenu(userNum);
