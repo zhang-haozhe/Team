@@ -1,5 +1,5 @@
-Permutations: A permutation of a set of distinct objects is an ordered arrangement of these objects. An ordered arrangement of r elements of a set is called an r-permutation. :063
-Combinations: An r-combination of elements of a set is an unordered selection of r elements from the set. Thus, an r-combination is simply a subset of the set with r elements. :063
-Binomial Coefficient: Binomial[n,k] :063
-Double Counting Proof: A double counting proof uses counting arguments to prove that both sides of an identity count the same objects, but in different ways. :063
-Bijective Proof: A bijective proof shows that there is a bijection between the sets of objects counted by the two sides of the identity. :063
+Permutations: A permutation of a set of distinct objects is an ordered arrangement of these objects. An ordered arrangement of r elements of a set is called an r-permutation.
+Combinations: An r-combination of elements of a set is an unordered selection of r elements from the set. Thus, an r-combination is simply a subset of the set with r elements.
+Binomial Coefficient: Binomial[n,k]
+Double Counting Proof: A double counting proof uses counting arguments to prove that both sides of an identity count the same objects, but in different ways.
+Bijective Proof: A bijective proof shows that there is a bijection between the sets of objects counted by the two sides of the identity.
