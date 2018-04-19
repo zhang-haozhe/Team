@@ -1,11 +1,11 @@
-Graph: (V , E) consists of V , a nonempty set of vertices (or nodes) and E, a set of edges. Each edge has either one or two vertices associated with it, called its endpoints. :101
+Graph: (V , E) consists of V , a nonempty set of vertices (or nodes) and E, a set of edges. Each edge has [either one or two vertices associated with it, called its endpoints. :101
 Infinite Graph: A graph with an infinite vertex set or an infinite number of edges :101
 Finite Graph: A graph with a finite vertex set and a finite edge set :101
-Simple Graph: A graph in which each edge connects two different vertices and where no two edges connect the same pair of vertices :101
+Simple Graph: A graph in which each edge connects two different vertices and where no two edges connect the [same pair of vertices :101
 Multigraphs: Graphs that may have multiple edges connecting the same vertices :101
-Pseudographs: Graphs that may include loops, and possibly multiple edges connecting the same pair of vertices or a vertex to itself :101
-Directed Graph: (or digraph) (V , E) consists of a nonempty set of vertices V and a set of directed edges (or arcs) E. Each directed edge is associated with an ordered pair of vertices. The directed edge associated with the ordered pair (u, v) is said to start at u and end at v. :101
+Pseudographs: Graphs that may include loops, and possibly multiple edges connecting the same pair of vertices [or a vertex to itself :101
+Directed Graph: (or digraph) (V , E) consists of a nonempty set of vertices V and a set of directed edges [(or arcs) E. Each directed edge is associated with an ordered pair of vertices. The directed edge associated [with the ordered pair (u, v) is said to start at u and end at v. :101
 Simple Directed Graph: A directed graph with no loops and no multiple directed edges :101
-Directed Multigraphs: Directed graphs that may have multiple directed edges from a vertex to a second (possibly the same) vertex are used to model such networks. :101
+Directed Multigraphs: Directed graphs that may have multiple directed edges from a vertex to a second [(possibly the same) vertex are used to model such networks. :101
 Mixed Graph:  A graph with both directed and undirected edges :101
-Social Networks: Graphs that are extensively used to model social structures based on different kinds of relationships between people or groups of people. :101
+Social Networks: Graphs that are extensively used to model social structures based on different kinds of [relationships between people or groups of people. :101
