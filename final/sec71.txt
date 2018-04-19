@@ -1,0 +1,5 @@
+Experiment: Procedure that yields one of a given set of possible outcomes 
+Sample Space: In an experiment, it is the set of possible outcomes 
+Event: Subset of the sample space 
+Laplace Definition: If S is a finite space of equally likely outcomes, and E is an event (a subset of S), then the probability of E is p(E) = |E|/|S|. 
+A note about E: For every event E, 0 <= p(E) <= 1. This follows from the definition: 0 <= p(E) = |E|/|S| <= |S|/|S| = 1, since 0 <= |E| <= |S|. 

@@ -1,0 +1,18 @@
+﻿Rules of Inference: They are the essential building blocks in the construction of valid arguments. Propositional Logic uses inference rules. For predicate logic, they use inference rules for propositional logic as well as additional interference rules to handle variables and quantifiers. 
+Argument: In propositional logic, it is a sequence of propositions 
+Premise: The statements in an argument aside from the last statement 
+Conclusion: The last statement in an argument 
+Modus Ponens: As follows (p ^ (p → q)) → q 
+Modus Tollens: As follows (¬q ^ (p → q)) → ¬p 
+Hypothetical Syllogism: As follows ((p → q) ^ (q → r)) → (p → r) 
+Disjunctive Syllogism: As follows (¬p ^ (p v q)) → q 
+Addition: As follows p → (p v q) 
+Simplification: As follows (p ^ q) → q 
+Conjunction with Respect to Rules of Inference: As follows ((p) ^ (q)) → (p ^ q) 
+Resolution: As follows ((¬p v r) ^ (p v q)) → (q v r) 
+Valid argument: A sequence of statements where each statement is either a premise or follows from previous statements by rules of inference. The last statement is the conclusion. 
+Universal Instantiation: It’s a generalization of simplification defined on the whole domain [ ∀xP(x) = P(c) 
+Universal Generalization: It’s a generalization of conjunction with the propositional value for all variables in the domain being true → universal quantifier true [ P(c) for an arbitrary c = ∀xP(x) 
+Existential Instantiation: As follows [ ∃xP(x) = P(c) for some element c 
+Existential Generalization: As follows [ P(c) for some element c = ∃xP(x) 
+Universal Modus Ponens: Combines universal instantiation and modus ponens into one rule [ ∀x(P(x) → Q(x)) [ P(a) [ = Q(a) 
