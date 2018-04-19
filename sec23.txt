@@ -1,0 +1,9 @@
+Function: f from A to B, denoted f:A à B, is an assignment of each element of A to exactly one element of B, can be specified as an explicit statement of the assignment, a formula, or a computer program :023
+Injections: function f is said to be this if and only if f(a) = f(b), which implies that a = b for all a and b in the domain of f (an injection if it is one-to-one) :023
+Surjections: function f from A to B is called onto or surjective if and only if for every element b in B, there is an element a in A with f(a) = b :023
+Bijections: one-to-one correspondence, if it is both one to one and onto (surjective and injective) :023
+Inverse Function: f = bijection from A to B, then the inverse of f (f-1) is the function from B to A defined as :023
+Composition: let f:BàC and g:AàB. The composition of f with g (denoted f ○ g) is the function from A to C defined as :023
+Floor Function: f(x) = |_x_| – largest integer less than or equal to x :023
+Ceiling Function: f(x) = |-x-| - smallest integer greater than or equal to x :023
+Factorial Function: f:NàZ+, denoted by f(n) = n!, product of the first n positive integer when n is nonnegative :023
