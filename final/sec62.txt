@@ -1,0 +1,2 @@
+Pigeonhole Principle: If k is a positive integer and k + 1 objects are placed into k boxes, then at least one box contains two or more objects. :062
+Generalized Pigeonhole Principle: If N objects are placed into k boxes, then there is at least one box containing at least ⌈N/k⌉ objects. :062

@@ -1,0 +1,7 @@
+Product Rule: A procedure can be broken down into a sequence of two tasks. There are n1 ways to do the first task and n2 ways to do the second task. Then there are n1 × n2 ways to do a procedure. :061
+Sum Rule: If a task can be done either in one of n1 ways or in one of n2, where none of the set of n1 ways is the same as any of the n2 ways, then there are n1+ n2 ways to do the task. :061
+Subtraction Rule: If a task can be done either in one of n1 ways or in one of n2 ways, then the total number of ways to do the task is n1+ n2 minus the number of ways to do the task that are common to the two different ways. [ |A ∪ B|= |A| + |B| - |A ∩ B| :061
+Division Rule: There are n/d ways to do a task if it can be done using a procedure that can be carried out in n ways, and for every way w, exactly d of the n ways corresponds to way w. :061
+Division Rule in Terms of Sets: If the finite set A is the union of n pairwise disjoint subsets each with d elements, then n = |A|/d. :061
+Division Rule in Terms of Functions: If f is a function from A to B, where both are finite sets, and for every value y ∈ B there are exactly d values x ∈ A such that f(x) = y, then |B| = |A|/d. :061
+Tree Diagrams: We can solve many counting problems through the use of tree diagrams, where a branch represents a possible choice and the leaves represent possible outcomes. :061

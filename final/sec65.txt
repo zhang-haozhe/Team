@@ -1,0 +1,4 @@
+Distinguishable: When objects are different from each other :065
+Identical: When objects are identical to each other :065
+Distinguishable Boxes: Labeled boxes :065
+Indistinguishable Boxes: Unlabeled boxes :065
