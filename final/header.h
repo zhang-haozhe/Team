@@ -20,6 +20,9 @@ void viewSelCh();
 void viewSelSec();
 
 void previous();
+void toc(int *userNum);
+void help(int *userNum);
+void creditList(int *userNum);
 
 class Node {
 public:
