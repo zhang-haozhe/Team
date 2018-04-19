@@ -1,6 +1,6 @@
-Base b Expansion of n: Let b be an integer greater than 1. Then if n is a positive integer, it can be expressed uniquely in the form [ n = a@u2093b^x + a@u2093@u208b@u2081b^(x-1)+...+a@u2081b+a@u2080 [ Where x is a nonnegative integer, a@u2080, a@u2081, ..., a@u2093 are nonnegative integers less than b, and a@u2093 ≠ 0 :042
-Decimal Expansions: base 10 expansion of integers :042
-Binary Expansions: base 2 expansion of integers :042
-Octal Expansions: base 8 expansion of integers :042
-Hexadecimal Expansions: base 16 expansion of integers :042
-Bytes: bit strings of length 8 :042
+Base b Expansion of n: Let b be an integer greater than 1. Then if n is a positive integer, it can be expressed uniquely in the form [ n = a@u2093b^x + a@u2093@u208b@u2081b^(x-1)+...+a@u2081b+a@u2080 [ Where x is a nonnegative integer, a@u2080, a@u2081, ..., a@u2093 are nonnegative integers less than b, and a@u2093 ≠ 0
+Decimal Expansions: base 10 expansion of integers
+Binary Expansions: base 2 expansion of integers
+Octal Expansions: base 8 expansion of integers
+Hexadecimal Expansions: base 16 expansion of integers
+Bytes: bit strings of length 8
