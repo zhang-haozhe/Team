@@ -81,7 +81,7 @@ Node* List::getHead() {
 int List::getSize() {
 	return this->size;
 }
-bool List::checkexistence(string term) {//check if there is a node with such a name
+bool List::contains(string term) {
 	Node * temp = new Node;
 	temp = head;
 	while (temp != NULL) {
@@ -228,14 +228,14 @@ void List::printSearch(string term) {
 	string addTerm;
 	if (search(this->head, term)) {
 		cout << term << endl;
-		if (!memory.checkexistence(term)) {
+		if (!memory.contains(term)) {
 			addTerm = term;
 			memory.addTerm(addTerm);
 		}
 	}
 	else {
 		cout << term << " does not exist in this dictionary" << endl;
-		if (!memory.checkexistence(term)) {
+		if (!memory.contains(term)) {
 			addTerm = term;
 			memory.addTerm(addTerm);
 		}
@@ -329,7 +329,7 @@ void List::printSearchDef(string term) {
 				counter++;
 			}
 		}
-		if (!memory.checkexistence(term)) {
+		if (!memory.contains(term)) {
 			addTerm = term;
 			memory.addTerm(addTerm);
 		}
@@ -337,7 +337,7 @@ void List::printSearchDef(string term) {
 	}
 	if (printOut == "") {
 		cout << term << " does not exist in this dictionary" << endl;
-		if (!memory.checkexistence(term)) {
+		if (!memory.contains(term)) {
 			addTerm = term;
 			memory.addTerm(addTerm);
 		}
@@ -669,10 +669,10 @@ void view(int *userNum) {
 	cout << "\n---------------------------------------------------";
 	cout << "\n                VIEW DICTIONARY";
 	cout << "\n---------------------------------------------------\n";
-	cout << "1. Individual Section" << endl;
-	cout << "2. Individual Chapter" << endl;
-	cout << "3. Selection of Sections" << endl;
-	cout << "4. Selection of Chapters" << endl;
+	cout << "1. View Individual Section" << endl;
+	cout << "2. View Individual Chapter" << endl;
+	cout << "3. View Selection of Sections" << endl;
+	cout << "4. View Selection of Chapters" << endl;
 	cout << "5. View Entire Dictionary" << endl;
 	cout << "6. Go Back" << endl;
 	cout << "\nchoice - ";
@@ -695,13 +695,16 @@ void view(int *userNum) {
 		*userNum = 3;
 	}
 	if (VDSelection == 3) {
-		cout << "Input which sections you want to view: " << endl;
-		//FIXME: create method that allows user to print out only requested sections  
+		cout << "Input which sections you want to view. " << endl;
+		cout << "Note: You can only view up to 5 chapters at a time.\n";
+		//FIXME: some method calling shit that asks what sections the user wants to view
+		//max of 5 sections at a time because ain't nobody got the time or motivation to write 7+ nested loops
 		*userNum = 3;
 	}
 	if (VDSelection == 4) {
-		cout << "Input which chapters you want to view: " << endl;
-		//FIXME: create method that allows user to print out only requested chapters 
+		cout << "Input which chapters you want to view. " << endl;
+		cout << "Note: You can only view up to 3 chapters at a time.\n";
+		viewSelCh();
 		*userNum = 3;
 	}
 	if (VDSelection == 5) {
@@ -718,8 +721,6 @@ void view(int *userNum) {
 		def09.print();
 		def10.print();
 		def11.print();
-
-		//FIXME: create method that prints out entire dictionary
 		//print to console but chapter 4 needs to be fixed, also fix formatting, it's ugly
 		//definition.print();
 		*userNum = 3;
@@ -869,6 +870,132 @@ void viewByCh() {
 		cout << "Chapter does not exist";
 	}
 }
+void viewSelCh() {
+	List *chList = new List;
+	cout << "\n1. Add Chapter";
+	cout << "\n2. Go Back";
+	cout << "\n\nchoice - ";
+	int choice1; cin >> choice1;
+	if (cin.fail() || (choice1 != 1) && (choice1 != 2)) {
+		cout << "Invalid input." << endl;
+		cin.clear();
+		cin.ignore(1024, '\n');
+		cout << endl;
+	}
+	if (choice1 == 1) {
+		cout << "\nEnter chapter number: ";
+		int ch1; cin >> ch1;
+		if (cin.fail() || !(ch1 >= 1 && ch1 <= 7) && !(ch1 >= 9 && ch1 <= 11)) {
+			cout << "Invalid input." << endl;
+			cin.clear();
+			cin.ignore(1024, '\n');
+			cout << endl;
+		}
+		else {
+			chList->addTerm(to_string(ch1));
+			cout << "\n1. Add Another Chapter";
+			cout << "\n2. View Chapter " << ch1;
+			cout << "\n3. Go back";
+			cout << "\n\nchoice - ";
+			int in2;
+			int *choice2 = &in2; cin >> in2;
+			if (cin.fail() || (*choice2 != 1) && (*choice2 != 2) && (*choice2 != 3)) {
+				cout << "Invalid input." << endl;
+				cin.clear();
+				cin.ignore(1024, '\n');
+				cout << endl;
+			}
+			if (*choice2 == 1) {
+				cout << "\nEnter chapter number: ";
+				int ch2; cin >> ch2;
+				if (cin.fail() || !(ch1 >= 1 && ch1 <= 7) && !(ch1 >= 9 && ch1 <= 11)) {
+					cout << "Invalid input." << endl;
+					cin.clear();
+					cin.ignore(1024, '\n');
+					cout << endl;
+				}
+				else if (chList->contains(to_string(ch2))) {
+					cout << "\nChapter already added" << endl;
+					choice1 = 1;
+				}
+				else {
+					chList->addTerm(to_string(ch2));
+					cout << "\n1. Add Another Chapter and Print";
+					cout << "\n2. View Chapters " << ch1 << " and " << ch2;
+					cout << "\n3. Go back";
+					cout << "\n\nchoice - ";
+					int choice3; cin >> choice3;
+					if (cin.fail() || (choice3 != 1) && (choice3 != 2) && (choice3 != 3)) {
+						cout << "Invalid input." << endl;
+						cin.clear();
+						cin.ignore(1024, '\n');
+						cout << endl;
+					}
+					if (choice3 == 1) {
+						cout << "\nEnter chapter number: ";
+						int ch3; cin >> ch3;
+						if (cin.fail() || !(ch3 >= 1 && ch3 <= 7) && !(ch3 >= 9 && ch3 <= 11)) {
+							cout << "Invalid input." << endl;
+							cin.clear();
+							cin.ignore(1024, '\n');
+							cout << endl;
+						}
+						else if (chList->contains(to_string(ch3))) {
+							cout << "\nChapter already added" << endl;
+							choice3 = 1;
+						}
+						else {
+							chList->addTerm(to_string(ch3));
+							cout << "\nPRINTING OUT CHAPTERS " << ch1 << ", " << ch2 << ", AND " << ch3 << endl;
+							cout << "--------------------------------------------------------------------------------" << endl;
+							if (chList->contains("1")) def01.print();
+							if (chList->contains("2")) def02.print();
+							if (chList->contains("3")) def03.print();
+							if (chList->contains("4")) def04.print();
+							if (chList->contains("5")) def05.print();
+							if (chList->contains("6")) def06.print();
+							if (chList->contains("7")) def07.print();
+							if (chList->contains("9")) def09.print();
+							if (chList->contains("10")) def10.print();
+							if (chList->contains("11")) def11.print();
+						}
+					}
+					if (choice3 == 2) {
+						cout << "\nPRINTING OUT CHAPTERS " << ch1 << " AND " << ch2 << endl;
+						cout << "--------------------------------------------------------------------------------" << endl;
+						if (chList->contains("1")) def01.print();
+						if (chList->contains("2")) def02.print();
+						if (chList->contains("3")) def03.print();
+						if (chList->contains("4")) def04.print();
+						if (chList->contains("5")) def05.print();
+						if (chList->contains("6")) def06.print();
+						if (chList->contains("7")) def07.print();
+						if (chList->contains("9")) def09.print();
+						if (chList->contains("10")) def10.print();
+						if (chList->contains("11")) def11.print();
+					}
+					if (choice3 == 3) return;
+				}
+			}
+			if (*choice2 == 2) {
+				cout << "\nPRINTING OUT CHAPTER " << ch1 << endl;
+				cout << "--------------------------------------------------------------------------------" << endl;
+				if (chList->contains("1")) def01.print();
+				if (chList->contains("2")) def02.print();
+				if (chList->contains("3")) def03.print();
+				if (chList->contains("4")) def04.print();
+				if (chList->contains("5")) def05.print();
+				if (chList->contains("6")) def06.print();
+				if (chList->contains("7")) def07.print();
+				if (chList->contains("9")) def09.print();
+				if (chList->contains("10")) def10.print();
+				if (chList->contains("11")) def11.print();
+			}
+			if (*choice2 == 3) return;
+		}
+	}
+	if (choice1 == 2) return;
+}
 
 void previous(int *userNum) {
 	//DONE
@@ -972,51 +1099,6 @@ void creditList(int *userNum) {
 	cout << "5. James Boultinghouse" << endl;
 	cout << "6. Thien Pham" << endl;
 	*userNum = 0;
-}
-
-//probably won't need and probably will delete
-void modifiable(int*userNum) {
-	cout << "\n---------------------------------------------------";
-	cout << "\n                USER INPUTTED TERMS";
-	cout << "\n---------------------------------------------------\n";
-	*userNum = 0;
-}
-void addition(int *userNum) {
-	int chap = 0;
-	string def = "?";
-	string word = "?";
-	cout << "Input your word: " << endl;
-	cin >> word;
-	cout << "Input the definition of this word: " << endl;
-	cin.ignore();//Important!!!
-	getline(cin, def);
-
-	if (term.checkexistence(word)) {
-		cout << word << " already exists." << endl;
-	}
-	else {
-		definition.addTerm(def);
-		term.addTerm(word);
-	}
-	cout << endl;
-	*userNum = 0;
-}
-void deletion(int *userNum) {
-	string weebs;
-	cout << "Which word do you want to remove?" << endl;
-	cin >> weebs;
-	int index = term.deleteTerm(weebs);
-
-	if (index == -1) {
-		cout << "This term does not exist." << endl;
-	}
-	else {
-		definition.deleteTermDetails(index);
-		cout << weebs << " removed successfully." << endl;
-	}
-	cout << endl;
-	*userNum = 0;
-
 }
 
 int main() {
