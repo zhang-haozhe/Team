@@ -4,7 +4,7 @@
 #include <fstream>
 #include <stack>
 
-using namespace std;
+using namespace std; 
 
 List::List() { this->head = NULL; }
 static List definition; //all definitions
@@ -63,6 +63,16 @@ static List sec61;
 static List sec62;
 static List sec63;
 static List sec65;
+
+//ch.7 sections
+static List sec71;
+static List sec72;
+static List sec73;
+
+//ch.9 sections
+static List sec91;
+static List sec92;
+static List sec93;
 
 void List::addTerm(string term) {
     if (head == NULL) {
@@ -857,10 +867,32 @@ void viewBySection() {
         }
     }
     else if (chp == 7) {
-
+        if (section == 1) {
+			sec71.print();
+		}
+		else if (section == 2) {
+			sec72.print();
+		}
+		else if (section == 3) {
+			sec73.print();
+		}
+		else {
+			cout << "Section does not exist." << endl;
+		}
     }
     else if (chp == 9) {
-
+        if (section == 1) {
+			sec91.print();
+		}
+		else if (section == 2) {
+			sec92.print();
+		}
+		else if (section == 3) {
+			sec93.print();
+		}
+		else {
+			cout << "Section does not exist." << endl;
+		}
     }
     else if (chp == 10) {
 
@@ -1229,6 +1261,16 @@ int main() {
     sec62.load("sec62.txt");
     sec63.load("sec63.txt");
     sec65.load("sec65.txt");
+    
+    //ch.7 sections
+	sec71.load("sec71.txt");
+	sec72.load("sec72.txt");
+	sec73.load("sec73.txt");
+	
+	//ch.9 sections
+	sec91.load("sec91.txt");
+	sec92.load("sec92.txt");
+	sec93.load("sec93.txt");
     
     do {
         userMenu(userNum);
