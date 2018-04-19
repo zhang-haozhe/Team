@@ -1,0 +1,8 @@
+Binary Search Tree: binary tree in which each child of a vertex is designated as a right or left child, no vertex has more than one right child or left child, and each vertex is labeled with a key, which is one of the items. 
+Decision Tree: A rooted tree in which each internal vertex corresponds to a decision, with a subtree at these vertices for each possible outcome of the decision. 
+Binary Comparison Theorem: A sorting algorithm based on binary comparisons requires at least upper bound(log n!) comparisons. 
+Average Comparison Theorem: The average number of comparisons used by a sorting algorithm to sort n elements based on binary comparisons is (omega)(n log n). 
+Huffman Coding: an algorithm that takes as input the frequencies (which are the probabilities of occurrences) of symbols in a string and produces as output a prefix code that encodes the string using the fewest possible bits, among all possible binary prefix codes for these symbols. 
+Nim Game: at the start of a game there are a number of piles of stones. Two players take turns making moves; a legal move consists of removing one or more stones from one of the piles, without removing all the stones left. A player without a legal move loses. 
+Minmax Strategy: The strategy where the first player moves to a position represented by a child with maximum value and the second player moves to a position of a child with minimum value 
+Minmax Theorem: The value of a vertex of a game tree tells us the payoff to the first player if both players follow the minmax strategy and play starts from the position represented by this vertex 
