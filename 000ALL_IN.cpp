@@ -462,19 +462,6 @@ void List::printSection(string section) {
 	}
 }
 
-string removeWhiteSpace(string term) {
-	string newTerm = "";
-	for (int i = 0; i < term.length(); i++) {
-		if (term[i] != ' ') newTerm += term[i];
-	}
-	return newTerm;
-}
-void searchTermAll() {
-	cout << "\nEnter term - ";
-	string inTerm; 
-	getline(cin, inTerm);
-	term.printSearchDef(inTerm);
-}
 
 void userMenu(int* userNum) {
 	while (!((*userNum == 1) || (*userNum == 2) || (*userNum == 3) || (*userNum == 4) || (*userNum == 5) || (*userNum == 6) || (*userNum == 7) || (*userNum == 8) || (*userNum == 9))) {
@@ -575,13 +562,6 @@ void sort(int *userNum) {
 	}
 }
 void search(int *userNum) {
-	//declare linkedLists
-	List *termsList = new List(); //change to *defList later
-	List *defList = new List();
-	List *allTerms = new List();
-	
-	//load
-	allTerms->load("allTerms.txt");
 	cout << "\n------------------------------";
 	cout << "\n         SEARCH TERM";
 	cout << "\n------------------------------";
@@ -597,69 +577,54 @@ void search(int *userNum) {
 		*userNum = 1;
 	}
 	if (select == 1) {
-		//cout << "Enter term - ";
-		//searchTermAll();
+		cin.clear();
+		cin.ignore(1024, '\n');
 		cout << "\nEnter term - ";
 		string inTerm;
 		getline(cin, inTerm);
-		term.printSearchDef(inTerm);
+		definition.printSearchDef(inTerm);
+		cout << "\n\nPress enter to continue...";
+		cin.clear();
+		cin.ignore(1024, '\n');
 		*userNum = 1;
 	}
 	if (select == 2) {
 		cout << "Enter Chapter Number - ";
 		int chIn; cin >> chIn;
-		if (chIn == 1) {
-			termsList->load("1Def.txt");
-			cout << "Enter term - ";
-			string searchInCh; cin >> searchInCh;
-			termsList->printSearch(searchInCh);
+		if (cin.fail() || !(chIn >= 1 && chIn <= 7) && !(chIn >= 9 && chIn <= 11)) {
+			cout << "Invalid input." << endl;
+			cin.clear();
+			cin.ignore(1024, '\n');
 			cout << endl;
 		}
-		else if (chIn == 2) {
-			termsList->load("2Def.txt");
-		}
-		else if (chIn == 3) {
-			termsList->load("3Def.txt");
-		}
-		else if (chIn == 4) {
-			termsList->load("4Def.txt");
-			cout << "Enter term - ";
-			string searchInCh; cin >> searchInCh;
-			cout << endl;
-			termsList->printSearchDef(searchInCh);
-			cout << endl;
-		}
-		else if (chIn == 5) {
-			termsList->load("5Def.txt");
-		}
-		else if (chIn == 6) {
-			termsList->load("6Def.txt");
-		}
-		else if (chIn == 7) {
-			termsList->load("7Def.txt");
-			cout << "Enter term - ";
-			string searchInCh; cin >> searchInCh;
-			cout << endl;
-			termsList->printSearchDef(searchInCh);
-			cout << endl;
-		}
-		else if (chIn == 9) {
-			termsList->load("9Def.txt");
-		}
-		else if (chIn == 10) {
-			termsList->load("10Def.txt");
-		}
-		else if (chIn == 11) {
-			termsList->load("11Def.txt");
-		}
-		else {
-			cout << "Chapter does not exist";
+		else { 
+			searchByCh(chIn);
+			cout << "\n\nPress enter to continue...";
+			cin.clear();
+			cin.ignore(1024, '\n');
 		}
 		*userNum = 1;
 	}
 	if (select == 3) {
 		*userNum = 0;
 	}
+}
+void searchByCh(int chIn) {
+	cin.clear();
+	cin.ignore(1024, '\n');
+	cout << "\nEnter term: ";
+	string searchTerm;
+	getline(cin, searchTerm);
+	if (chIn == 1) def01.printSearchDef(searchTerm);
+	if (chIn == 2) def02.printSearchDef(searchTerm);
+	if (chIn == 3) def03.printSearchDef(searchTerm);
+	if (chIn == 4) def04.printSearchDef(searchTerm);
+	if (chIn == 5) def05.printSearchDef(searchTerm);
+	if (chIn == 6) def06.printSearchDef(searchTerm);
+	if (chIn == 7) def07.printSearchDef(searchTerm);
+	if (chIn == 9) def09.printSearchDef(searchTerm);
+	if (chIn == 10) def10.printSearchDef(searchTerm);
+	if (chIn == 11) def11.printSearchDef(searchTerm);
 }
 
 void view(int *userNum) {
