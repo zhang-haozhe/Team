@@ -1,0 +1,9 @@
+﻿Proof: A valid argument that establishes the truth of a statement 
+Theorem: A statement that can be shown to be true using definitions, other theorems, axioms, rules of interference. Less important theorems are sometimes called propositions. 
+Lemma: A ‘helping theorem’ or a result which is needed to prove a theorem 
+Corollary: A result which follows directly from a theorem 
+Conjecture: A statement that is being proposed to be true. Once a proof of a conjecture is found, it becomes a theorem. It may turn out to be false. 
+Direct Proof: Assume that p is true. Use rules of inference, axioms, and logical equivalences to show that q must also be true. 
+Proof by Contraposition: Assume ¬q and show ¬p is also true. This is sometimes called the indirect proof method. If we give a direct proof of ¬q → ¬p, then we have a proof of p ¬p → q [ p → q ≡ ¬q → ¬p 
+Proof by Contradiction: To prove p, assume ¬p and derive a contradiction such as p ^ ¬p (an indirect form of proof). Since we have shown that ¬p → F is true, it follows that the contrapositive T → p also holds. 
+Proof of Theorems that are Biconditional Statements: To prove a theorem that is a biconditional statement, we show that p → q and q → p are both true. 
