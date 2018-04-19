@@ -1,0 +1,70 @@
+﻿Proposition: A proposition is a declarative sentence that is either true or false. If it is always true, then it is denoted by “T” and, if it is always false, then it is denoted by “F”. They can't be commands, questions, or have unknown variables. 
+Compound Proposition: Compound propositions are constructed from logical connectives and other propositions
+Negation: The negation of a proposition p is denoted by ¬p. It is the opposite of the proposition. If p is T, then ¬p is F. If p is F, then ¬p is T.
+Conjunction: For propositions p and q, it is denoted by p ^ q. It’s a compound statement formed by joining two statements with the connector AND. It is true if and only if both statements are true; otherwise, it is false.
+Disjunction: For propositions p and q, it is denoted by p v q. It’s a compound statement formed by joining two statements with the connector OR. A disjunction is false if and only if both statements or false; otherwise it is true.
+Inclusive Disjunction: OR connective, a disjunction that remains true if either or both of its arguments are true.
+Exclusive Disjunction: XOR connective, a disjunction that is true if only one, but not both of its arguments are true, and is false if neither or both are true, denoted by ⊕.
+Implication: Conditional statement, if p and q are propositions, then p → q is the implication which reads “if p, then q”. In this case, p is the hypothesis (aka antecedent or premise) and q is the conclusion. [ If p = T and q = T, then p → q = T [If p = T and q = F, then p → q = F [ If p = F and q = T, then p → q = T [ If p = F and q = F, then p → q = T
+Converse of Implication: Flip the hypothesis and conclusion of p → q [ The converse of p → q is q → p
+Contrapositive of Implication: Flip and negate p → q [ The contrapositive of p → q is ¬q → ¬p
+Inverse of Implication: Negate p → q [ The inverse of p → q is ¬p → ¬q
+Biconditional: True whenever both parts have the same truth value, if p and q are propositions, then p ↔ q is the biconditional statement [ If p and q both have the same true or false value, then p ↔ q = T. Else, p ↔ q = F.
+Truth Table: Shows true or false for compound propositions.
+Equivalent Propositions: Two propositions are equivalent if they always have the same truth value.
+Precedence of Logical Operators: As follows ¬ (negation) > ^ (conjunction) > v (disjunction) > →  (implication) > ↔ (biconditional)
+Logic Puzzles: Puzzles that can be solved using logical reasoning. These are excellent for practicing working with the rules of logic.
+Tautology: A proposition which is always true [ Ex: p v ¬p
+Contradiction: A proposition which is always false [ Ex: p ^ ¬p
+Contingency: A proposition which is neither a tautology nor a contradiction [ Ex: p
+Logical Equivalence: A two compound propositions p and q are logically equivalent if p ↔ q is a tautology. This is written as p ⇔ q or as p ≡ q where p and q are compound propositions.
+De Morgan’s Laws: As follows [ ¬(p ^ q) ≡ ¬p v ¬q [ ¬(p v q) ≡ ¬p ^ ¬q
+Identity Laws of Logical Equivalence: As follows [ p ^ T ≡ p [ p v F ≡ p
+Domination Laws of Logical Equivalence: As follows [ p v T ≡ T [ p ^ F ≡ F
+Idempotent Laws of Logical Equivalence: As follows [ p v p ≡ p [ p ^ p ≡ p
+Double Negation Law of Logical Equivalence: As follows ¬(¬p) ≡ p
+Negation Laws of Logical Equivalence: As follows [ p v ¬p ≡ T [ p ^ ¬p ≡ F
+Commutative Laws of Logical Equivalence: As follows [ p v q ≡ q v p [ p ^ q ≡ q ^ p
+Associative Laws of Logical Equivalence: As follows [ (p ^ q) ^ r ≡ p ^ (q ^ r) [ (p v q) v r ≡ p v (q ^ r)
+Distributive Laws of Logical Equivalence: As follows [ (p v (q ^ r)) ≡ (p v q) ^ (p v r) [ (p ^ (q v r)) ≡ (p ^ q) v (p ^ r)
+Absorption Laws of Logical Equivalence: As follows [ p v (p ^ q) ≡ p [ p ^ (p v q) ≡ p
+Propositional Satisfiability: A compound proposition is satisfiable if there is an assignment of truth values to its variables that make it true
+Predicate Logic: Made up of variables (x, y, z, etc.), predicates (P(x), M(x), etc.), and quantifiers (∀, ∃, etc.). It is a Boolean-valued function P: X → {true, false} and is called the predicate on X.
+Propositional Functions: Represented as P(x), they become propositions (and have truth values) when their variables are each replaced by a value from the domain of the quantifier
+Compound Expression: Connectives from propositional logic carry over to predicate logic. You combine 2 or more propositional functions to form propositional expressions.
+Quantifiers: Quantifiers are used to express the extent to which a predicate is true over a range of elements. In English, some of these terms used for quantification are all, some, many, none, and few. In logic, ∀ and ∃ are used. The quantifiers ∀ and ∃ also have higher precedence than all the logical operators. The truth value of quantified expressions depends on both the propositional function P(x) and on the domain U.
+Universal Quantifier: Asserts that the propositional P(x) is true for all values x in the domain. It is denoted as ∀; ∀xP(x) reads as “for every x P(x)”.
+Existential Quantifier: Asserts that there exists an element x in the domain which that P(x). The notation used for this is ∃ and ∃xP(x) reads as “there exists an element x in the domain such that P(x)”
+Uniqueness Quantifier: Denoted by ∃!x P(x), it means that P(x) is true for one and only one x in the domain. It can also be expressed as ∃x(P(x)∧∀y(P(y)→y=x))
+Equivalence of Predicate Logic: Statements involving predicates and quantifiers are logically equivalent if and only if they have the same truth value.
+System Specification in Predicate Logic: Predicate logic is used for specifying properties that systems must satisfy.
+Lewis-Carroll Example: There are premises and a conclusion statements in an argument.
+Nested Quantifiers: Necessary to express the meaning of logic in various fields such as English and computer science and mathematics concepts.
+Order of Quantifiers: Quantified expressions are read from left to right. [ Negation of Nested Quantifiers - The steps do doing this is as follows: [ Use quantifiers to express a statement [ Use De Morgan’s Laws to move the negation as far inward as possible
+Rules of Inference: They are the essential building blocks in the construction of valid arguments. Propositional Logic uses inference rules. For predicate logic, they use inference rules for propositional logic as well as additional interference rules to handle variables and quantifiers.
+Argument: In propositional logic, it is a sequence of propositions
+Premise: The statements in an argument aside from the last statement
+Conclusion: The last statement in an argument
+Modus Ponens: As follows (p ^ (p → q)) → q
+Modus Tollens: As follows (¬q ^ (p → q)) → ¬p
+Hypothetical Syllogism: As follows ((p → q) ^ (q → r)) → (p → r)
+Disjunctive Syllogism: As follows (¬p ^ (p v q)) → q
+Addition: As follows p → (p v q)
+Simplification: As follows (p ^ q) → q
+Conjunction: As follows ((p) ^ (q)) → (p ^ q)
+Resolution: As follows ((¬p v r) ^ (p v q)) → (q v r)
+Valid argument: A sequence of statements where each statement is either a premise or follows from previous statements by rules of inference. The last statement is the conclusion.
+Universal Instantiation: It’s a generalization of simplification defined on the whole domain [ ∀xP(x) = P(c)
+Universal Generalization: It’s a generalization of conjunction with the propositional value for all variables in the domain being true → universal quantifier true [ P(c) for an arbitrary c = ∀xP(x)
+Existential Instantiation: As follows [ ∃xP(x) = P(c) for some element c
+Existential Generalization: As follows [ P(c) for some element c = ∃xP(x)
+Universal Modus Ponens: Combines universal instantiation and modus ponens into one rule [ ∀x(P(x) → Q(x)) [ P(a) [ = Q(a)
+Proof: A valid argument that establishes the truth of a statement
+Theorem: A statement that can be shown to be true using definitions, other theorems, axioms, rules of interference. Less important theorems are sometimes called propositions.
+Lemma: A ‘helping theorem’ or a result which is needed to prove a theorem
+Corollary: A result which follows directly from a theorem
+Conjecture: A statement that is being proposed to be true. Once a proof of a conjecture is found, it becomes a theorem. It may turn out to be false.
+Direct Proof: Assume that p is true. Use rules of inference, axioms, and logical equivalences to show that q must also be true.
+Proof by Contraposition: Assume ¬q and show ¬p is also true. This is sometimes called the indirect proof method. If we give a direct proof of ¬q → ¬p, then we have a proof of p ¬p → q [ p → q ≡ ¬q → ¬p
+Proof by Contradiction: To prove p, assume ¬p and derive a contradiction such as p ^ ¬p (an indirect form of proof). Since we have shown that ¬p → F is true, it follows that the contrapositive T → p also holds. 
+Proof of Theorems that are Biconditional Statements: To prove a theorem that is a biconditional statement, we show that p → q and q → p are both true.
