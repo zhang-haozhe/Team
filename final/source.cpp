@@ -91,6 +91,18 @@ static List sec113;
 static List sec114;
 static List sec115;
 
+//stores sorted definitions by chapter
+static List sort01;
+static List sort02;
+static List sort03;
+static List sort04;
+static List sort05;
+static List sort06;
+static List sort07;
+static List sort09;
+static List sort10;
+static List sort11;
+
 void List::addTerm(string term) {
     if (head == NULL) {
         head = new Node();
@@ -1624,6 +1636,17 @@ int main() {
     sec114.load("sec114.txt");
     sec115.load("sec115.txt");
 
+     sort01.load("1Def.txt");
+     sort02.load("2Def.txt");
+     sort03.load("3Def.txt");
+     sort04.load("4Def.txt");
+     sort05.load("5Def.txt");
+     sort06.load("6Def.txt");
+     sort07.load("7Def.txt");
+     sort09.load("9Def.txt");
+     sort10.load("10Def.txt");
+     sort11.load("11Def.txt");
+	
     do {
         userMenu(userNum);
         switch (*userNum) {
