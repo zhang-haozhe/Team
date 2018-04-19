@@ -51,7 +51,7 @@ Hypothetical Syllogism: As follows ((p → q) ^ (q → r)) → (p → r)
 Disjunctive Syllogism: As follows (¬p ^ (p v q)) → q
 Addition: As follows p → (p v q)
 Simplification: As follows (p ^ q) → q
-Conjunction: As follows ((p) ^ (q)) → (p ^ q)
+Conjunction with Respect to Rules of Inference: As follows ((p) ^ (q)) → (p ^ q)
 Resolution: As follows ((¬p v r) ^ (p v q)) → (q v r)
 Valid argument: A sequence of statements where each statement is either a premise or follows from previous statements by rules of inference. The last statement is the conclusion.
 Universal Instantiation: It’s a generalization of simplification defined on the whole domain [ ∀xP(x) = P(c)
