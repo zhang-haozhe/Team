@@ -1,3 +1,0 @@
-Strong Induction: To prove that P(n) is true for all positive integers n, where P(n) is a propositional function, complete two steps: [ Basis Step: Verify that the proposition P(1) is true. [ Inductive Step: Show the conditional statement [P(1) ? P(2) ? … ? P(k)] ? P(k+1) holds for all positive integers k. :052
-Using Strong Induction in Computational Geometry: Theorem: A simple polygon with n sides, where n is an integer with n = 3, can be triangulated into n - 2 triangles.
-Well-Ordering Property: A set is well ordered if every subset has a least element.[ N is well ordered under =. [ The set of finite strings over an alphabet using lexicographic ordering is well ordered.
