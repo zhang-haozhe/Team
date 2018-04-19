@@ -42,4 +42,4 @@ Regions: A planar representation of a graph splits the plane
 Elementary Subdivision: If a graph is planar, so will be any graph obtained by removing an edge {u, v} [and adding a new vertex w together with edges {u,w} and {w, v}.  
 Homeomorphic: The graphs G1 = (V1, E1) and G2 = (V2, E2) if they can be obtained from the same graph [by a sequence of elementary subdivisions.
 Dual Graph: Two regions that touch at only one point are not considered adjacent. 
-Chromatic Number: the least number of colors needed for a coloring of this graph.  
+Chromatic Number: the least number of colors needed for a coloring of this graph.   
