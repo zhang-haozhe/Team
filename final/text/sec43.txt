@@ -1,6 +1,6 @@
-Primes: Positive integers that have exactly two different positive integer factors :043
-The Fundamental Theorem of Arithmetic: Every integer greater than 1 can be written uniquely as a prime or as the product of two or more primes where the prime factors are written in order of nondecreasing size :043
-Trial Division: A brute-force algorithm that divides some integer n by all primes not exceeding √n and concludes that n is prime if it is not divisible by any of these primes :043
-Euclidean Algorithm: An algorithm that finds the greatest common divisor of two integers by using successive division to reduce the problem to two smaller integers until one of the integers is zero :043
-Linear Combination: For two integers a and b, there exists integers s and t such that the greatest common divisor between a and b can be expressed as gcd(a, b) = sa + tb :043
-Extended Euclidean Algorithm: A method of finding the linear combination of two integers’ greatest common divisor by making a forward pass through the Euclidean algorithm and then making a backward pass through its steps in order to the integers s and t when constructing the linear combination :043
+Primes: Positive integers that have exactly two different positive integer factors
+The Fundamental Theorem of Arithmetic: Every integer greater than 1 can be written uniquely as a prime or as the product of two or more primes where the prime factors are written in order of nondecreasing size
+Trial Division: A brute-force algorithm that divides some integer n by all primes not exceeding √n and concludes that n is prime if it is not divisible by any of these primes
+Euclidean Algorithm: An algorithm that finds the greatest common divisor of two integers by using successive division to reduce the problem to two smaller integers until one of the integers is zero
+Linear Combination: For two integers a and b, there exists integers s and t such that the greatest common divisor between a and b can be expressed as gcd(a, b) = sa + tb
+Extended Euclidean Algorithm: A method of finding the linear combination of two integers’ greatest common divisor by making a forward pass through the Euclidean algorithm and then making a backward pass through its steps in order to the integers s and t when constructing the linear combination
