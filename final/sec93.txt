@@ -1,0 +1,5 @@
+Digraphs: A directed graph, or digraph, consists of a set V of vertices (or nodes) together with a set E of ordered pairs of elements of V called edges (or arcs). The vertex a is called the initial vertex of the edge (a,b), and the vertex b is called the terminal vertex of this edge. An edge of the form (a,a) is called a loop. 
+Reflexivity: A loop must be present at all vertices in the graph. 
+Symmetry: If (x,y) is an edge, then so is (y,x). 
+Antisymmetry: If (x,y) with x ? y is an edge, then (y,x) is not an edge. 
+Transitivity: If (x,y) and (y,z) are edges, then so is (x,z).
