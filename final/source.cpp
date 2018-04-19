@@ -276,36 +276,6 @@ void List::swap(Node*a, Node*b) {
     a->value = b->value;
     b->value = temp;
 }
-bool List::search(Node*head, string term) {
-    Node*current = head;
-    //int compareStr;
-    while (current != NULL) {
-        string currUpper = strToUpper(current->value);
-        string termUpper = strToUpper(term);
-        if (removeWhiteSpace(currUpper) == termUpper) {
-            return true;
-        }
-        current = current->next;
-    }
-    return false;
-}
-void List::printSearch(string term) {
-    string addTerm;
-    if (search(this->head, term)) {
-        cout << term << endl;
-        if (!memory.contains(term)) {
-            addTerm = term;
-            memory.addTerm(addTerm);
-        }
-    }
-    else {
-        cout << term << " does not exist in this dictionary" << endl;
-        if (!memory.contains(term)) {
-            addTerm = term;
-            memory.addTerm(addTerm);
-        }
-    }
-}
 void List::printSearchDef(string term) {
     Node*current = this->head;
     string temp;
