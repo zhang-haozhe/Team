@@ -23,7 +23,7 @@ Identity Laws of Logical Equivalence: As follows [ p ^ T ≡ p [ p v F ≡ p
 Domination Laws of Logical Equivalence: As follows [ p v T ≡ T [ p ^ F ≡ F
 Idempotent Laws of Logical Equivalence: As follows [ p v p ≡ p [ p ^ p ≡ p
 Double Negation Law of Logical Equivalence: As follows ¬(¬p) ≡ p
-Negation Laws of Logical Equivalence: As follows [ p v ¬p ≡ T [ p ^ ¬p ≡ F
+Negation Laws of Logical Equivalence: As follows [ p v ¬p ≡ T [ p ^ ¬p ≡ F 
 Commutative Laws of Logical Equivalence: As follows [ p v q ≡ q v p [ p ^ q ≡ q ^ p
 Associative Laws of Logical Equivalence: As follows [ (p ^ q) ^ r ≡ p ^ (q ^ r) [ (p v q) v r ≡ p v (q ^ r)
 Distributive Laws of Logical Equivalence: As follows [ (p v (q ^ r)) ≡ (p v q) ^ (p v r) [ (p ^ (q v r)) ≡ (p ^ q) v (p ^ r)
