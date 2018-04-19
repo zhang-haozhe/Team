@@ -39,6 +39,11 @@ static List sec31;
 static List sec32;
 static List sec33;
 
+//ch.5 sections
+static List sec51;
+static List sec52;
+static List sec53;
+
 void List::addTerm(string term) {
 	if (head == NULL) {
 		head = new Node();
@@ -766,10 +771,18 @@ void viewBySection() {
 		//def04.print();
 	}
 	else if (chp == 5) {
-		cout << "\n------------------------------------------------------------------------------";
-		cout << "\nCHAPTER 5 - INDUCTION AND RECURSION";
-		cout << "\n------------------------------------------------------------------------------\n";
-		def05.print();
+		if (section == 1) {
+			sec51.print();
+		}
+		else if (section == 2) {
+			sec52.print();
+		}
+		else if (section == 3) {
+			sec53.print();
+		}
+		else {
+			cout << "Section does not exist." << endl;
+		}
 	}
 	else if (chp == 6) {
 		cout << "\n------------------------------------------------------------------------------";
@@ -1137,6 +1150,11 @@ int main() {
 	sec31.load("sec31.txt");
 	sec32.load("sec32.txt");
 	sec33.load("sec33.txt");
+
+	//ch.5 sections
+	sec51.load("sec51.txt");
+	sec52.load("sec52.txt");
+	sec53.load("sec53.txt");
 
 	do {
 		userMenu(userNum);
