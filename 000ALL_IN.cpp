@@ -11,6 +11,19 @@ static List definition; //all definitions
 static List term; //all terms
 static List number; //chapter and lesson index
 static List memory; //stores searched terms from the user
+static List numDef; //definitions with indexed chapters+lessons
+
+//stores definitions by section
+static List def01;
+static List def02;
+static List def03;
+static List def04;
+static List def05;
+static List def06;
+static List def07;
+static List def09;
+static List def10;
+static List def11;
 
 void List::addTerm(string term) {
 	if (head == NULL) {
@@ -164,7 +177,7 @@ void List::print() {
 		temp = temp->next;
 		counter = 0;
 		cout << endl;
-		cout << endl;
+		//cout << endl;
 	}
 }
 void List::insertAtBeginning(Node**start) {
@@ -238,7 +251,6 @@ void List::printSearchDef(string term) {
 		parenIdx = current->value.find_first_of(":");
 		temp = current->value.substr(0, parenIdx);
 		if (strToUpper(temp) == strToUpper(term)) {
-			//cout << current->value << endl;
 			printOut = current->value;
 			int counter = 0;
 			string tempString = "";
@@ -357,6 +369,98 @@ void List::printMemory() {
 		temp = temp->next;
 	}
 }
+void List::printSection(string section) {
+	Node *current = this->head;
+	string temp;
+	int colIdx;
+	int len;
+	string printOut = "";
+	while (current != NULL) {
+		colIdx = current->value.find_last_of(":");
+		len = current->value.length() - 1;
+		temp = current->value.substr(colIdx, len);
+		if (temp == section) {
+			printOut = current->value.substr(0, colIdx);
+			int counter = 0;
+			string tempString = "";
+			while (counter != printOut.length()) {
+				if (printOut.at(counter) == '[') {
+					cout << endl;
+				}
+				else if (printOut.at(counter) == '@') {
+					tempString += "@";
+					while ((printOut.at(counter + 1) != ' ') && (counter + 1 != printOut.length())) {
+						counter++;
+						tempString += printOut.at(counter);
+					}
+					if (tempString == "@u00AC") { //negation
+						cout << "\u00AC";
+					}
+					else if (tempString == "@u2194") { //biconditional
+						cout << "\u2194";
+					}
+					else if (tempString == "@u2219") { //dot
+						cout << "\u2219";
+					}
+					else if (tempString == "@u220A") { //subset of (tiny curvy e)
+						cout << "\u220A";
+					}
+					else if (tempString == "@u2211") { //sigma
+						cout << "\u2211";
+					}
+					else if (tempString == "@u222a") { //union
+						cout << "\u222a";
+					}
+					else if (tempString == "@u2229") { //intersection
+						cout << "\u2229";
+					}
+					else if (tempString == "@u2295") {//exclusive or
+						cout << "\u2295";
+					}
+					else if (tempString == "@u2192") { //right arrow
+						cout << "\u2192";
+					}
+					else if (tempString == "@u2286") { // subset of
+						cout << "\u2286";
+					}
+					else if (tempString == "@u2261") { // equivalent (three lines)
+						cout << "\u2261";
+					}
+					else if (tempString == "@u2200") { // for all
+						cout << "\u2200";
+					}
+					else if (tempString == "@u2203") { // there exists
+						cout << "\u2203";
+					}
+					else if (tempString == "@u2081") { // subscript 1
+						cout << "\u2081";
+					}
+					else if (tempString == "@u2082") { // subscript 2
+						cout << "\u2082";
+					}
+					else if (tempString == "@u2099") { // subscript n
+						cout << "\u2099";
+					}
+					else if (tempString == "@u2308") { // left ceiling
+						cout << "\u2308";
+					}
+					else if (tempString == "@u2309") { // right ceiling
+						cout << "\u2309";
+					}
+					else if (tempString == "@u2260") { //not equal sign
+						cout << "\u2260";
+					}
+					tempString = "";
+				}
+				else {
+					cout << printOut.at(counter);
+				}
+				counter++;
+			}
+		}
+		current = current->next;
+	}
+}
 
 string removeWhiteSpace(string term) {
 	string newTerm = "";
@@ -365,7 +469,6 @@ string removeWhiteSpace(string term) {
 	}
 	return newTerm;
 }
-
 void searchTermAll() {
 	cout << "\nEnter term - ";
 	string inTerm; 
@@ -380,17 +483,16 @@ void userMenu(int* userNum) {
 		cout << "\n-------------------------\n";
 		cout << "1. Search Term" << endl;
 		cout << "2. Previous Searches" << endl;
-		cout << "3. Sort Dictionary" << endl;
-		cout << "4. View Dictionary" << endl;
-		cout << "5. Modifiable Dictionary" << endl;
-		cout << "6. Table of Contents" << endl;
-		cout << "7. About and Help" << endl;
-		cout << "8. Credits" << endl;
-		cout << "9. Quit" << endl;
+		cout << "3. View Dictionary" << endl;
+		cout << "4. Sort Dictionary" << endl;
+		cout << "5. Table of Contents" << endl;
+		cout << "6. About and Help" << endl;
+		cout << "7. Credits" << endl;
+		cout << "8. Quit" << endl;
 		cout << endl;
 		cout << "choice - ";
 		cin >> *userNum;
-		if (!((*userNum == 1) || (*userNum == 2) || (*userNum == 3) || (*userNum == 4) || (*userNum == 5) || (*userNum == 6) || (*userNum == 7) || (*userNum == 8) || (*userNum == 9))) {
+		if (!((*userNum == 1) || (*userNum == 2) || (*userNum == 3) || (*userNum == 4) || (*userNum == 5) || (*userNum == 6) || (*userNum == 7) || (*userNum == 8))) {
 			cout << endl;
 			cout << "Invalid Input." << endl;
 			cin.clear();
@@ -426,7 +528,7 @@ void sort(int *userNum) {
 	if (selection == 1) {
 		cout << "Enter the section number: " << endl;
 		cin >> numSec;
-		*userNum = 3;
+		*userNum = 4;
 	}
 	if (selection == 2) {
 		cout << "Input the number of Chapter:" << endl;
@@ -465,7 +567,7 @@ void sort(int *userNum) {
 		cin >> subSelection;
 		if ((subSelection != 'a') || (subSelection != 'b') || (subSelection != 'c')) {
 			cout << "Invalid input." << endl;
-			*userNum = 3;
+			*userNum = 4;
 		}
 	}
 	if (selection == 6) {
@@ -559,9 +661,10 @@ void search(int *userNum) {
 		*userNum = 0;
 	}
 }
+
 void view(int *userNum) {
 	int VDSelection = 0;
-	int VDnumChap = 0;
+	int chIn = 0;
 	int VDnumSec = 0;
 	cout << "\n---------------------------------------------------";
 	cout << "\n                VIEW DICTIONARY";
@@ -578,37 +681,195 @@ void view(int *userNum) {
 		cout << "Invalid input." << endl;
 		cin.clear();
 		cin.ignore(1024, '\n');
-		*userNum = 4;
+		*userNum = 3;
 		cout << endl;
 	}
 	if (VDSelection == 1) {
-		cout << "Enter the section number: " << endl;
-		cin >> VDnumSec;
-		*userNum = 4;
+		//cout << "Enter the section number: " << endl;
+		//cin >> VDnumSec;
+		viewBySection();
+		*userNum = 3;
 	}
 	if (VDSelection == 2) {
-		cout << "Input the chapter number:" << endl;
-		cin >> VDnumChap;
-		*userNum = 4;
+		viewByCh();
+		*userNum = 3;
 	}
 	if (VDSelection == 3) {
 		cout << "Input which sections you want to view: " << endl;
 		//FIXME: create method that allows user to print out only requested sections  
-		*userNum = 4;
+		*userNum = 3;
 	}
 	if (VDSelection == 4) {
 		cout << "Input which chapters you want to view: " << endl;
 		//FIXME: create method that allows user to print out only requested chapters 
-		*userNum = 4;
+		*userNum = 3;
 	}
 	if (VDSelection == 5) {
-		//FIXME: create method that prints out entire dictionary 
-		*userNum = 4;
+		cout << "\n------------------------------------------------------------------------------";
+		cout << "\nUF COT3100 SPRING 2018 - IMPORTANT TERMS";
+		cout << "\n------------------------------------------------------------------------------\n";
+		def01.print();
+		def02.print();
+		def03.print();
+		//def04.print();
+		def05.print();
+		def06.print();
+		def07.print();
+		def09.print();
+		def10.print();
+		def11.print();
+
+		//FIXME: create method that prints out entire dictionary
+		//print to console but chapter 4 needs to be fixed, also fix formatting, it's ugly
+		//definition.print();
+		*userNum = 3;
 	}
 	if (VDSelection == 6) {
 		*userNum = 0;
 	}
 }
+void viewBySection() {
+	string inSec;
+	int chp;
+	cout << "\nEnter the chapter number: ";
+	cin >> chp;
+	if ((chp >= 1 && chp <= 7) || (chp >= 9 && chp <= 11)) {
+		cout << "\nEnter the section number for chapter " << chp << ": ";
+		int section; cin >> section;
+		if (chp == 1) {
+			if (section >= 1 && section <= 8) {
+				inSec = "01" + section;
+				numDef.printSection(inSec);
+				cout << endl;
+			}
+			else cout << "\nThis section does not exist in Chapter 1\n";
+		}
+		if (chp == 2) {
+			if ((section >= 1 && section <= 4) || section == 6) {
+				//do something
+			}
+			else cout << "\nThis section does not exist in Chpater 2\n";
+		}
+		if (chp == 3) {
+			if (section >= 1 && section <= 3) {
+				//do something
+			}
+			else cout << "\nThis section does not exist in Chapter 3\n";
+		}
+		if (chp == 4) {
+			if (section >= 1 && section <= 3) {
+				//do something
+			}
+			else cout << "\nThis section does not exist in Chapter 4\n";
+		}
+		if (chp == 5) {
+			if (section >= 1 && section <= 3) {
+				//do something
+			}
+			else cout << "\nThis section does not exist in Chapter 5\n";
+		}
+		if (chp == 6) {
+			if (section >= 1 && section <= 3) {
+				//do something
+			}
+			else cout << "\nThis section does exist in Chapter 6\n";
+		}
+		if (chp == 7) {
+			if (section >= 1 && section <= 3) {
+				//do something
+			}
+			else cout << "\nThis section does not exist in Chapter 7\n";
+		}
+		if (chp == 9) {
+			if (section == 1 || section == 3 || section == 5) {
+				//do something
+			}
+			else cout << "\nThis section does not exist in Chapter 9\n";
+		}
+		if (chp == 10) {
+			if (section >= 1 && section <= 8) {
+				//do something
+			}
+			else cout << "\nThis section does not exist in Chapter 10\n";
+		}
+		if (chp == 11) {
+			if (section >= 1 && section <= 5) {
+				//do something
+			}
+			else cout << "\nThis section does not exist in Chapter 11\n";
+		}
+	}
+	else cout << "\nInvalid Input"; 
+}
+void viewByCh() {
+	cout << "Input the chapter number:" << endl;
+	int chIn; cin >> chIn;
+	if (chIn == 1) {
+		cout << "\n------------------------------------------------------------------------------";
+		cout << "\nCHAPTER 1 - THE FOUNDATIONS: LOGIC AND PROOFS";
+		cout << "\n------------------------------------------------------------------------------\n";
+		def01.print();
+	}
+	else if (chIn == 2) {
+		cout << "\n------------------------------------------------------------------------------";
+		cout << "\nCHAPTER 2 - BASIC STRUCTURES: SETS, FUNCTIONS, SEQUENCES";
+		cout << "\n------------------------------------------------------------------------------\n";
+		def02.print();
+	}
+	else if (chIn == 3) {
+		cout << "\n------------------------------------------------------------------------------";
+		cout << "\nCHAPTER 3 - ALGORITHMS";
+		cout << "\n------------------------------------------------------------------------------\n";
+		def03.print();
+	}
+	else if (chIn == 4) {
+		cout << "\n------------------------------------------------------------------------------";
+		cout << "\nCHAPTER 4 - NUMBER THEORY AND CRYPTOLOGY";
+		cout << "\n------------------------------------------------------------------------------\n";
+		cout << "\nchapter 4 faulty asf, pls fix\n";
+		//def04.print();
+	}
+	else if (chIn == 5) {
+		cout << "\n------------------------------------------------------------------------------";
+		cout << "\nCHAPTER 5 - INDUCTION AND RECURSION";
+		cout << "\n------------------------------------------------------------------------------\n";
+		def05.print();
+	}
+	else if (chIn == 6) {
+		cout << "\n------------------------------------------------------------------------------";
+		cout << "\nCHAPTER 6 - COUNTING";
+		cout << "\n------------------------------------------------------------------------------\n";
+		def06.print();
+	}
+	else if (chIn == 7) {
+		cout << "\n------------------------------------------------------------------------------";
+		cout << "\nCHAPTER 7 - DISCRETE PROBABILITY";
+		cout << "\n------------------------------------------------------------------------------\n";
+		def07.print();
+	}
+	else if (chIn == 9) {
+		cout << "\n------------------------------------------------------------------------------";
+		cout << "\nCHAPTER 9 - RELATIONS";
+		cout << "\n------------------------------------------------------------------------------\n";
+		def09.print();
+	}
+	else if (chIn == 10) {
+		cout << "\n------------------------------------------------------------------------------";
+		cout << "\nCHAPTER 10 - GRAPHS";
+		cout << "\n------------------------------------------------------------------------------\n";
+		def10.print();
+	}
+	else if (chIn == 11) {
+		cout << "\n------------------------------------------------------------------------------";
+		cout << "\nCHAPTER 11 - TREES";
+		cout << "\n------------------------------------------------------------------------------\n";
+		def11.print();
+	}
+	else {
+		cout << "Chapter does not exist";
+	}
+}
+
 void previous(int *userNum) {
 	//DONE
 	cout << "\n---------------------------------------------------";
@@ -761,10 +1022,22 @@ void deletion(int *userNum) {
 int main() {
 	int userInput;
 	int* userNum = &userInput;
+
 	definition.load("allDefinitions.txt");
 	term.load("allTerms.txt");
 	number.load("numbers.txt");
-	//definition.print();
+	numDef.load("numAllDef.txt");
+
+	def01.load("1Def.txt");
+	def02.load("2Def.txt");
+	def03.load("3Def.txt");
+	def04.load("4Def.txt");
+	def05.load("5Def.txt");
+	def06.load("6Def.txt");
+	def07.load("7Def.txt");
+	def09.load("9Def.txt");
+	def10.load("10Def.txt");
+	def11.load("11Def.txt");
 
 	do {
 		userMenu(userNum);
@@ -776,30 +1049,24 @@ int main() {
 			previous(userNum);
 			break;
 		}case 3: {
-			
-			sort(userNum);
-			break;
-		}case 4: {
 			view(userNum);
 			break;
-		}case 5: {
-			modifiable(userNum);
+		}case 4: {
+			sort(userNum);
 			break;
-		}case 6: {
+		}case 5: {
 			toc(userNum);
 			break;
-		}
-		case 7: {
+		}case 6: {
 			help(userNum);
 			break;
-		}
-		case 8: {
+		}case 7: {
 			creditList(userNum);
 			cout << endl;
 			break;
 		}
 		}userMenu(userNum);
-	} while (*userNum != 9);
+	} while (*userNum != 8);
 
 	return 0;
 }
