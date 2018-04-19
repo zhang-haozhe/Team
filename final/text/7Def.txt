@@ -1,0 +1,19 @@
+Experiment: Procedure that yields one of a given set of possible outcomes 
+Sample Space: In an experiment, it is the set of possible outcomes 
+Event: Subset of the sample space 
+Laplace Definition: If S is a finite space of equally likely outcomes, and E is an event (a subset of S), then [the probability of E is p(E) = |E|/|S|.
+A note about E: For every event E, 0 <= p(E) <= 1. This follows from the definition: [0 <= p(E) = |E|/|S| <= |S|/|S| = 1, since 0 <= |E| <= |S|. 
+Probability Distribution: Function p from the set of all outcomes of the sample space S
+Uniform Distribution: Suppose we have a set S with n elements, then uniform distribution assigns the probability [1/n to each element of S.
+Probability of an Event: The probability of the event E is the sum of the possibilities of the outcomes in E. 
+Complements: p(@u0112) = 1-p(E)
+Unions: p(E1 @u222a E2) = p(E1) + p(E2) - p(E1 @u2229 E2) 
+Conditional Probability: Let E and F be events with P(F) > 0. The conditional probability of E given F, denoted [p(E|F), is defined as: p(E|F) = p(E @u2229 F)/p(F)
+Independence: The events E and F are independent if and only if (E @u2229 F) = p(E)p(F)
+Pairwise and Mutual Independence: The events E1, E2, ..., En are pairwise independent if and only if [p(Ei @u2229 Ej) = p(Ei)p(Ej) for all pairs i and j with i <= j <= n.[ They are mutually independent if [:p(Ei1 @u2229 Ei2 @u2229 ... @u2229 Eim) = p(Ei1)p(Ei2)×...×p(Eim) whenever ij, j = 1,2,...,m, are integers [with 1 <= i1 < i2 < … < im<=n, and m >= 2 [ Note: If something is mutually independent, it has to be [pairwise independent.
+Bernoulli Trials: Suppose an experiment can only have two possible outcomes, e.g., the flipping of a coin or the [random generation of a bit. [ Bernoulli trial: each performance of the experiment [ One outcome is called success and the other a failure [ If p is the probability of success and q is the probability of failure, then p + q = 1. 
+Random Variables: A function from the sample space of an experiment to the set of real numbers. That is, a random [variable assigns a real number to each possible outcome. 
+Distribution: The distribution of a random variable X on a sample space S is the set of pairs (r, p(X=r)) for all [r @u2208 X(S), where p(X = r) is the probability that X takes the value r.
+Monte Carlo Algorithms: Algorithms that make random choices at one or more steps are called probabilistic algorithms. [ Monte Carlo Algorithms are probabilistic algorithms used to answer decision problems, which are problems that [are either “true” or “false” as their answer. [ A Monte Carlo Algorithm consists of a sequence of tests. For each test, the algorithm responds “true” or “unknown”. [ If the response is “true”, the algorithm terminates with the answer is “true”. [ After running a specified sequence of tests where every step yields “unknown”, the algorithm outputs “false”. [ Idea: probability of algorithm incorrectly outputting “false” should be very small as long as a sufficient number of tests are performed. 
+Probabilistic Primality Testing: Example of a Monte Carlo Algorithm...useful for finding large primes 
+Baye's Theorem: Suppose that E and F are events from a sample space S such that p(E) =/= 0 and p(F) =/= 0. [Then: p(F|E) = p(E|F)p(F)/(p(E|F)p(F) + p(E|G)p(G)) where G is the complement of F.
