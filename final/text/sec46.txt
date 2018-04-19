@@ -1,0 +1,2 @@
+Encryption: The process of making a message secret :046
+Decryption: The process of determining the original message from an encrypted message :046
