@@ -1,8 +1,8 @@
-Path: a sequence of edges that begins at a vertex of a graph and travels from vertex to vertex along edges of the graph. :104
+Path: a sequence of edges that begins at a vertex of a graph and travels from vertex to vertex along edges [of the graph. :104
 Connected: An undirected graph’s path between every pair of distinct vertices of the graph. :104
-Disconnected: An undirected graph that is not connected is called. We say that we disconnect a graph when we remove vertices or edges, or both, to produce a disconnected subgraph. :104
-Cut Vertices: the removal from a graph of a vertex and all incident edges produces a subgraph with more connected components. :104
-Non Separable Graphs: Connected graphs without cut vertices and can be thought of as more connected than those with a cut vertex. :104
-Vertex Cut: the vertex connectivity of a non complete graph G, denoted by κ(G), as the minimum number of vertices in a strongly connected graph :104
+Disconnected: An undirected graph that is not connected is called. We say that we disconnect a graph when we [remove vertices or edges, or both, to produce a disconnected subgraph. :104
+Cut Vertices: the removal from a graph of a vertex and all incident edges produces a subgraph with more [connected components. :104
+Non Separable Graphs: Connected graphs without cut vertices and can be thought of as more connected than [those with a cut vertex. :104
+Vertex Cut: the vertex connectivity of a non complete graph G, denoted by κ(G), as the minimum number of [vertices in a strongly connected graph :104
 Strongly Connected: if there is a path from a to b and from b to a whenever a and b are vertices in the graph. :104
 Weakly Connected: if there is a path between every two vertices in the underlying undirected graph. :104
