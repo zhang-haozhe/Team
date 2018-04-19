@@ -1,3 +1,3 @@
 Euler Circuit: a simple circuit containing every edge of G. :105
 Hamilton Path: A simple path in a graph G that passes through every vertex exactly once :105
-Gray Code: a labeling of the arcs of the circle such that adjacent arcs are labeled with bit strings that differ in exactly one bit. :105
+Gray Code: a labeling of the arcs of the circle such that adjacent arcs are labeled with bit strings [that differ in exactly one bit. :105
