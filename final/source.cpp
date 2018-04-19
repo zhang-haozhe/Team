@@ -228,6 +228,21 @@ void List::print() {
                     else if (tempString == "@u2260") { //not equal sign
                         cout << "\u2260";
                     }
+                    else if (tempString == "@u0027") { //apostrophe
+                        cout << "\u0027";
+                    }
+                    else if (tempString == "@u221A") { //square root sign
+                        cout << "\u221A";
+                    }
+                    else if (tempString == "@u2C7C") { //subscript j
+                        cout << "\u2C7C";
+                    }
+                    else if (tempString == "@u2098") { //subscript m
+                        cout << "\u2098";
+                    }
+                    else if (tempString == "@u1d62") { //subscript i
+                        cout << "\u1d62";
+                    }
                     else if (tempString == "@u005b") { //open bracket
                         cout<< "\u005b";
                     }
@@ -355,6 +370,24 @@ void List::printSearchDef(string term) {
                     }
                     else if (tempString == "@u2260") { //not equal sign
                         cout << "\u2260";
+                    }
+                    else if (tempString == "@u0027") { //apostrophe
+                        cout << "\u0027";
+                    }
+                    else if (tempString == "@u221A") { //square root sign
+                        cout << "\u221A";
+                    }
+                    else if (tempString == "@u2C7C") { //subscript j
+                        cout << "\u2C7C";
+                    }
+                    else if (tempString == "@u2098") { //subscript m
+                        cout << "\u2098";
+                    }
+                    else if (tempString == "@u1d62") { //subscript i
+                        cout << "\u1d62";
+                    }
+                    else if (tempString == "@u005b") { //open bracket
+                        cout<< "\u005b";
                     }
                     tempString = "";
                 }
