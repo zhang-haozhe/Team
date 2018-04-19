@@ -1,5 +1,5 @@
-Congruence: When the modulo of two integers are equal :041
-Modulus: In modular arithmetic, it is the divisor that, once divided as many times as it can into the divisor, will result in the remainder of the division :041
-Congruence Class: The set of all integers congruent to an integer a modulo m :041
-Z(m): The set of nonnegative integers less than m :041
-Arithmetic Modulo: Used when performing tasks utilizing the operations +m and @u2022m :041
+Congruence: When the modulo of two integers are equal
+Modulus: In modular arithmetic, it is the divisor that, once divided as many times as it can into the divisor, will result in the remainder of the division
+Congruence Class: The set of all integers congruent to an integer a modulo m
+Z(m): The set of nonnegative integers less than m
+Arithmetic Modulo: Used when performing tasks utilizing the operations +m and @u2022m
