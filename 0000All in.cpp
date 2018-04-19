@@ -25,6 +25,27 @@ static List def09;
 static List def10;
 static List def11;
 
+//ch.1 sections
+static List sec11;
+static List sec12;
+static List sec13;
+static List sec14;
+static List sec15;
+static List sec16;
+static List sec17;
+
+//ch.3 sections
+static List sec31;
+static List sec32;
+static List sec33;
+
+//ch.5 sections
+static List sec51;
+static List sec52;
+static List sec53;
+
+
+
 void List::addTerm(string term) {
     if (head == NULL) {
         head = new Node();
@@ -220,36 +241,6 @@ void List::swap(Node*a, Node*b) {
     a->value = b->value;
     b->value = temp;
 }
-bool List::search(Node*head, string term) {
-    Node*current = head;
-    //int compareStr;
-    while (current != NULL) {
-        string currUpper = strToUpper(current->value);
-        string termUpper = strToUpper(term);
-        if (removeWhiteSpace(currUpper) == termUpper) {
-            return true;
-        }
-        current = current->next;
-    }
-    return false;
-}
-void List::printSearch(string term) {
-    string addTerm;
-    if (search(this->head, term)) {
-        cout << term << endl;
-        if (!memory.contains(term)) {
-            addTerm = term;
-            memory.addTerm(addTerm);
-        }
-    }
-    else {
-        cout << term << " does not exist in this dictionary" << endl;
-        if (!memory.contains(term)) {
-            addTerm = term;
-            memory.addTerm(addTerm);
-        }
-    }
-}
 void List::printSearchDef(string term) {
     Node*current = this->head;
     string temp;
@@ -418,76 +409,441 @@ void userMenu(int* userNum) {
     }
 }
 void sort(int *userNum) {
-    int selection = 0;
-    int numChap = 0;
-    int numSec = 0;
-    char subSelection = 0;
-    cout << "\n------------------------------";
-    cout << "\n         SORT TERMS";
-    cout << "\n------------------------------\n";
-    cout << "1. Individual Section" << endl;
-    cout << "2. Individual Chapter" << endl;
-    cout << "3. Selection of Sections" << endl;
-    cout << "4. Selection of Chapters" << endl;
-    cout << "5. Sort Entire Dictionary" << endl;
-    cout << "6. Go Back" << endl;
-    cout << "\nchoice - " << endl;
-    cin >> selection;
-    if (cin.fail() || (selection != 1) && (selection != 2) && (selection != 3) && (selection != 4) && (selection != 5) && (selection != 6)) {
-        cout << "Invalid input." << endl;
-        cin.clear();
-        cin.ignore(1024, '\n');
-        *userNum = 3;
-        cout << endl;
-    }
-    if (selection == 1) {
-        cout << "Enter the section number: " << endl;
-        cin >> numSec;
-        *userNum = 4;
-    }
-    if (selection == 2) {
-        cout << "Input the number of Chapter:" << endl;
-        cin >> numChap;
-        cout << "a. Sort Chpater by Section" << endl;
-        cout << "b. Sort Entire Chapter" << endl;
-        cin >> subSelection;
-        if ((subSelection != 'a') || (subSelection != 'b')) {
-            cout << "Invalid input." << endl;
-            selection = 6;
-        }
-    }
-    if (selection == 3) {
-        cout << "a. Sort by Order of Sections" << endl;
-        cout << "b. Sort Entire Selection" << endl;
-        cin >> subSelection;
-        if ((subSelection != 'a') || (subSelection != 'b')) {
-            cout << "Invalid input." << endl;
-            *userNum = 3;
-        }
-    }
-    if (selection == 4) {
-        cout << "a. Sort by Order of Chapters" << endl;
-        cout << "b. Sort by Order of Sections" << endl;
-        cout << "c. Sort Entire Selection" << endl;
-        cin >> subSelection;
-        if ((subSelection != 'a') || (subSelection != 'b') || (subSelection != 'c')) {
-            cout << "Invalid input." << endl;
-            *userNum = 3;
-        }
-    }
-    if (selection == 5) {
-        cout << "a. Sort by Chapters" << endl;
-        cout << "b. Sort by Sections" << endl;
-        cout << "c. Sort All" << endl;
-        cin >> subSelection;
-        if ((subSelection != 'a') || (subSelection != 'b') || (subSelection != 'c')) {
-            cout << "Invalid input." << endl;
-            *userNum = 4;
-        }
-    }
-    if (selection == 6) {
-        *userNum = 0;
-    }
+	int selection = 0;
+	int numCh = 0;
+	int numSec = 0;
+	int subSelect = 0;
+
+	cout << "\n------------------------------------------------------------------------------";
+	cout << "\nSORT TERMS";
+	cout << "\n------------------------------------------------------------------------------\n";
+	cout << "Sort terms alphabetically and prints sorted terms out" << endl;
+	cout << "\n1. Sort Sections" << endl;
+	cout << "2. Sort Chapters" << endl;
+	cout << "3. Sort Entire Dictionary" << endl;
+	cout << "4. Go Back" << endl;
+	cout << "\nchoice - ";
+	cin >> selection;
+	if (cin.fail() || (selection != 1) && (selection != 2) && (selection != 3) && (selection != 4)) {
+		cout << "Invalid input." << endl;
+		cin.clear();
+		cin.ignore(1024, '\n');
+		*userNum = 4;
+		cout << endl;
+	}
+	if (selection == 1) {
+		cout << "Enter amount of sections to sort (maximum of 7) - ";
+		cin >> numSec;
+		if (cin.fail() || (numSec > 7) || (numSec < 1)) {
+			cout << "Invalid input." << endl;
+			cin.clear();
+			cin.ignore(1024, '\n');
+			cout << endl;
+		}
+		else {
+			sortSec(numSec);
+		}
+		*userNum = 4;
+	}
+	if (selection == 2) {
+		cout << "Enter amount of chapters to sort (maximum of 3) - ";
+		cin >> numCh;
+		if (cin.fail() || (numCh < 1)) {
+			cout << "Invalid input." << endl;
+			cin.clear();
+			cin.ignore(1024, '\n');
+			cout << endl;
+		}
+		else if (numCh > 3) {
+			cout << "Invalid Input. You can only input up to 3 chapters" << endl;
+			cin.clear();
+			cin.ignore(1024, '\n');
+			cout << endl;
+		}
+		else {
+			sortChp(numCh);
+		}
+		*userNum = 4;
+	}
+	if (selection == 3) {
+		cout << "1. Sort by Chapters" << endl;
+		cout << "2. Sort All" << endl;
+		cout << "3. Go Back" << endl;
+		cout << "choice - ";
+		cin >> subSelect;
+		if (cin.fail() || !(subSelect >= 1 && subSelect <= 3)) {
+			cout << "Invalid input." << endl;
+			cin.clear();
+			cin.ignore(1024, '\n');
+			cout << endl;
+			*userNum = 4;
+		}
+		if (subSelect == 1 || subSelect == 2) {
+			sortEntire(subSelect);
+			*userNum == 4;
+		}
+		if (subSelect == 3) {
+			*userNum = 4;
+		}
+	}
+	if (selection == 4) {
+		*userNum = 0;
+	}
+}
+void sortSec(int numSec) {
+	cout << "test" << endl;
+}
+void sortChp(int numChp) {
+	List *chList = new List;
+	Node *head1 = sort01.getHead();
+	Node *head2 = sort02.getHead();
+	Node *head3 = sort03.getHead();
+	Node *head4 = sort04.getHead();
+	Node *head5 = sort05.getHead();
+	Node *head6 = sort06.getHead();
+	Node *head7 = sort07.getHead();
+	Node *head9 = sort09.getHead();
+	Node *head10 = sort10.getHead();
+	Node *head11 = sort11.getHead();
+
+	if (numChp == 1) {
+		cout << "Add Chapter - ";
+		int ch1; cin >> ch1;
+		cout << "\nSORTED CHAPTER " << ch1 << " PRINTED";
+		cout << "\n------------------------------------------------------------------------------\n";
+		if (ch1 == 1) {
+			sort01.bubbleSort(head1);
+			sort01.print();
+		}
+		else if (ch1 == 2) {
+			sort02.bubbleSort(head2);
+			sort02.print();
+		}
+		else if (ch1 == 3) {
+			sort03.bubbleSort(head3);
+			sort03.print();
+		}
+		else if (ch1 == 4) {
+			sort04.bubbleSort(head4);
+			sort04.print();
+		}
+		else if (ch1 == 5) {
+			sort05.bubbleSort(head5);
+			sort05.print();
+		}
+		else if (ch1 == 6) {
+			sort06.bubbleSort(head6);
+			sort06.print();
+		}
+		else if (ch1 == 7) {
+			sort07.bubbleSort(head7);
+			sort07.print();
+		}
+		else if (ch1 == 9) {
+			sort09.bubbleSort(head9);
+			sort09.print();
+		}
+		else if (ch1 == 10) {
+			sort10.bubbleSort(head10);
+			sort10.print();
+		}
+		else if (ch1 == 11) {
+			sort11.bubbleSort(head11);
+			sort11.print();
+		}
+	}
+	else if (numChp == 2) {
+		cout << "Add Chapter - ";
+		int ch1; cin >> ch1;
+		if (cin.fail() || !(ch1 >= 1 && ch1 <= 7) && !(ch1 >= 9 && ch1 <= 11)) {
+			cout << "Invalid input." << endl;
+			cin.clear();
+			cin.ignore(1024, '\n');
+			cout << endl;
+		}
+		else chList->addTerm(to_string(ch1));
+		cout << "Add Chapter - ";
+		int ch2; cin >> ch2;
+		if (cin.fail() || !(ch2 >= 1 && ch2 <= 7) && !(ch2 >= 9 && ch2 <= 11)) {
+			cout << "Invalid input." << endl;
+			cin.clear();
+			cin.ignore(1024, '\n');
+			cout << endl;
+		}
+		if (chList->contains(to_string(ch2))) {
+			cout << "Duplicate" << endl;
+			cin.clear();
+			cin.ignore(1024, '\n');
+			cout << endl;
+		}
+		else chList->addTerm(to_string(ch2));
+
+		cout << "\nPrint selection? " << endl;
+		cout << "1. Print Selected Chapters" << endl;
+		cout << "2. Cancel" << endl;
+		cout << "choice - ";
+		int yn; cin >> yn;
+		if (cin.fail() || (yn != 1) || (yn != 2)) {
+			cout << "Invalid input." << endl;
+			cin.clear();
+			cin.ignore(1024, '\n');
+			cout << endl;
+		}
+		if (yn == 1) {
+			if (chList->contains("1")) {
+				sort01.bubbleSort(head1);
+				cout << "\nSORTED CHAPTER 1 PRINTED";
+				cout << "\n------------------------------------------------------------------------------\n";
+				sort01.print();
+			}
+			if (chList->contains("2")) {
+				sort02.bubbleSort(head2);
+				cout << "\nSORTED CHAPTER 2 PRINTED";
+				cout << "\n------------------------------------------------------------------------------\n";
+				sort02.print();
+			}
+			if (chList->contains("3")) {
+				sort03.bubbleSort(head3);
+				cout << "\nSORTED CHAPTER 3 PRINTED";
+				cout << "\n------------------------------------------------------------------------------\n";
+				sort03.print();
+			}
+			if (chList->contains("4")) {
+				sort04.bubbleSort(head4);
+				cout << "\nSORTED CHAPTER 4 PRINTED";
+				cout << "\n------------------------------------------------------------------------------\n";
+				sort04.print();
+			}
+			if (chList->contains("5")) {
+				sort05.bubbleSort(head5);
+				cout << "\nSORTED CHAPTER 5 PRINTED";
+				cout << "\n------------------------------------------------------------------------------\n";
+				sort05.print();
+			}
+			if (chList->contains("6")) {
+				sort06.bubbleSort(head6);
+				cout << "\nSORTED CHAPTER 6 PRINTED";
+				cout << "\n------------------------------------------------------------------------------\n";
+				sort06.print();
+			}
+			if (chList->contains("7")) {
+				cout << "\nSORTED CHAPTER 7 PRINTED";
+				cout << "\n------------------------------------------------------------------------------\n";
+				sort07.bubbleSort(head7);
+				sort07.print();
+			}
+			if (chList->contains("9")) {
+				cout << "\nSORTED CHAPTER 9 PRINTED";
+				cout << "\n------------------------------------------------------------------------------\n";
+				sort09.bubbleSort(head9);
+				sort09.print();
+			}
+			if (chList->contains("10")) {
+				cout << "\nSORTED CHAPTER 10 PRINTED";
+				cout << "\n------------------------------------------------------------------------------\n";
+				sort10.bubbleSort(head10);
+				sort10.print();
+			}
+			if (chList->contains("11")) {
+				cout << "\nSORTED CHAPTER 11 PRINTED";
+				cout << "\n------------------------------------------------------------------------------\n";
+				sort11.bubbleSort(head11);
+				sort11.print();
+			}
+		}
+		if (yn == 2) return;
+	}
+	else if (numChp == 3) {
+		cout << "Add Chapter - ";
+		int ch1; cin >> ch1;
+		if (cin.fail() || !(ch1 >= 1 && ch1 <= 7) && !(ch1 >= 9 && ch1 <= 11)) {
+			cout << "Invalid input." << endl;
+			cin.clear();
+			cin.ignore(1024, '\n');
+			cout << endl;
+		}
+		else chList->addTerm(to_string(ch1));
+		cout << "Add Chapter - ";
+		int ch2; cin >> ch2;
+		if (cin.fail() || !(ch2 >= 1 && ch2 <= 7) && !(ch2 >= 9 && ch2 <= 11)) {
+			cout << "Invalid input." << endl;
+			cin.clear();
+			cin.ignore(1024, '\n');
+			cout << endl;
+		}
+		if (chList->contains(to_string(ch2))) {
+			cout << "Duplicate" << endl;
+			cin.clear();
+			cin.ignore(1024, '\n');
+			cout << endl;
+		}
+		else chList->addTerm(to_string(ch2));
+		cout << "Add Chapter - ";
+		int ch3; cin >> ch3;
+		if (cin.fail() || !(ch3 >= 1 && ch3 <= 7) && !(ch3 >= 9 && ch3 <= 11)) {
+			cout << "Invalid input." << endl;
+			cin.clear();
+			cin.ignore(1024, '\n');
+			cout << endl;
+		}
+		if (chList->contains(to_string(ch3))) {
+			cout << "Duplicate" << endl;
+			cin.clear();
+			cin.ignore(1024, '\n');
+			cout << endl;
+		}
+		else chList->addTerm(to_string(ch3));
+
+		cout << "\nPrint selection? " << endl;
+		cout << "1. Print Selected Chapters" << endl;
+		cout << "2. Cancel" << endl;
+		cout << "choice - ";
+		int yn; cin >> yn;
+		if (cin.fail() || (yn != 1) || (yn != 2)) {
+			cout << "Invalid input." << endl;
+			cin.clear();
+			cin.ignore(1024, '\n');
+			cout << endl;
+		}
+		if (yn == 1) {
+			if (chList->contains("1")) {
+				sort01.bubbleSort(head1);
+				cout << "\nSORTED CHAPTER 1 PRINTED";
+				cout << "\n------------------------------------------------------------------------------\n";
+				sort01.print();
+			}
+			if (chList->contains("2")) {
+				sort02.bubbleSort(head2);
+				cout << "\nSORTED CHAPTER 2 PRINTED";
+				cout << "\n------------------------------------------------------------------------------\n";
+				sort02.print();
+			}
+			if (chList->contains("3")) {
+				sort03.bubbleSort(head3);
+				cout << "\nSORTED CHAPTER 3 PRINTED";
+				cout << "\n------------------------------------------------------------------------------\n";
+				sort03.print();
+			}
+			if (chList->contains("4")) {
+				sort04.bubbleSort(head4);
+				cout << "\nSORTED CHAPTER 4 PRINTED";
+				cout << "\n------------------------------------------------------------------------------\n";
+				sort04.print();
+			}
+			if (chList->contains("5")) {
+				sort05.bubbleSort(head5);
+				cout << "\nSORTED CHAPTER 5 PRINTED";
+				cout << "\n------------------------------------------------------------------------------\n";
+				sort05.print();
+			}
+			if (chList->contains("6")) {
+				sort06.bubbleSort(head6);
+				cout << "\nSORTED CHAPTER 6 PRINTED";
+				cout << "\n------------------------------------------------------------------------------\n";
+				sort06.print();
+			}
+			if (chList->contains("7")) {
+				cout << "\nSORTED CHAPTER 7 PRINTED";
+				cout << "\n------------------------------------------------------------------------------\n";
+				sort07.bubbleSort(head7);
+				sort07.print();
+			}
+			if (chList->contains("9")) {
+				cout << "\nSORTED CHAPTER 9 PRINTED";
+				cout << "\n------------------------------------------------------------------------------\n";
+				sort09.bubbleSort(head9);
+				sort09.print();
+			}
+			if (chList->contains("10")) {
+				cout << "\nSORTED CHAPTER 10 PRINTED";
+				cout << "\n------------------------------------------------------------------------------\n";
+				sort10.bubbleSort(head10);
+				sort10.print();
+			}
+			if (chList->contains("11")) {
+				cout << "\nSORTED CHAPTER 11 PRINTED";
+				cout << "\n------------------------------------------------------------------------------\n";
+				sort11.bubbleSort(head11);
+				sort11.print();
+			}
+		}
+		if (yn == 2) return;
+	}
+}
+void sortEntire(int sub) {
+	//Linked list declarations here
+	List *sortAll = new List;
+
+	if (sub == 1) {
+		//FIXME: sort by chapter
+		cout << "\n------------------------------------------------------------------------------\n";
+		cout << "CHAPTER 1 - THE FOUNDATIONS: LOGIC AND PROOFS";
+		cout << "\n------------------------------------------------------------------------------\n";
+		Node *head1 = sort01.getHead();
+		sort01.bubbleSort(head1);
+		sort01.print();
+		cout << "\n------------------------------------------------------------------------------\n";
+		cout << "CHAPTER 2";
+		cout << "\n------------------------------------------------------------------------------\n";
+		Node*head2 = sort02.getHead();
+		sort02.bubbleSort(head2);
+		sort02.print();
+		cout << "\n------------------------------------------------------------------------------\n";
+		cout << "CHAPTER 3";
+		cout << "\n------------------------------------------------------------------------------\n";
+		Node*head3 = sort03.getHead();
+		sort03.bubbleSort(head3);
+		sort03.print();
+		cout << "\n------------------------------------------------------------------------------\n";
+		cout << "CHAPTER 4";
+		cout << "\n------------------------------------------------------------------------------\n";
+		Node*head4 = sort04.getHead();
+		//sort04.bubbleSort(head4);
+		//sort04.print();
+		cout << "\n------------------------------------------------------------------------------\n";
+		cout << "CHAPTER 5";
+		cout << "\n------------------------------------------------------------------------------\n";
+		Node*head5 = sort05.getHead();
+		sort05.bubbleSort(head5);
+		sort05.print();
+		cout << "\n------------------------------------------------------------------------------\n";
+		cout << "CHAPTER 6";
+		cout << "\n------------------------------------------------------------------------------\n";
+		Node*head6 = sort06.getHead();
+		sort06.bubbleSort(head6);
+		sort06.print();
+		cout << "\n------------------------------------------------------------------------------\n";
+		cout << "CHAPTER 7";
+		cout << "\n------------------------------------------------------------------------------\n";
+		Node*head7 = sort07.getHead();
+		sort07.bubbleSort(head7);
+		sort07.print();
+		cout << "\n------------------------------------------------------------------------------\n";
+		cout << "CHAPTER 9";
+		cout << "\n------------------------------------------------------------------------------\n";
+		Node*head9 = sort09.getHead();
+		sort09.bubbleSort(head9);
+		sort09.print();
+		cout << "\n------------------------------------------------------------------------------\n";
+		cout << "CHAPTER 10";
+		cout << "\n------------------------------------------------------------------------------\n";
+		Node*head10 = sort10.getHead();
+		sort10.bubbleSort(head10);
+		sort10.print();
+		cout << "\n------------------------------------------------------------------------------\n";
+		cout << "CHAPTER 11";
+		cout << "\n------------------------------------------------------------------------------\n";
+		Node*head11 = sort11.getHead();
+		sort11.bubbleSort(head11);
+		sort11.print();
+	}
+	else if (sub == 2) {
+		//FIXME: sort everything
+		sortAll->load("allDefinitions.txt");
+		Node *head = sortAll->getHead();
+		sortAll->bubbleSort(head);
+		sortAll->print();
+	}
 }
 void search(int *userNum) {
     cout << "\n------------------------------";
@@ -623,95 +979,111 @@ void view(int *userNum) {
     }
 }
 void viewBySection() {
-    string inSec;
-    int chp;
-    cout << "\nEnter the chapter number: ";
-    cin >> chp;
-    if ((chp >= 1 && chp <= 7) || (chp >= 9 && chp <= 11)) {
-        cout << "\nEnter the section number for chapter " << chp << ": ";
-        int section; cin >> section;
-        if (chp == 1) {
-            if (section >= 1 && section <= 8) {
-                inSec = "01" + section;
-                //numDef.printSection(inSec);
-                cout << endl;
-            }
-            else cout << "\nThis section does not exist in Chapter 1\n";
-        }
-        if (chp == 2) {
-            if ((section >= 1 && section <= 4) || section == 6) {
-                inSec = "02" + section;
-                //numDef.printSection(inSec);
-                cout << endl;
-            }
-            else cout << "\nThis section does not exist in Chpater 2\n";
-        }
-        if (chp == 3) {
-            if (section >= 1 && section <= 3) {
-                inSec = "03" + section;
-                //numDef.printSection(inSec);
-                cout << endl;
-            }
-            else cout << "\nThis section does not exist in Chapter 3\n";
-        }
-        if (chp == 4) {
-            if (section >= 1 && section <= 3) {
-                inSec = "04" + section;
-                //numDef.printSection(inSec);
-                cout << endl;
-            }
-            else cout << "\nThis section does not exist in Chapter 4\n";
-        }
-        if (chp == 5) {
-            if (section >= 1 && section <= 3) {
-                inSec = "05" + section;
-                //numDef.printSection(inSec);
-                cout << endl;
-            }
-            else cout << "\nThis section does not exist in Chapter 5\n";
-        }
-        if (chp == 6) {
-            if (section >= 1 && section <= 3) {
-                inSec = "06" + section;
-                //numDef.printSection(inSec);
-                cout << endl;
-            }
-            else cout << "\nThis section does exist in Chapter 6\n";
-        }
-        if (chp == 7) {
-            if (section >= 1 && section <= 3) {
-                inSec = "07" + section;
-                //numDef.printSection(inSec);
-                cout << endl;
-            }
-            else cout << "\nThis section does not exist in Chapter 7\n";
-        }
-        if (chp == 9) {
-            if (section == 1 || section == 3 || section == 5) {
-                inSec = "09" + section;
-                //numDef.printSection(inSec);
-                cout << endl;
-            }
-            else cout << "\nThis section does not exist in Chapter 9\n";
-        }
-        if (chp == 10) {
-            if (section >= 1 && section <= 8) {
-                inSec = "10" + section;
-                //numDef.printSection(inSec);
-                cout << endl;
-            }
-            else cout << "\nThis section does not exist in Chapter 10\n";
-        }
-        if (chp == 11) {
-            if (section >= 1 && section <= 5) {
-                inSec = "11" + section;
-                //numDef.printSection(inSec);
-                cout << endl;
-            }
-            else cout << "\nThis section does not exist in Chapter 11\n";
-        }
-    }
-    else cout << "\nInvalid Input";
+	cout << "Input the chapter number:" << endl;
+	int chp; cin >> chp;
+
+	cout << "\nEnter the section number for chapter " << chp << ": ";
+	int section; cin >> section;
+	if (chp == 1) {
+		if (section == 1) {
+			sec11.print();
+		}
+		else if (section == 2) {
+			sec12.print();
+		}
+		else if (section == 3) {
+			sec13.print();
+		}
+		else if (section == 4) {
+			sec14.print();
+		}
+		else if (section == 5) {
+			sec15.print();
+		}
+		else if (section == 6) {
+			sec16.print();
+		}
+		else if (section == 7) {
+			sec17.print();
+		}
+		else {
+			cout << "Section does not exist." << endl;
+		}
+	}
+	else if (chp == 2) {
+		cout << "\n------------------------------------------------------------------------------";
+		cout << "\nCHAPTER 2 - BASIC STRUCTURES: SETS, FUNCTIONS, SEQUENCES";
+		cout << "\n------------------------------------------------------------------------------\n";
+		def02.print();
+	}
+	else if (chp == 3) {
+		if (section == 1) {
+			sec31.print();
+		}
+		else if (section == 2) {
+			sec32.print();
+		}
+		else if (section == 3) {
+			sec33.print();
+		}
+		else {
+			cout << "Section does not exist." << endl;
+		}
+	}
+	else if (chp == 4) {
+		cout << "\n------------------------------------------------------------------------------";
+		cout << "\nCHAPTER 4 - NUMBER THEORY AND CRYPTOLOGY";
+		cout << "\n------------------------------------------------------------------------------\n";
+		cout << "\nchapter 4 faulty asf, pls fix\n";
+		//def04.print();
+	}
+	else if (chp == 5) {
+		if (section == 1) {
+			sec51.print();
+		}
+		else if (section == 2) {
+			sec52.print();
+		}
+		else if (section == 3) {
+			sec53.print();
+		}
+		else {
+			cout << "Section does not exist." << endl;
+		}
+	}
+	else if (chp == 6) {
+		cout << "\n------------------------------------------------------------------------------";
+		cout << "\nCHAPTER 6 - COUNTING";
+		cout << "\n------------------------------------------------------------------------------\n";
+		def06.print();
+	}
+	else if (chp == 7) {
+		cout << "\n------------------------------------------------------------------------------";
+		cout << "\nCHAPTER 7 - DISCRETE PROBABILITY";
+		cout << "\n------------------------------------------------------------------------------\n";
+		def07.print();
+	}
+	else if (chp == 9) {
+		cout << "\n------------------------------------------------------------------------------";
+		cout << "\nCHAPTER 9 - RELATIONS";
+		cout << "\n------------------------------------------------------------------------------\n";
+		def09.print();
+	}
+	else if (chp == 10) {
+		cout << "\n------------------------------------------------------------------------------";
+		cout << "\nCHAPTER 10 - GRAPHS";
+		cout << "\n------------------------------------------------------------------------------\n";
+		def10.print();
+	}
+	else if (chp == 11) {
+		cout << "\n------------------------------------------------------------------------------";
+		cout << "\nCHAPTER 11 - TREES";
+		cout << "\n------------------------------------------------------------------------------\n";
+		def11.print();
+	}
+	else {
+		cout << "Chapter does not exist";
+	}
 }
 void viewByCh() {
     cout << "Input the chapter number:" << endl;
@@ -1031,6 +1403,36 @@ int main() {
     def09.load("9Def.txt");
     def10.load("10Def.txt");
     def11.load("11Def.txt");
+
+	//ch.1 sections
+	sec11.load("sec11.txt");
+	sec12.load("sec12.txt");
+	sec13.load("sec13.txt");
+	sec14.load("sec14.txt");
+	sec15.load("sec15.txt");
+	sec16.load("sec16.txt");
+	sec17.load("sec17.txt");
+
+	//ch.3 sections
+	sec31.load("sec31.txt");
+	sec32.load("sec32.txt");
+	sec33.load("sec33.txt");
+
+	//ch.5 sections
+	sec51.load("sec51.txt");
+	sec52.load("sec52.txt");
+	sec53.load("sec53.txt");
+    
+    sort01.load("1Def.txt");
+	sort02.load("2Def.txt");
+	sort03.load("3Def.txt");
+	sort04.load("4Def.txt");
+	sort05.load("5Def.txt");
+	sort06.load("6Def.txt");
+	sort07.load("7Def.txt");
+	sort09.load("9Def.txt");
+	sort10.load("10Def.txt");
+	sort11.load("11Def.txt");
 
     do {
         userMenu(userNum);
