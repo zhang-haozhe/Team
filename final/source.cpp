@@ -58,6 +58,11 @@ static List sec51;
 static List sec52;
 static List sec53;
 
+//ch.6 sections
+static List sec61;
+static List sec62;
+static List sec63;
+static List sec65;
 
 void List::addTerm(string term) {
     if (head == NULL) {
@@ -835,7 +840,21 @@ void viewBySection() {
         }
     }
     else if (chp == 6) {
-
+        if (section == 1) {
+            sec61.print();
+        }
+        else if (section == 2) {
+            sec62.print();
+        }
+        else if (section == 3) {
+            sec63.print();
+        }
+        else if (section == 5) {
+            sec65.print();
+        }
+        else {
+            cout << "Section does not exist." << endl;
+        }
     }
     else if (chp == 7) {
 
@@ -1204,6 +1223,12 @@ int main() {
     sec51.load("sec51.txt");
     sec52.load("sec52.txt");
     sec53.load("sec53.txt");
+    
+    //ch.6 sections
+    sec61.load("sec61.txt");
+    sec62.load("sec62.txt");
+    sec63.load("sec63.txt");
+    sec65.load("sec65.txt");
     
     do {
         userMenu(userNum);
