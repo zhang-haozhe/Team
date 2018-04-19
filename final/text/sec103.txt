@@ -1,0 +1,3 @@
+Isomorphic: two graphs have exactly the same form, in the sense that there is a one-to-one correspondence between their vertex sets that preserves edges. :103
+Adjacency Lists: specify the vertices that are adjacent to each vertex of the graph. :103
+Graph Invariant: two graphs are not isomorphic if we can find a property only one of the two graphs has, but that is preserved by isomorphism. :103
