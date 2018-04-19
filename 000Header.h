@@ -6,18 +6,19 @@
 using namespace std;
 
 
-void creditList(int* userNum);
+
 void userMenu(int* userNum);
-void sort(int* userNum);
-void previous(int* userNum);
 void search(int* userNum);
 void searchByCh(int chIn);
-void toc(int* userNum);
-
+void previous(int* userNum);
 void view(int* userNum);
 void viewBySection();
 void viewByCh();
 void viewSelCh();
+void sort(int* userNum);
+void toc(int* userNum);
+void help(int* userNum);
+void creditList(int* userNum);
 
 class Node {
 public:
