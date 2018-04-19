@@ -712,55 +712,73 @@ void viewBySection() {
 		}
 		if (chp == 2) {
 			if ((section >= 1 && section <= 4) || section == 6) {
-				//do something
+				inSec = "02" + section;
+				numDef.printSection(inSec);
+				cout << endl;
 			}
 			else cout << "\nThis section does not exist in Chpater 2\n";
 		}
 		if (chp == 3) {
 			if (section >= 1 && section <= 3) {
-				//do something
+				inSec = "03" + section;
+				numDef.printSection(inSec);
+				cout << endl;
 			}
 			else cout << "\nThis section does not exist in Chapter 3\n";
 		}
 		if (chp == 4) {
 			if (section >= 1 && section <= 3) {
-				//do something
+				inSec = "04" + section;
+				numDef.printSection(inSec);
+				cout << endl;
 			}
 			else cout << "\nThis section does not exist in Chapter 4\n";
 		}
 		if (chp == 5) {
 			if (section >= 1 && section <= 3) {
-				//do something
+				inSec = "05" + section;
+				numDef.printSection(inSec);
+				cout << endl;
 			}
 			else cout << "\nThis section does not exist in Chapter 5\n";
 		}
 		if (chp == 6) {
 			if (section >= 1 && section <= 3) {
-				//do something
+				inSec = "06" + section;
+				numDef.printSection(inSec);
+				cout << endl;
 			}
 			else cout << "\nThis section does exist in Chapter 6\n";
 		}
 		if (chp == 7) {
 			if (section >= 1 && section <= 3) {
-				//do something
+				inSec = "07" + section;
+				numDef.printSection(inSec);
+				cout << endl;
 			}
 			else cout << "\nThis section does not exist in Chapter 7\n";
 		}
 		if (chp == 9) {
 			if (section == 1 || section == 3 || section == 5) {
-				//do something
+				inSec = "09" + section;
+				numDef.printSection(inSec);
+				cout << endl;
 			}
 			else cout << "\nThis section does not exist in Chapter 9\n";
 		}
 		if (chp == 10) {
 			if (section >= 1 && section <= 8) {
-				//do something
+				inSec = "10" + section;
+				numDef.printSection(inSec);
+				cout << endl;
 			}
 			else cout << "\nThis section does not exist in Chapter 10\n";
 		}
 		if (chp == 11) {
 			if (section >= 1 && section <= 5) {
-				//do something
+				inSec = "11" + section;
+				numDef.printSection(inSec);
+				cout << endl;
 			}
 			else cout << "\nThis section does not exist in Chapter 11\n";
 		}
