@@ -1,9 +1,9 @@
-Halting Problems: A well-known computer science problem that is unsolvable. It entails the impossibility of a procedure that can take a computer program as input and input to the program and determine whether the program will eventually stop when run with this input.
-Big-O Notation: allows the estimation of growth of functions without needing the consideration of constant multipliers and smaller order terms
+Halting Problems: A well-known computer science problem that is unsolvable. It entails the impossibility of a [procedure that can take a computer program as input and input to the program and determine whether the program will [eventually stop when run with this input.
+Big-O Notation: allows the estimation of growth of functions without needing the consideration of constant [multipliers and smaller order terms
 Landau Symbol: the name of the big-O symbol, named after the German mathematician Paul Landau
 Big-Omega Notation: provides the lower bound for the size of f(x)
-Big-Theta Notation: The notation used when providing both the upper bound and lower bound of a function f(x) relative to a reference function g(x)
-Computational Complexity: The efficiency of an algorithm based on the amount of time needed based on a specified input size and the size of memory needed to implement it
+Big-Theta Notation: The notation used when providing both the upper bound and lower bound of a function f(x) [relative to a reference function g(x)
+Computational Complexity: The efficiency of an algorithm based on the amount of time needed based on a specified [input size and the size of memory needed to implement it
 Time Complexity: An analysis of the time required to solve a problem of a particular size
 Space Complexity: An analysis of the computer memory required of an algorithm
-Worst-Case: the largest number of operations needed to solve the given problem using this algorithm on input of specified size
+Worst-Case: the largest number of operations needed to solve the given problem using this algorithm on input [of specified size
