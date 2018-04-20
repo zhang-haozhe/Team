@@ -8,10 +8,8 @@ using namespace std;
 
 List::List() { this->head = NULL; }
 static List definition; //all definitions
-static List term; //all terms
-static List number; //chapter and lesson index
 static List memory; //stores searched terms from the user
-static List numDef; //definitions with indexed chapters+lessons
+static List sectionIdList; //list of all section indexes
 
 //stores definitions by section
 static List def01;
@@ -102,6 +100,53 @@ static List sort07;
 static List sort09;
 static List sort10;
 static List sort11;
+//stores sorted definitions by section
+static List sort011;
+static List sort012;
+static List sort013;
+static List sort014;
+static List sort015;
+static List sort016;
+static List sort017;
+static List sort021;
+static List sort022;
+static List sort023;
+static List sort024;
+static List sort026;
+static List sort031;
+static List sort032;
+static List sort033;
+static List sort041;
+static List sort042;
+static List sort043;
+static List sort045;
+static List sort046;
+static List sort051;
+static List sort052;
+static List sort053;
+static List sort061;
+static List sort062;
+static List sort063;
+static List sort065;
+static List sort071;
+static List sort072;
+static List sort073;
+static List sort091;
+static List sort092;
+static List sort093;
+static List sort101;
+static List sort102;
+static List sort103;
+static List sort104;
+static List sort105;
+static List sort106;
+static List sort107;
+static List sort108;
+static List sort111;
+static List sort112;
+static List sort113;
+static List sort114;
+static List sort115;
 
 void List::addTerm(string term) {
     if (head == NULL) {
@@ -1036,13 +1081,27 @@ void view(int *userNum) {
         viewByCh();
         *userNum = 3;
     }
-    if (VDSelection == 3) {
-        cout << "Input which sections you want to view. " << endl;
-        cout << "Note: You can only view up to 5 chapters at a time.\n";
-        //FIXME: some method calling shit that asks what sections the user wants to view
-        //max of 5 sections at a time because ain't nobody got the time or motivation to write 7+ nested loops
-        *userNum = 3;
-    }
+   if (VDSelection == 3) {
+		cout << "Input which sections you want to view. " << endl;
+		cout << "Note: You can only view up to 6 sections at a time.\n";
+		int numSec;
+		cout << "\nEnter the number of sections to view: " << endl;
+		cin >> numSec;
+		if (cin.fail() || numSec < 0) {
+			cout << "Invalid input." << endl;
+			cin.clear();
+			cin.ignore(1024, '\n');
+			cout << endl;
+		}
+		if (numSec > 6) {
+			cout << "Invalid Input. You can only input up to 6 sections" << endl;
+			cin.clear();
+			cin.ignore(1024, '\n');
+			cout << endl;
+		}
+		else viewSelSec(numSec);
+		*userNum = 3;
+	}
     if (VDSelection == 4) {
         cout << "Input which chapters you want to view. " << endl;
         cout << "Note: You can only view up to 3 chapters at a time.\n";
@@ -1463,6 +1522,325 @@ void viewSelCh() {
     }
     if (choice1 == 2) return;
 }
+void viewSelSec(int numSec) {
+	List *secList = new List; //max size = 6
+	if (numSec == 1) {
+		string sec1 = sectionId(); 
+		if (sectionIdList.contains(sec1)) {
+			viewPrintSec(sec1);
+		}
+		else cout << "This section does not exist" << endl;
+	}
+	if (numSec == 2) {
+		string sec1 = sectionId();
+		if (sectionIdList.contains(sec1)) {
+			cout << "Section Added!" << endl;
+			secList->addTerm(sec1);
+		}
+		else cout << "This section does not exist" << endl;
+		string sec2 = sectionId();
+		if (sectionIdList.contains(sec2) && !secList->contains(sec2)) {
+			cout << "Section Added!" << endl;
+			secList->addTerm(sec2);
+		}
+		else if (secList->contains(sec2)) cout << "Duplicate" << endl;
+		else cout << "This section does not exist" << endl;
+	}
+	if (numSec == 3) {
+		string sec1 = sectionId();
+		if (sectionIdList.contains(sec1)) {
+			cout << "Section Added!" << endl;
+			secList->addTerm(sec1);
+		}
+		else cout << "This section does not exist" << endl;
+		string sec2 = sectionId();
+		if (sectionIdList.contains(sec2) && !secList->contains(sec2)) {
+			cout << "Section Added!" << endl;
+			secList->addTerm(sec2);
+		}
+		else if (secList->contains(sec2)) cout << "Duplicate" << endl;
+		else cout << "This section does not exist" << endl;
+		string sec3 = sectionId();
+		if (sectionIdList.contains(sec2) && !secList->contains(sec2)) {
+			cout << "Section Added!" << endl;
+			secList->addTerm(sec3);
+		}
+		else if (secList->contains(sec3)) cout << "Duplicate" << endl;
+		else cout << "This section does not exist" << endl;
+	}
+	if (numSec == 4) {
+		string sec1 = sectionId();
+		if (sectionIdList.contains(sec1)) {
+			secList->addTerm(sec1);
+		}
+		else cout << "This section does not exist" << endl;
+		string sec2 = sectionId();
+		if (sectionIdList.contains(sec2) && !secList->contains(sec2)) {
+			cout << "Section Added!" << endl;
+			secList->addTerm(sec2);
+		}
+		else if (secList->contains(sec2)) cout << "Duplicate" << endl;
+		else cout << "This section does not exist" << endl;
+		string sec3 = sectionId();
+		if (sectionIdList.contains(sec3) && !secList->contains(sec3)) {
+			cout << "Section Added!" << endl;
+			secList->addTerm(sec3);
+		}
+		else if (secList->contains(sec3)) cout << "Duplicate" << endl;
+		else cout << "This section does not exist" << endl;
+		string sec4 = sectionId();
+		if (sectionIdList.contains(sec4) && !secList->contains(sec4)) {
+			cout << "Section Added!" << endl;
+			secList->addTerm(sec4);
+		}
+		else if (secList->contains(sec4)) cout << "Duplicate" << endl;
+		else cout << "This section does not exist" << endl;
+	}
+	if (numSec == 5) {
+		string sec1 = sectionId();
+		if (sectionIdList.contains(sec1)) {
+			secList->addTerm(sec1);
+		}
+		else cout << "This section does not exist" << endl;
+		string sec2 = sectionId();
+		if (sectionIdList.contains(sec2) && !secList->contains(sec2)) {
+			cout << "Section Added!" << endl;
+			secList->addTerm(sec2);
+		}
+		else if (secList->contains(sec2)) cout << "Duplicate" << endl;
+		else cout << "This section does not exist" << endl;
+		string sec3 = sectionId();
+		if (sectionIdList.contains(sec3) && !secList->contains(sec3)) {
+			cout << "Section Added!" << endl;
+			secList->addTerm(sec3);
+		}
+		else if (secList->contains(sec3)) cout << "Duplicate" << endl;
+		else cout << "This section does not exist" << endl;
+		string sec4 = sectionId();
+		if (sectionIdList.contains(sec4) && !secList->contains(sec4)) {
+			cout << "Section Added!" << endl;
+			secList->addTerm(sec4);
+		}
+		else if (secList->contains(sec4)) cout << "Duplicate" << endl;
+		else cout << "This section does not exist" << endl;
+		string sec5 = sectionId();
+		if (sectionIdList.contains(sec5) && !secList->contains(sec5)) {
+			cout << "Section Added!" << endl;
+			secList->addTerm(sec5);
+		}
+		else if (secList->contains(sec5)) cout << "Duplicate" << endl;
+		else cout << "This section does not exist" << endl;
+	}
+	if (numSec == 6) {
+		string sec1 = sectionId();
+		if (sectionIdList.contains(sec1)) {
+			secList->addTerm(sec1);
+		}
+		else cout << "This section does not exist" << endl;
+		string sec2 = sectionId();
+		if (sectionIdList.contains(sec2) && !secList->contains(sec2)) {
+			cout << "Section Added!" << endl;
+			secList->addTerm(sec2);
+		}
+		else if (secList->contains(sec2)) cout << "Duplicate" << endl;
+		else cout << "This section does not exist" << endl;
+		string sec3 = sectionId();
+		if (sectionIdList.contains(sec3) && !secList->contains(sec3)) {
+			cout << "Section Added!" << endl;
+			secList->addTerm(sec3);
+		}
+		else if (secList->contains(sec3)) cout << "Duplicate" << endl;
+		else cout << "This section does not exist" << endl;
+		string sec4 = sectionId();
+		if (sectionIdList.contains(sec4) && !secList->contains(sec4)) {
+			cout << "Section Added!" << endl;
+			secList->addTerm(sec4);
+		}
+		else if (secList->contains(sec4)) cout << "Duplicate" << endl;
+		else cout << "This section does not exist" << endl;
+		string sec5 = sectionId();
+		if (sectionIdList.contains(sec5) && !secList->contains(sec5)) {
+			cout << "Section Added!" << endl;
+			secList->addTerm(sec5);
+		}
+		else if (secList->contains(sec5)) cout << "Duplicate" << endl;
+		else cout << "This section does not exist" << endl;
+		string sec6 = sectionId();
+		if (sectionIdList.contains(sec6) && !secList->contains(sec6)) {
+			cout << "Section Added!" << endl;
+			secList->addTerm(sec6);
+		}
+		else if (secList->contains(sec6)) cout << "Duplicate" << endl;
+		else cout << "This section does not exist" << endl;
+	}
+	string secId;
+	Node*head = secList->getHead();
+	while (head != NULL) {
+		secId = head->value; 
+		viewPrintSec(secId);
+		head = head->next;
+	}
+}
+void viewPrintSec(string sec) {
+	string chNum = sec.substr(0, 2);
+	char secNum = sec.at(2);
+	if (chNum == "1") {
+		if (secNum == '1') sec11.print();
+		if (secNum == '2') sec12.print();
+		if (secNum == '3') sec13.print();
+		if (secNum == '4') sec14.print();
+		if (secNum == '5') sec15.print();
+		if (secNum == '6') sec16.print();
+		if (secNum == '7') sec17.print();
+	}
+	if (chNum == "2") {
+		if (secNum == '1') sec21.print();
+		if (secNum == '2') sec22.print();
+		if (secNum == '3') sec23.print();
+		if (secNum == '4') sec24.print();
+		if (secNum == '6') sec26.print();
+	}
+	if (chNum == "3") {
+		if (secNum == '1') sec31.print();
+		if (secNum == '2') sec32.print();
+		if (secNum == '3') sec33.print();
+	}
+	if (chNum == "4") {
+		if (secNum == '1') sec41.print();
+		if (secNum == '2') sec42.print();
+		if (secNum == '3') sec43.print();
+		if (secNum == '5') sec45.print();
+		if (secNum == '6') sec46.print();
+	}
+	if (chNum == "5") {
+		if (secNum == '1') sec51.print();
+		if (secNum == '2') sec52.print();
+		if (secNum == '3') sec53.print();
+	}
+	if (chNum == "6") {
+		if (secNum == '1') sec61.print();
+		if (secNum == '2') sec62.print();
+		if (secNum == '3') sec63.print();
+		if (secNum == '5') sec65.print();
+	}
+	if (chNum == "7") {
+		if (secNum == '1') sec71.print();
+		if (secNum == '2') sec72.print();
+		if (secNum == '3') sec73.print();
+	}
+	if (chNum == "9") {
+		if (secNum == '1') sec91.print();
+		if (secNum == '3') sec92.print();
+		if (secNum == '5') sec93.print();
+	}
+	if (chNum == "10") {
+		if (secNum == '1') sec101.print();
+		if (secNum == '2') sec102.print();
+		if (secNum == '3') sec103.print();
+		if (secNum == '4') sec104.print();
+		if (secNum == '5') sec105.print();
+		if (secNum == '6') sec106.print();
+		if (secNum == '7') sec107.print();
+		if (secNum == '8') sec108.print();
+	}
+	if (chNum == "11") {
+		if (secNum == '1') sec111.print();
+		if (secNum == '2') sec112.print();
+		if (secNum == '3') sec113.print();
+		if (secNum == '4') sec114.print();
+		if (secNum == '5') sec115.print();
+	}
+}
+void listSections() {
+	//chapter 1
+	sectionIdList.addTerm("011");
+	sectionIdList.addTerm("012");
+	sectionIdList.addTerm("013");
+	sectionIdList.addTerm("014");
+	sectionIdList.addTerm("015");
+	sectionIdList.addTerm("016");
+	sectionIdList.addTerm("017");
+	//chapter 2
+	sectionIdList.addTerm("021");
+	sectionIdList.addTerm("022");
+	sectionIdList.addTerm("023");
+	sectionIdList.addTerm("024");
+	sectionIdList.addTerm("026");
+	//chapter 3
+	sectionIdList.addTerm("031");
+	sectionIdList.addTerm("032");
+	sectionIdList.addTerm("033");
+	//chapter 4
+	sectionIdList.addTerm("041");
+	sectionIdList.addTerm("042");
+	sectionIdList.addTerm("043");
+	sectionIdList.addTerm("045");
+	sectionIdList.addTerm("046");
+	//chapter 5
+	sectionIdList.addTerm("051");
+	sectionIdList.addTerm("052");
+	sectionIdList.addTerm("053");
+	//chapter 6
+	sectionIdList.addTerm("061");
+	sectionIdList.addTerm("062");
+	sectionIdList.addTerm("063");
+	sectionIdList.addTerm("065");
+	//chapter 7
+	sectionIdList.addTerm("071");
+	sectionIdList.addTerm("072");
+	sectionIdList.addTerm("073");
+	//chapter 9
+	sectionIdList.addTerm("091");
+	sectionIdList.addTerm("093");
+	sectionIdList.addTerm("095");
+	//chapter 10
+	sectionIdList.addTerm("101");
+	sectionIdList.addTerm("102");
+	sectionIdList.addTerm("103");
+	sectionIdList.addTerm("104");
+	sectionIdList.addTerm("105");
+	sectionIdList.addTerm("106");
+	sectionIdList.addTerm("107");
+	sectionIdList.addTerm("108");
+	//chapter 11
+	sectionIdList.addTerm("111");
+	sectionIdList.addTerm("112");
+	sectionIdList.addTerm("113");
+	sectionIdList.addTerm("114");
+	sectionIdList.addTerm("115");
+}
+string sectionId() {
+	string idnum;
+	cout << "\nEnter Chapter - ";
+	int ch1; cin >> ch1;
+	if (cin.fail() || !(ch1 >= 1 && ch1 <= 7) && !(ch1 >= 9 && ch1 <= 11)) {
+		cout << "Invalid input." << endl;
+		cin.clear();
+		cin.ignore(1024, '\n');
+		cout << endl;
+	}
+	cout << "Enter Section Number - ";
+	int sec; cin >> sec;
+	if (cin.fail()) {
+		cout << "Invalid input." << endl;
+		cin.clear();
+		cin.ignore(1024, '\n');
+		cout << endl;
+	}
+	else {
+		if (ch1 == 1) idnum = "01" + to_string(sec);
+		else if (ch1 == 2) idnum = "02" + to_string(sec);
+		else if (ch1 == 3) idnum = "03" + to_string(sec);
+		else if (ch1 == 4) idnum = "04" + to_string(sec);
+		else if (ch1 == 5) idnum = "05" + to_string(sec);
+		else if (ch1 == 6) idnum = "06" + to_string(sec);
+		else if (ch1 == 7) idnum = "07" + to_string(sec);
+		else if (ch1 == 9) idnum = "09" + to_string(sec);
+		else if (ch1 == 10) idnum = "10" + to_string(sec);
+		else if (ch1 == 11) idnum = "11" + to_string(sec);
+	}
+	return idnum;
+}
 
 void previous(int *userNum) {
     //DONE
@@ -1573,9 +1951,7 @@ int main() {
     int* userNum = &userInput;
     
     definition.load("allDefinitions.txt");
-    term.load("allTerms.txt");
-    number.load("numbers.txt");
-    numDef.load("numAllDef.txt");
+    listSections();
     
     def01.load("1Def.txt");
     def02.load("2Def.txt");
