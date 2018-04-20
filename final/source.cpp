@@ -229,6 +229,12 @@ void List::print() {
                     else if (tempString == "@u2203") { // there exists
                         cout << "\u2203";
                     }
+		    else if (tempString == "@u208B") { // there exists
+                        cout << "\u208B";
+                    }
+		    else if (tempString == "@u2080") { // subscript 0
+                        cout << "\u2080";
+                    }
                     else if (tempString == "@u2081") { // subscript 1
                         cout << "\u2081";
                     }
@@ -375,6 +381,9 @@ void List::printSearchDef(string term) {
                     else if (tempString == "@u2203") { // there exists
                         cout << "\u2203";
                     }
+		    else if (tempString == "@u2080") { // subscript 0
+                        cout << "\u2080";
+		    }
                     else if (tempString == "@u2081") { // subscript 1
                         cout << "\u2081";
                     }
@@ -1560,7 +1569,7 @@ int main() {
     int userInput;
     int* userNum = &userInput;
     
-    definition.load("allDef.txt");
+    definition.load("allDefinitions.txt");
     term.load("allTerms.txt");
     number.load("numbers.txt");
     numDef.load("numAllDef.txt");
