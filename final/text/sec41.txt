@@ -1,5 +1,5 @@
 Congruence: When the modulo of two integers are equal
-Modulus: In modular arithmetic, it is the divisor that, once divided as many times as it can into the divisor, will result in the remainder of the division
+Modulus: In modular arithmetic, it is the divisor that, once divided as many times as it can into the [divisor, will result in the remainder of the division
 Congruence Class: The set of all integers congruent to an integer a modulo m
 Z(m): The set of nonnegative integers less than m
 Arithmetic Modulo: Used when performing tasks utilizing the operations +m and @u2022m
