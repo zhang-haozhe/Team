@@ -1,7 +1,7 @@
 ﻿Tautology: A proposition which is always true [ Ex: p v ¬p
 Contradiction: A proposition which is always false [ Ex: p ^ ¬p
 Contingency: A proposition which is neither a tautology nor a contradiction [ Ex: p
-Logical Equivalence: A two compound propositions p and q are logically equivalent if p ↔ q is a tautology. This is written as p ⇔ q or as p ≡ q where p and q are compound propositions.
+Logical Equivalence: A two compound propositions p and q are logically equivalent if p ↔ q is a tautology. [This is written as p ⇔ q or as p ≡ q where p and q are compound propositions.
 De Morgan’s Laws: As follows [ ¬(p ^ q) ≡ ¬p v ¬q [ ¬(p v q) ≡ ¬p ^ ¬q
 Identity Laws of Logical Equivalence: As follows [ p ^ T ≡ p [ p v F ≡ p
 Domination Laws of Logical Equivalence: As follows [ p v T ≡ T [ p ^ F ≡ F
@@ -12,4 +12,4 @@ Commutative Laws of Logical Equivalence: As follows [ p v q ≡ q v p [ p ^ q �
 Associative Laws of Logical Equivalence: As follows [ (p ^ q) ^ r ≡ p ^ (q ^ r) [ (p v q) v r ≡ p v (q ^ r)
 Distributive Laws of Logical Equivalence: As follows [ (p v (q ^ r)) ≡ (p v q) ^ (p v r) [ (p ^ (q v r)) ≡ (p ^ q) v (p ^ r) 
 Absorption Laws of Logical Equivalence: As follows [ p v (p ^ q) ≡ p [ p ^ (p v q) ≡ p 
-Propositional Satisfiability: A compound proposition is satisfiable if there is an assignment of truth values to its variables that make it true 
+Propositional Satisfiability: A compound proposition is satisfiable if there is an assignment of truth values [to its variables that make it true 
