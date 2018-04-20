@@ -265,6 +265,9 @@ void List::print() {
                     else if (tempString == "@u005b") { //open bracket
                         cout<< "\u005b";
                     }
+			else if (tempString == "@u00D7") { //multiplication mark
+                        cout<< "\u00D7";
+                    }
                     tempString = "";
                 }
                 else {
@@ -407,6 +410,9 @@ void List::printSearchDef(string term) {
                     }
                     else if (tempString == "@u005b") { //open bracket
                         cout<< "\u005b";
+                    }
+			else if (tempString == "@u00D7") { //multiplication mark
+                        cout<< "\u00D7";
                     }
                     tempString = "";
                 }
