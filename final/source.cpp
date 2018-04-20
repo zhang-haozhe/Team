@@ -1735,39 +1735,6 @@ void viewPrintSec(string sec) {
 	}
 }
 
-string sectionId() {
-	string idnum;
-	cout << "\nEnter Chapter - ";
-	int ch1; cin >> ch1;
-	if (cin.fail() || !(ch1 >= 1 && ch1 <= 7) && !(ch1 >= 9 && ch1 <= 11)) {
-		cout << "Invalid input." << endl;
-		cin.clear();
-		cin.ignore(1024, '\n');
-		cout << endl;
-	}
-	cout << "Enter Section Number - ";
-	int sec; cin >> sec;
-	if (cin.fail()) {
-		cout << "Invalid input." << endl;
-		cin.clear();
-		cin.ignore(1024, '\n');
-		cout << endl;
-	}
-	else {
-		if (ch1 == 1) idnum = "01" + to_string(sec);
-		else if (ch1 == 2) idnum = "02" + to_string(sec);
-		else if (ch1 == 3) idnum = "03" + to_string(sec);
-		else if (ch1 == 4) idnum = "04" + to_string(sec);
-		else if (ch1 == 5) idnum = "05" + to_string(sec);
-		else if (ch1 == 6) idnum = "06" + to_string(sec);
-		else if (ch1 == 7) idnum = "07" + to_string(sec);
-		else if (ch1 == 9) idnum = "09" + to_string(sec);
-		else if (ch1 == 10) idnum = "10" + to_string(sec);
-		else if (ch1 == 11) idnum = "11" + to_string(sec);
-	}
-	return idnum;
-}
-
 void previous(int *userNum) {
 	//DONE
 	cout << "\n---------------------------------------------------";
@@ -1928,6 +1895,38 @@ void listSections() {
 	sectionIdList.addTerm("113");
 	sectionIdList.addTerm("114");
 	sectionIdList.addTerm("115");
+}
+string sectionId() {
+	string idnum;
+	cout << "\nEnter Chapter - ";
+	int ch1; cin >> ch1;
+	if (cin.fail() || !(ch1 >= 1 && ch1 <= 7) && !(ch1 >= 9 && ch1 <= 11)) {
+		cout << "Invalid input." << endl;
+		cin.clear();
+		cin.ignore(1024, '\n');
+		cout << endl;
+	}
+	cout << "Enter Section Number - ";
+	int sec; cin >> sec;
+	if (cin.fail()) {
+		cout << "Invalid input." << endl;
+		cin.clear();
+		cin.ignore(1024, '\n');
+		cout << endl;
+	}
+	else {
+		if (ch1 == 1) idnum = "01" + to_string(sec);
+		else if (ch1 == 2) idnum = "02" + to_string(sec);
+		else if (ch1 == 3) idnum = "03" + to_string(sec);
+		else if (ch1 == 4) idnum = "04" + to_string(sec);
+		else if (ch1 == 5) idnum = "05" + to_string(sec);
+		else if (ch1 == 6) idnum = "06" + to_string(sec);
+		else if (ch1 == 7) idnum = "07" + to_string(sec);
+		else if (ch1 == 9) idnum = "09" + to_string(sec);
+		else if (ch1 == 10) idnum = "10" + to_string(sec);
+		else if (ch1 == 11) idnum = "11" + to_string(sec);
+	}
+	return idnum;
 }
 
 int main() {
