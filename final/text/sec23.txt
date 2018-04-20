@@ -1,6 +1,6 @@
-Function: f from A to B, denoted f:A à B, is an assignment of each element of A to exactly one element of B, can be specified as an explicit statement of the assignment, a formula, or a computer program 
-Injections: function f is said to be this if and only if f(a) = f(b), which implies that a = b for all a and b in the domain of f (an injection if it is one-to-one) 
-Surjections: function f from A to B is called onto or surjective if and only if for every element b in B, there is an element a in A with f(a) = b 
+Function: f from A to B, denoted f:A à B, is an assignment of each element of A to exactly one element of B, [can be specified as an explicit statement of the assignment, a formula, or a computer program 
+Injections: function f is said to be this if and only if f(a) = f(b), which implies that a = b for all a and b [in the domain of f (an injection if it is one-to-one) 
+Surjections: function f from A to B is called onto or surjective if and only if for every element b in B, there [is an element a in A with f(a) = b 
 Bijections: one-to-one correspondence, if it is both one to one and onto (surjective and injective) 
 Inverse Function: f = bijection from A to B, then the inverse of f (f-1) is the function from B to A defined as 
 Composition: let f:BàC and g:AàB. The composition of f with g (denoted f ○ g) is the function from A to C defined as 
