@@ -1,1 +1,1 @@
-Baye's Theorem: Suppose that E and F are events from a sample space S such that p(E) =/= 0 and p(F) =/= 0. Then: [ p(F|E) = p(E|F)p(F)/(p(E|F)p(F) + p(E|G)p(G)) where G is the complement of F. 
+Baye's Theorem: Suppose that E and F are events from a sample space S such that p(E) =/= 0 and p(F) =/= 0. [Then: p(F|E) = p(E|F)p(F)/(p(E|F)p(F) + p(E|G)p(G)) where G is the complement of F. 
