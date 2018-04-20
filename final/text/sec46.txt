@@ -1,2 +1,2 @@
-Encryption: The process of making a message secret
-Decryption: The process of determining the original message from an encrypted message
+Encryption: The process of making a message secret.
+Decryption: The process of determining the original message from an encrypted message.
