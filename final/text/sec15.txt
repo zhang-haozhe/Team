@@ -1,2 +1,2 @@
-﻿Nested Quantifiers: Necessary to express the meaning of logic in various fields such as English and computer science and mathematics concepts. 
-Order of Quantifiers: Quantified expressions are read from left to right. [ Negation of Nested Quantifiers - The steps do doing this is as follows: [ Use quantifiers to express a statement [ Use De Morgan’s Laws to move the negation as far inward as possible 
+Nested Quantifiers: Necessary to express the meaning of logic in various fields such as English and computer [science and mathematics concepts. 
+Order of Quantifiers: Quantified expressions are read from left to right. [ Negation of Nested Quantifiers - The [steps do doing this is as follows: [ Use quantifiers to express a statement [ Use De Morgan’s Laws to move the negation as far inward as possible 
