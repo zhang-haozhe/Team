@@ -1,6 +1,6 @@
-Universal Address System: a vertex v at level n, for n = 1, is labeled x1.x2. . . . .xn, where the unique path from the root to v goes through the x1st vertex at level 1, the x2nd vertex at level 2, and so on. :113
+Universal Address System: a vertex v at level n, for n = 1, is labeled x1.x2. . . . .xn, where the unique path [from the root to v goes through the x1st vertex at level 1, the x2nd vertex at level 2, and so on. :113
 Traversal Algorithms: Procedures for systematically visiting every vertex of an ordered rooted tree. :113
-Infix Form: To make such expressions unambiguous it is necessary to include parentheses in the in order traversal whenever we encounter an operation. :113
+Infix Form: To make such expressions unambiguous it is necessary to include parentheses in the in order [traversal whenever we encounter an operation. :113
 Prefix Form: obtain the prefix form of an expression when we traverse its rooted tree in preorder. :113
 Polish Notation: expressions written in prefix form. :113
 Postfix Form: We obtain the postfix form of an expression by traversing its binary tree in postorder. :113
