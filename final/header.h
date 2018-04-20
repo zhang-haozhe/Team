@@ -17,7 +17,11 @@ void view(int*userNum);
 void viewBySection();
 void viewByCh();
 void viewSelCh();
-void viewSelSec();
+void viewSelSec(int numSec);
+void viewPrintSec(string sec);
+
+void listSections();
+string sectionId();
 
 void previous();
 void toc(int *userNum);
