@@ -1,9 +1,9 @@
 Binary Relations: A binary relation R from a set A to a set B is a subset R ⊆ A x B.
 Binary Relation on a Set: A binary relation R on a set A is a subset of A x A or a relation from A to A.
-Reflexive Relations: R is reflexive iff(a,a) ∊ R for every element a ∊ A. Written symbolically, R is reflexive [if and only if ∀x[x∊U⟶ (x,x) ∊ R].
-Symmetric Relations: R is symmetric iff (b,a) ∊ R whenever (a,b) ∊ R for all a,b ∊ A. Written symbolically, R [is symmetric if and only if ∀x∀y[(x,y) ∊R⟶ (y,x) ∊ R] 
-Antisymmetric Relations: A relation R on a set A such that for all a,b ∊ A if (a,b) ∊ R and (b,a) ∊ R, then [a = b is called antisymmetric. [ Written symbolically, ∀x∀y[(x,y) ∊R∧ (y,x) ∊ R ⟶ x= y]
-Transitive Relations: A relation R on a set A is called transitive if whenever (a,b) ∊ R and (b,c) ∊ R, [then (a,c) ∊ R, for all a,b,c ∊ A.[Written symbolically, R is transitive if and only if ∀x∀y∀z[(x,y) ∊R∧ (y,z) ∊ R ⟶ (x,z) ∊ R]
+Reflexive Relations: R is reflexive iff(a,a) ∊ R for every element a ∊ A. Written symbolically, R is reflexive [if and only if ∀x(x∊U⟶ (x,x) ∊ R).
+Symmetric Relations: R is symmetric iff (b,a) ∊ R whenever (a,b) ∊ R for all a,b ∊ A. Written symbolically, R [is symmetric if and only if ∀x∀y((x,y) ∊R⟶ (y,x) ∊ R) 
+Antisymmetric Relations: A relation R on a set A such that for all a,b ∊ A if (a,b) ∊ R and (b,a) ∊ R, then [a = b is called antisymmetric. [ Written symbolically, ∀x∀y((x,y) ∊R∧ (y,x) ∊ R ⟶ x= y)
+Transitive Relations: A relation R on a set A is called transitive if whenever (a,b) ∊ R and (b,c) ∊ R, [then (a,c) ∊ R, for all a,b,c ∊ A.[Written symbolically, R is transitive if and only if ∀x∀y∀z((x,y) ∊R∧ (y,z) ∊ R ⟶ (x,z) ∊ R)
 Composition: Suppose [ 1) R1 is a relation from a set A to a set B [ 2) R2 is a relation from B to a set C [ Then the composition (or composite) of R2 with R1, is a relation from A to C where if (x,y) is a member of [R1 and (y,z) is a member of R2, then (x,z) is a member of R2 ∘ R1.
 Powers of a Relation: Let R be a binary relation on A. Then the powers R^n of the relation R can be defined [inductively by: [ 1) Basis Step: R^1 = R [ 2) Inductive Step: R^(n+1) = R^n ∘ R 
 Digraphs: A directed graph, or digraph, consists of a set V of vertices (or nodes) together with a set E of [ordered pairs of elements of V called edges (or arcs). The vertex a is called the initial vertex of the edge [(a,b), and the vertex b is called the terminal vertex of this edge. An edge of the form (a,a) is called a loop.
