@@ -1560,7 +1560,7 @@ int main() {
     int userInput;
     int* userNum = &userInput;
     
-    definition.load("allDefinitions.txt");
+    definition.load("allDef.txt");
     term.load("allTerms.txt");
     number.load("numbers.txt");
     numDef.load("numAllDef.txt");
