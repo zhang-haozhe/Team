@@ -1,9 +1,9 @@
 Union: Union of sets A and B is denoted by A U B 
 Intersection:  A ∩ B = {x | x ∈ A ^ x ∈ B} – what’s in common between A and B 
 Complement: If A is a set, then the complement of the A (with respect to U), denoted by Ā is the set U – A 
-Difference: A and B are sets with respect to U – the difference between them is denoted by A – B – contains elements of A that are not in B 
+Difference: A and B are sets with respect to U – the difference between them is denoted by A – B – contains elements [of A that are not in B 
 Inclusion-Exclusion: |A U B| = |A| + |B| - |A ∩ B| 
 Disjoint: two sets are disjoint if their intersection is an empty set (A ∩ B = Ø) 
 Symmetric Difference: denoted by A (XOR) B 
-Generalized Unions: the union of a collection of sets is the set that contains those elements that are members of at least 1 set in the collection 
-Generalized Intersection: the intersection of a collection of sets is the set that contains those elements that are members of the sets in the collection 
+Generalized Unions: the union of a collection of sets is the set that contains those elements that are members of at [least 1 set in the collection 
+Generalized Intersection: the intersection of a collection of sets is the set that contains those elements that are [members of the sets in the collection 
