@@ -1,6 +1,6 @@
 Average-Case: The average number of operations used to solve the problem over all possible inputs of a given size 
-Algorithmic Paradigms: a general approach based on a particular concept that can be used to construct algorithms for solving a variety of problems 
-Brute Force Algorithm: an algorithm where a problem is solved in the most straightforward manner based on the statement of the problem and the definitions of terms 
+Algorithmic Paradigms: a general approach based on a particular concept that can be used to construct algorithms [for solving a variety of problems 
+Brute Force Algorithm: an algorithm where a problem is solved in the most straightforward manner based on the [statement of the problem and the definitions of terms 
 Constant Complexity: When the time or space complexity of an algorithm remains the same regardless of the input 
 Linear Complexity: When the complexity of an algorithm relies on either the average-case or worst-case scenario 
 Logarithmic Complexity: When the complexity of an algorithm relies solely on the worst-case scenario
