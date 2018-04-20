@@ -4,6 +4,6 @@ Linear Search: also known as Sequential Search, a type of algorithm that begins 
 Binary Search: A search algorithm that compares elements in a list by assuming that the desired term is the [middle element of a list. If not, the search is then restricted to a sublist that has endpoints based on the [comparison of the previous list against the desired element to be located in the middle term 
 Sorting: The action of putting elements into an ordered list of increasing size 
 Bubble Sort: A sorting algorithm that puts a list into increasing order by successively comparing adjacent [elements and swapping the two elements if they are not in increasing order 
-Insertion Sort: A sorting algorithm that begins with the second element in a list of n elements. The element [is then compared to the preceding elements; it is either placed before the preceding element if it does not [exceed the value of the preceding element, or it is placed after the element if it does exceed the [preceding element’s value. 
+Insertion Sort: A sorting algorithm that begins with the second element in a list of n elements. The element [is then compared to the preceding elements; it is either placed before the preceding element if it does not [exceed the value of the preceding element, or it is placed after the element if it does exceed the [preceding element’s value.  
 Optimization Problems: Problems where the goal is to minimize or maximize the value of a certain parameter [within the problem. 
 Greedy Algorithms: Algorithms that appear to make the “best” choice at all steps 
