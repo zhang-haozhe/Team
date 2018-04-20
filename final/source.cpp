@@ -279,7 +279,7 @@ void List::print() {
         temp = temp->next;
         counter = 0;
         cout << endl;
-        //cout << endl;
+        cout << endl;
     }
 }
 void List::insertAtBeginning(Node**start) {
