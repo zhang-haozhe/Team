@@ -1,10 +1,10 @@
-﻿Predicate Logic: Made up of variables (x, y, z, etc.), predicates (P(x), M(x), etc.), and quantifiers (∀, ∃, etc.). It is a Boolean-valued function P: X → {true, false} and is called the predicate on X. 
-Propositional Functions: Represented as P(x), they become propositions (and have truth values) when their variables are each replaced by a value from the domain of the quantifier 
-Compound Expression: Connectives from propositional logic carry over to predicate logic. You combine 2 or more propositional functions to form propositional expressions.
-Quantifiers: Quantifiers are used to express the extent to which a predicate is true over a range of elements. In English, some of these terms used for quantification are all, some, many, none, and few. In logic, ∀ and ∃ are used. The quantifiers ∀ and ∃ also have higher precedence than all the logical operators. The truth value of quantified expressions depends on both the propositional function P(x) and on the domain U. 
-Universal Quantifier: Asserts that the propositional P(x) is true for all values x in the domain. It is denoted as ∀; ∀xP(x) reads as “for every x P(x)”.
-Existential Quantifier: Asserts that there exists an element x in the domain which that P(x). The notation used for this is ∃ and ∃xP(x) reads as “there exists an element x in the domain such that P(x)” 
-Uniqueness Quantifier: Denoted by ∃!x P(x), it means that P(x) is true for one and only one x in the domain. It can also be expressed as ∃x(P(x)∧∀y(P(y)→y=x))
-Equivalence of Predicate Logic: Statements involving predicates and quantifiers are logically equivalent if and only if they have the same truth value.
+Predicate Logic: Made up of variables (x, y, z, etc.), predicates (P(x), M(x), etc.), and quantifiers (∀, ∃, etc.). [It is a Boolean-valued function P: X → {true, false} and is called the predicate on X. 
+Propositional Functions: Represented as P(x), they become propositions (and have truth values) when their variables [are each replaced by a value from the domain of the quantifier 
+Compound Expression: Connectives from propositional logic carry over to predicate logic. You combine 2 or more [propositional functions to form propositional expressions.
+Quantifiers: Quantifiers are used to express the extent to which a predicate is true over a range of elements. In [English, some of these terms used for quantification are all, some, many, none, and few. In logic, ∀ and ∃ are used. [The quantifiers ∀ and ∃ also have higher precedence than all the logical operators. The truth value of [quantified expressions depends on both the propositional function P(x) and on the domain U. 
+Universal Quantifier: Asserts that the propositional P(x) is true for all values x in the domain. It is denoted [as ∀; ∀xP(x) reads as “for every x P(x)”.
+Existential Quantifier: Asserts that there exists an element x in the domain which that P(x). The notation used [for this is ∃ and ∃xP(x) reads as “there exists an element x in the domain such that P(x)” 
+Uniqueness Quantifier: Denoted by ∃!x P(x), it means that P(x) is true for one and only one x in the domain. It [can also be expressed as ∃x(P(x)∧∀y(P(y)→y=x))
+Equivalence of Predicate Logic: Statements involving predicates and quantifiers are logically equivalent if and [only if they have the same truth value.
 System Specification in Predicate Logic: Predicate logic is used for specifying properties that systems must satisfy. 
 Lewis-Carroll Example: There are premises and a conclusion statements in an argument. 
