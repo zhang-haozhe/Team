@@ -1,4 +1,4 @@
-Distinguishable: When objects are different from each other
-Identical: When objects are identical to each other
-Distinguishable Boxes: Labeled boxes
-Indistinguishable Boxes: Unlabeled boxes
+Distinguishable: When objects are different from each other.
+Identical: When objects are identical to each other.
+Distinguishable Boxes: Labeled boxes.
+Indistinguishable Boxes: Unlabeled boxes.
