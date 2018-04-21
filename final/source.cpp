@@ -258,6 +258,9 @@ void List::print() {
 		    else if (tempString == "@u208B") { // subscript -
                         cout << "\u208B";
                     }
+		    else if (tempString == "@u208A") { // subscript +
+                        cout << "\u208A";
+                    }
 		    else if (tempString == "@u2080") { // subscript 0
                         cout << "\u2080";
                     }
@@ -409,6 +412,9 @@ void List::printSearchDef(string term) {
                     }
 		    else if (tempString == "@u208B") { // subscript -
                         cout << "\u208B";
+                    }
+		    else if (tempString == "@u208A") { // subscript +
+                        cout << "\u208A";
                     }
 		    else if (tempString == "@u2080") { // subscript 0
                         cout << "\u2080";
