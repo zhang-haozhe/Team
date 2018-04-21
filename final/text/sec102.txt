@@ -1,12 +1,12 @@
-Isolated: A vertex of degree zero  
-Pendant: if and only if a vertex has degree one.  
-Complete Graph: a simple graph that contains exactly one edge between each pair of distinct vertices. 
-Non Complete Graph: A simple graph for which there is at least one pair of distinct vertex not connected by [an edge  
-Bipartite: vertex set V can be partitioned into two disjoint sets V1 and V2 such that every edge in the graph [connects a vertex in V1 and a vertex in V2  
-Serial: the algorithms written to solve problems were designed to perform one step at a time  
-Parallel Processing: uses computers made up of many separate processors, each with its own memory, helps [overcome the limitations of computers with a single processor.  
-Parallel Algorithm: breaks a problem into a number of subproblems that can be solved concurrently, can then [be devised to rapidly solve problems using a computer with multiple processors.  
-Hops: a large number of intermediate links for processors to share information.  
-Subgraph: When edges and vertices are removed from a graph, without removing endpoints of any remaining edges, [a smaller graph is obtained. 
-Edge Contraction: removes an edge e with endpoints u and v and merges u and w into a new single vertex w, and [for each edge with u or v as an endpoint replaces the edge with one with w as endpoint in place of u or v and [with the same second endpoint.  
-Union of the Graphs: graph that contains all the vertices and edges of these graphs  
+Isolated: A vertex of degree zero 
+Pendant: if and only if a vertex has degree one.
+Complete Graph: a simple graph that contains exactly one edge between each pair of distinct vertices.
+Non Complete Graph: A simple graph for which there is at least one pair of distinct vertex not [connected by an edge
+Bipartite: vertex set V can be partitioned into two disjoint sets V@u2081 and V@u2082 such that every edge [in the graph connects a vertex in V@u2081 and a vertex in V@u2082
+Serial: the algorithms written to solve problems were designed to perform one step at a time
+Parallel Processing: uses computers made up of many separate processors, each with its own memory, [helps overcome the limitations of computers with a single processor.
+Parallel Algorithm: breaks a problem into a number of subproblems that can be solved concurrently, [can then be devised to rapidly solve problems using a computer with multiple processors.
+Hops: a large number of intermediate links for processors to share information.
+Subgraph: When edges and vertices are removed from a graph, without removing endpoints of any [remaining edges, a smaller graph is obtained.  
+Edge Contraction: removes an edge e with endpoints u and v and merges u and w into a new single [vertex w, and for each edge with u or v as an endpoint replaces the edge with one with w as endpoint [in place of u or v and with the same second endpoint.
+Union of the Graphs: graph that contains all the vertices and edges of these graphs
