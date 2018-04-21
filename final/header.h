@@ -12,8 +12,9 @@ void sort(int*userNum);
 void sortSec(int numSec);
 void sortChp(int numChp);
 void sortEntire(int sub);
-void sortPrintSec(string sec);
 bool toPrintSort();
+void sortPrintSecIdv(string sec);
+void sortPrintSecWhole();
 
 void view(int*userNum);
 void viewBySection();
