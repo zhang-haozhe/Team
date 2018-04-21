@@ -8,7 +8,7 @@ List::List() { this->head = NULL; }
 static List definition; //all definitions
 static List memory; //stores searched terms from user
 static List sectionIdList; //list of all section indexes
-static List sortSecSel; //list of words in selection of sections to sort
+static List sortedSecSel; //list of words in selection of sections to sort
 
 //stores definitions by chapter
 static List def01;
