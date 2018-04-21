@@ -32,11 +32,11 @@ Composition: let f:BàC and g:AàB. The composition of f with g (denoted f ○ g
 Floor Function: f(x) = |_x_| – largest integer less than or equal to x
 Ceiling Function: f(x) = |-x-| - smallest integer greater than or equal to x
 Factorial Function: f:NàZ+, denoted by f(n) = n!, product of the first n positive integer when n is nonnegative
-Sequence: function from a subset of the integers to a set S – notation an (term of the sequence)
+Sequence: function from a subset of the integers to a set S – notation a@u2099 (term of the sequence)
 Geometric Progression: sequence of the form where initial term a and common ratio r are real numbers
 Arithmetic Progression: initial term a and the common difference d are real numbers
 String: a finite sequence of characters from a finite set (an alphabet)
-Recurrence Relations: {an} is an equation that expresses an in terms of one or more of the previous terms of the sequence (an-1)
+Recurrence Relations: {a@u2099} is an equation that expresses a@u2099 in terms of one or more of the previous terms of the sequence (a@u2099@u208B@u2081)
 Solution of Recurrence Relations: a sequence is called a solution of a recurrence relation if its terms [satisfy the recurrence relation
 Initial Condition of Recurrence Relations: initial conditions for a sequence specify the terms that precede [the first term where the recurrence relation takes effect
 Fibonacci Sequence: f@u2080, @u2081, f@u2082,… represented by initial condition f@u2080 = 0, f@u2081 = 1 and recurrence relation of [f@u2099 = f@u2099@u208B@u2081 + f@u2099@u208B@u2082
@@ -48,14 +48,14 @@ Matrix: a rectangular array of numbers
 m × n Matrix: a matrix with m rows and n columns
 Square: a matrix with the same number of rows as columns
 Equality of Matrices: two matrices are equal if they have the same number of rows and columns and the [corresponding entries in every position are equal
-Addition of Matrices: Let A = @u005baij] and B = @u005bbij] be m x n matrices. The sum of A and B, denoted [by A + B, is the m x n matrix that has aij + bij as its (i,j)th element. In other words, A + B = @u005baij + bij]
-Multiplication of Matrices: Let A be an m x k matrix and B be a k x n matrix. The product of A and B, denoted [by AB, is the m x n matrix that has its (i,j)th element equal to the sum of products of the corresponding [elements from the ith row of A and the jth column of B. In other words, if AB = @u005bcij], then [cij = ai1b1j + ai2b2j + … + akjb2j
-Identity Matrix of Order n: It is the m x n matrix In = @u005bδij], where δij = 1 if i = j and δij = 0 if i != j
+Addition of Matrices: Let A = @u005ba@u1d62@u2C7C] and B = @u005bb@u1d62@u2C7C] be m x n matrices. The sum of A and B, denoted [by A + B, is the m x n matrix that has a@u1d62@u2C7C + b@u1d62@u2C7C as its (i,j)th element. In other words, A + B = @u005ba@u1d62@u2C7C + b@u1d62@u2C7C]
+Multiplication of Matrices: Let A be an m x k matrix and B be a k x n matrix. The product of A and B, denoted [by AB, is the m x n matrix that has its (i,j)th element equal to the sum of products of the corresponding [elements from the ith row of A and the jth column of B. In other words, if AB = @u005bc@u1d62@u2C7C], then [c@u1d62@u2C7C = a@u1d62@u2081b@u2081@u2C7C + a@u1d62@u2082b@u2082@u2C7C + … + a@u2096@u2C7Cb@u2082@u2C7C
+Identity Matrix of Order n: It is the m x n matrix I@u2099 = @u005bδ@u1d62@u2C7C], where δ@u1d62@u2C7C = 1 if i = j and δ@u1d62@u2C7C = 0 if i != j
 Powers of Square Matrices: when A is an n x n matrix, we have: A0 = I@u2099 and Ar = AAA...A where A is multiplied [by itself r times
-Transposes of Matrices: Let A = @u005baij] be an m x n matrix. The transpose of A, denoted by At, is the n x m [matrix obtained by interchanging the rows and columns of A
-Symmetric Matrices: a square matrix A is called symmetric if A = At. Thus, A = @u005baij] is symmetric if [aij = aji for i and j with 1 <= i <=n and i <= j <=n. Square matrices do not change when their rows and [columns are interchanged
+Transposes of Matrices: Let A = @u005ba@u1d62@u2C7C] be an m x n matrix. The transpose of A, denoted by At, is the n x m [matrix obtained by interchanging the rows and columns of A
+Symmetric Matrices: a square matrix A is called symmetric if A = At. Thus, A = @u005ba@u1d62@u2C7C] is symmetric if [a@u1d62@u2C7C = a@u2C7C@u1d62 for i and j with 1 <= i <=n and i <= j <=n. Square matrices do not change when their rows and [columns are interchanged
 Zero-One Matrices: a matrix all of whose entries are either 0 or 1. Algorithms operating on discrete structures [represented by zero-one matrices are based on Boolean arithmetic defined by the following Boolean operations:
-Join of Zero-One Matrices: Let A = @u005baij] and B = @u005bbij] be m x n zero-one matrices. The join of A and B [is the zero-one matrix with (i,j)th entry aij v bij. The join of A and B is dented by A v B.
-Meet of Zero-One Matrices: Let A = @u005baij] and B = @u005bbij] be m x n zero-one matrices. The meet of A and B [is the zero-one matrix with (i,j)th entry aij ^ bij. The meet of A and B is denoted by A ^ B
-Boolean Product of Zero-One Matrices:  Let A = @u005baij] and B = @u005bbij] be m x n zero-one matrices [and B = @u005bbij] be a k x n zero-one matrix. The Boolean product of A and B, denoted by A ⊙ B, is the m x n [zero-one matrix with (i,j)th entry
+Join of Zero-One Matrices: Let A = @u005ba@u1d62@u2C7C] and B = @u005bb@u1d62@u2C7C] be m x n zero-one matrices. The join of A and B [is the zero-one matrix with (i,j)th entry a@u1d62@u2C7C v b@u1d62@u2C7C. The join of A and B is dented by A v B.
+Meet of Zero-One Matrices: Let A = @u005ba@u1d62@u2C7C] and B = @u005bb@u1d62@u2C7C] be m x n zero-one matrices. The meet of A and B [is the zero-one matrix with (i,j)th entry a@u1d62@u2C7C ^ b@u1d62@u2C7C. The meet of A and B is denoted by A ^ B
+Boolean Product of Zero-One Matrices:  Let A = @u005ba@u1d62@u2C7C] and B = @u005bb@u1d62@u2C7C] be m x n zero-one matrices [and B = @u005bb@u1d62@u2C7C] be a k x n zero-one matrix. The Boolean product of A and B, denoted by A ⊙ B, is the m x n [zero-one matrix with (i,j)th entry
 Boolean Powers of Zero-One Matrices: Let A be a square zero-one matrix and let r be a positive integer. [The rth Boolean power of A is the Boolean product of r factors of A, denoted by A@u005br]. Hence A@u005br] = [A ⊙ A ⊙ … ⊙ A where A is multiplied r times.
