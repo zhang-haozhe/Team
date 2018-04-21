@@ -9,12 +9,13 @@ void search(int*userNum);
 void searchByCh(int chIn);
 
 void sort(int*userNum);
-void sortSec(int numSec);
 void sortChp(int numChp);
 void sortEntire(int sub);
-bool toPrintSort();
+bool toPrintSort(); //delete maybe
+void sortSec(int numSec); 
 void sortPrintSecIdv(string sec);
-void sortPrintSecWhole();
+void addSortSel();
+int sortPrint();
 
 void view(int*userNum);
 void viewBySection();
@@ -50,6 +51,7 @@ public:
 	void deleteTermDetails(int index);
 	void load(string fileName);
 	bool contains(string term);
+	void clear();
 	void print();
 
 	//bubblesort methods
