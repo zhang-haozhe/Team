@@ -20,13 +20,13 @@ void viewSelCh();
 void viewSelSec(int numSec);
 void viewPrintSec(string sec);
 
-void listSections();
-string sectionId();
-
-void previous();
+void previous(int *userNum);
 void toc(int *userNum);
 void help(int *userNum);
 void creditList(int *userNum);
+void listSections();
+string sectionId();
+bool reenter();
 
 class Node {
 public:
