@@ -13,7 +13,7 @@ Isolated: A vertex of degree zero
 Pendant: if and only if a vertex has degree one.
 Complete Graph: a simple graph that contains exactly one edge between each pair of distinct vertices.
 Non Complete Graph: A simple graph for which there is at least one pair of distinct vertex not [connected by an edge
-Bipartite: vertex set V can be partitioned into two disjoint sets V1 and V2 such that every edge [in the graph connects a vertex in V1 and a vertex in V2
+Bipartite: vertex set V can be partitioned into two disjoint sets V@u2081 and V@u2082 such that every edge [in the graph connects a vertex in V@u2081 and a vertex in V@u2082
 Serial: the algorithms written to solve problems were designed to perform one step at a time
 Parallel Processing: uses computers made up of many separate processors, each with its own memory, [helps overcome the limitations of computers with a single processor.
 Parallel Algorithm: breaks a problem into a number of subproblems that can be solved concurrently, [can then be devised to rapidly solve problems using a computer with multiple processors.
@@ -40,6 +40,6 @@ Approximation Algorithm: A practical approach to the traveling salesperson probl
 Planar: a graph that is drawn in the plane without any edges crossing (where a crossing of edges is [the intersection of the lines or arcs representing them at a point other than their common endpoint).
 Regions: A planar representation of a graph splits the plane
 Elementary Subdivision: If a graph is planar, so will be any graph obtained by removing an edge {u, v} [and adding a new vertex w together with edges {u,w} and {w, v}.  
-Homeomorphic: The graphs G1 = (V1, E1) and G2 = (V2, E2) if they can be obtained from the same graph [by a sequence of elementary subdivisions.
+Homeomorphic: The graphs G@u2081 = (V@u2081, E@u2081) and G@u2082 = (V@u2082, E@u2082) if they can be obtained from the same graph [by a sequence of elementary subdivisions.
 Dual Graph: Two regions that touch at only one point are not considered adjacent. 
 Chromatic Number: the least number of colors needed for a coloring of this graph.   
