@@ -1,4 +1,4 @@
-Planar: a graph that is drawn in the plane without any edges crossing (where a crossing of edges is the [intersection of the lines or arcs representing them at a point other than their common endpoint). :107
-Regions: A planar representation of a graph splits the plane :107
-Elementary Subdivision: If a graph is planar, so will be any graph obtained by removing an edge {u, v} and [adding a new vertex w together with edges {u,w} and {w, v}. :107 
-Homeomorphic: The graphs G1 = (V1, E1) and G2 = (V2, E2) if they can be obtained from the same graph by a [sequence of elementary subdivisions. :107
+Planar: a graph that is drawn in the plane without any edges crossing (where a crossing of edges is the [intersection of the lines or arcs representing them at a point other than their common endpoint).  
+Regions: A planar representation of a graph splits the plane  
+Elementary Subdivision: If a graph is planar, so will be any graph obtained by removing an edge {u, v} and [adding a new vertex w together with edges {u,w} and {w, v}.  
+Homeomorphic: The graphs G1 = (V1, E1) and G2 = (V2, E2) if they can be obtained from the same graph by a [sequence of elementary subdivisions.  
