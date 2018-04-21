@@ -600,7 +600,7 @@ void sort(int *userNum) {
 		}
 		if (subSelect == 1 || subSelect == 2) {
 			sortEntire(subSelect);
-			*userNum == 4;
+			*userNum = 4;
 		}
 		if (subSelect == 3) {
 			*userNum = 4;
@@ -959,7 +959,7 @@ void sortEntire(int sub) {
 	}
 	else if (sub == 2) {
 		//FIXME: sort everything
-		sortAll->load("allDefinitions.txt");
+		sortAll->load("allDef.txt");
 		Node *head = sortAll->getHead();
 		sortAll->bubbleSort(head);
 		sortAll->print();
@@ -1063,7 +1063,7 @@ void view(int *userNum) {
 	}
 	if (VDSelection == 3) {
 		cout << "Input which sections you want to view. " << endl;
-		cout << "Note: You can only view up to 5 chapters at a time.\n";
+		cout << "Note: You can only view up to 6 chapters at a time in this menu.\n";
 		int numSec;
 		cout << "\nEnter the number of sections to view: " << endl;
 		cin >> numSec;
@@ -1074,7 +1074,7 @@ void view(int *userNum) {
 			cout << endl;
 		}
 		if (numSec > 6) {
-			cout << "Invalid Input. You can only input up to 6 sections" << endl;
+			cout << "Too many sections! You can only input up to 6 sections" << endl;
 			cin.clear();
 			cin.ignore(1024, '\n');
 			cout << endl;
@@ -1084,7 +1084,7 @@ void view(int *userNum) {
 	}
 	if (VDSelection == 4) {
 		cout << "Input which chapters you want to view. " << endl;
-		cout << "Note: You can only view up to 3 chapters at a time.\n";
+		cout << "Note: You can only view up to 3 chapters at a time in this menu.\n";
 		viewSelCh();
 		*userNum = 3;
 	}
@@ -1507,9 +1507,15 @@ void viewSelSec(int numSec) {
 	if (numSec == 1) {
 		string sec1 = sectionId();
 		if (sectionIdList.contains(sec1)) {
+			cout << "\n--------------------------------------------------------------------------------" << endl;
+			cout << "\nPRINTING OUT SELECTED SECTION" << endl;
+			cout << "--------------------------------------------------------------------------------" << endl;
 			viewPrintSec(sec1);
 		}
-		else cout << "This section does not exist" << endl;
+		else { 
+			cout << "This section does not exist" << endl; 
+			if (reenter()) viewSelSec(numSec);
+		}
 	}
 	if (numSec == 2) {
 		string sec1 = sectionId();
@@ -1521,10 +1527,29 @@ void viewSelSec(int numSec) {
 				cout << "2nd Section Added!" << endl;
 				secList->addTerm(sec2);
 			}
-			else if (secList->contains(sec2)) cout << "Duplicate" << endl;
-			else cout << "This section does not exist" << endl;
+			else if (sec2 == sec1) { 
+				cout << "Duplicate" << endl; 
+				if (reenter()) viewSelSec(numSec);
+			}
+			else {
+				cout << "This section does not exist" << endl;
+				if (reenter()) viewSelSec(numSec);
+			}
+			string secId;
+			Node*head = secList->getHead();
+			cout << "\n--------------------------------------------------------------------------------" << endl;
+			cout << "\nPRINTING OUT SELECTED SECTIONS" << endl;
+			cout << "--------------------------------------------------------------------------------" << endl;
+			while (head != NULL) {
+				secId = head->value;
+				viewPrintSec(secId);
+				head = head->next;
+			}
 		}
-		else cout << "This section does not exist" << endl;
+		else {
+			cout << "This section does not exist" << endl;
+			if (reenter()) viewSelSec(numSec);
+		}
 	}
 	if (numSec == 3) {
 		string sec1 = sectionId();
@@ -1536,17 +1561,42 @@ void viewSelSec(int numSec) {
 				cout << "2nd Section Added!" << endl;
 				secList->addTerm(sec2);
 				string sec3 = sectionId();
-				if (sectionIdList.contains(sec2) && !secList->contains(sec2)) {
+				if (sectionIdList.contains(sec3) && !secList->contains(sec3)) {
 					cout << "3rd Section Added!" << endl;
 					secList->addTerm(sec3);
 				}
-				else if (secList->contains(sec3)) cout << "Duplicate" << endl;
-				else cout << "This section does not exist" << endl;
+				else if (secList->contains(sec3)) {
+					cout << "Duplicate" << endl;
+					if (reenter()) viewSelSec(numSec);
+				}
+				else {
+					cout << "This section does not exist" << endl;
+					if (reenter()) viewSelSec(numSec);
+				}
 			}
-			else if (secList->contains(sec2)) cout << "Duplicate" << endl;
-			else cout << "This section does not exist" << endl;
+			else if (secList->contains(sec2)) {
+				cout << "Duplicate" << endl;
+				if (reenter()) viewSelSec(numSec);
+			}
+			else {
+				cout << "This section does not exist" << endl;
+				if (reenter()) viewSelSec(numSec);
+			}
+			string secId;
+			Node*head = secList->getHead();
+			cout << "\n--------------------------------------------------------------------------------" << endl;
+			cout << "\nPRINTING OUT SELECTED SECTIONS" << endl;
+			cout << "--------------------------------------------------------------------------------" << endl;
+			while (head != NULL) {
+				secId = head->value;
+				viewPrintSec(secId);
+				head = head->next;
+			}
 		}
-		else cout << "This section does not exist" << endl;
+		else {
+			cout << "This section does not exist" << endl;
+			if (reenter()) viewSelSec(numSec);
+		}
 	}
 	if (numSec == 4) {
 		string sec1 = sectionId();
@@ -1566,16 +1616,47 @@ void viewSelSec(int numSec) {
 						cout << "4th Section Added!" << endl;
 						secList->addTerm(sec4);
 					}
-					else if (secList->contains(sec4)) cout << "Duplicate" << endl;
-					else cout << "This section does not exist" << endl;
+					else if (secList->contains(sec4)) {
+						cout << "Duplicate" << endl;
+						if (reenter()) viewSelSec(numSec);
+					}
+					else {
+						cout << "This section does not exist" << endl;
+						if (reenter()) viewSelSec(numSec);
+					}
 				}
-				else if (secList->contains(sec3)) cout << "Duplicate" << endl;
-				else cout << "This section does not exist" << endl;
+				else if (secList->contains(sec3)) {
+					cout << "Duplicate" << endl;
+					if (reenter()) viewSelSec(numSec);
+				}
+				else {
+					cout << "This section does not exist" << endl;
+					if (reenter()) viewSelSec(numSec);
+				}
 			}
-			else if (secList->contains(sec2)) cout << "Duplicate" << endl;
-			else cout << "This section does not exist" << endl;
+			else if (secList->contains(sec2)) {
+				cout << "Duplicate" << endl;
+				if (reenter()) viewSelSec(numSec);
+			}
+			else {
+				cout << "This section does not exist" << endl;
+				if (reenter()) viewSelSec(numSec);
+			}
+			string secId;
+			Node*head = secList->getHead();
+			cout << "\n--------------------------------------------------------------------------------" << endl;
+			cout << "\nPRINTING OUT SELECTED SECTIONS" << endl;
+			cout << "--------------------------------------------------------------------------------" << endl;
+			while (head != NULL) {
+				secId = head->value;
+				viewPrintSec(secId);
+				head = head->next;
+			}
 		}
-		else cout << "This section does not exist" << endl;
+		else {
+			cout << "This section does not exist" << endl;
+			if (reenter()) viewSelSec(numSec);
+		}
 	}
 	if (numSec == 5) {
 		string sec1 = sectionId();
@@ -1599,19 +1680,56 @@ void viewSelSec(int numSec) {
 							cout << "5th Section Added!" << endl;
 							secList->addTerm(sec5);
 						}
-						else if (secList->contains(sec5)) cout << "Duplicate" << endl;
-						else cout << "This section does not exist" << endl;
+						else if (secList->contains(sec5)) {
+							cout << "Duplicate" << endl;
+							if (reenter()) viewSelSec(numSec);
+						}
+						else {
+							cout << "This section does not exist" << endl;
+							if (reenter()) viewSelSec(numSec);
+						}
 					}
-					else if (secList->contains(sec4)) cout << "Duplicate" << endl;
-					else cout << "This section does not exist" << endl;
+					else if (secList->contains(sec4)) {
+						cout << "Duplicate" << endl;
+						if (reenter()) viewSelSec(numSec);
+					}
+					else {
+						cout << "This section does not exist" << endl;
+						if (reenter()) viewSelSec(numSec);
+					}
 				}
-				else if (secList->contains(sec3)) cout << "Duplicate" << endl;
-				else cout << "This section does not exist" << endl;
+				else if (secList->contains(sec3)) {
+					cout << "Duplicate" << endl;
+					if (reenter()) viewSelSec(numSec);
+				}
+				else {
+					cout << "This section does not exist" << endl;
+					if (reenter()) viewSelSec(numSec);
+				}
 			}
-			else if (secList->contains(sec2)) cout << "Duplicate" << endl;
-			else cout << "This section does not exist" << endl;
+			else if (secList->contains(sec2)) {
+				cout << "Duplicate" << endl;
+				if (reenter()) viewSelSec(numSec);
+			}
+			else {
+				cout << "This section does not exist" << endl;
+				if (reenter()) viewSelSec(numSec);
+			}
+			string secId;
+			Node*head = secList->getHead();
+			cout << "\n--------------------------------------------------------------------------------" << endl;
+			cout << "\nPRINTING OUT SELECTED SECTIONS" << endl;
+			cout << "--------------------------------------------------------------------------------" << endl;
+			while (head != NULL) {
+				secId = head->value;
+				viewPrintSec(secId);
+				head = head->next;
+			}
 		}
-		else cout << "This section does not exist" << endl;
+		else {
+			cout << "This section does not exist" << endl;
+			if (reenter()) viewSelSec(numSec);
+		}
 	}
 	if (numSec == 6) {
 		string sec1 = sectionId();
@@ -1639,35 +1757,71 @@ void viewSelSec(int numSec) {
 								cout << "6th Section Added!" << endl;
 								secList->addTerm(sec6);
 							}
-							else if (secList->contains(sec6)) cout << "Duplicate" << endl;
-							else cout << "This section does not exist" << endl;
+							else if (secList->contains(sec6)) {
+								cout << "Duplicate" << endl;
+								if (reenter()) viewSelSec(numSec);
+							}
+							else {
+								cout << "This section does not exist" << endl;
+								if (reenter()) viewSelSec(numSec);
+							}
 						}
-						else if (secList->contains(sec5)) cout << "Duplicate" << endl;
-						else cout << "This section does not exist" << endl;
+						else if (secList->contains(sec5)) {
+							cout << "Duplicate" << endl;
+							if (reenter()) viewSelSec(numSec);
+						}
+						else {
+							cout << "This section does not exist" << endl;
+							if (reenter()) viewSelSec(numSec);
+						}
 					}
-					else if (secList->contains(sec4)) cout << "Duplicate" << endl;
-					else cout << "This section does not exist" << endl;
+					else if (secList->contains(sec4)) {
+						cout << "Duplicate" << endl;
+						if (reenter()) viewSelSec(numSec);
+					}
+					else {
+						cout << "This section does not exist" << endl;
+						if (reenter()) viewSelSec(numSec);
+					}
 				}
-				else if (secList->contains(sec3)) cout << "Duplicate" << endl;
-				else cout << "This section does not exist" << endl;
+				else if (secList->contains(sec3)) {
+					cout << "Duplicate" << endl;
+					if (reenter()) viewSelSec(numSec);
+				}
+				else {
+					cout << "This section does not exist" << endl;
+					if (reenter()) viewSelSec(numSec);
+				}
 			}
-			else if (secList->contains(sec2)) cout << "Duplicate" << endl;
-			else cout << "This section does not exist" << endl;
+			else if (secList->contains(sec2)) {
+				cout << "Duplicate" << endl;
+				if (reenter()) viewSelSec(numSec);
+			}
+			else {
+				cout << "This section does not exist" << endl;
+				if (reenter()) viewSelSec(numSec);
+			}
+			string secId;
+			Node*head = secList->getHead();
+			cout << "\n--------------------------------------------------------------------------------" << endl;
+			cout << "\nPRINTING OUT SELECTED SECTIONS" << endl;
+			cout << "--------------------------------------------------------------------------------" << endl;
+			while (head != NULL) {
+				secId = head->value;
+				viewPrintSec(secId);
+				head = head->next;
+			}
 		}
-		else cout << "This section does not exist" << endl;
-	}
-	string secId;
-	Node*head = secList->getHead();
-	while (head != NULL) {
-		secId = head->value;
-		viewPrintSec(secId);
-		head = head->next;
+		else {
+			cout << "This section does not exist" << endl;
+			if (reenter()) viewSelSec(numSec);
+		}
 	}
 }
 void viewPrintSec(string sec) {
 	string chNum = sec.substr(0, 2);
 	char secNum = sec.at(2);
-	if (chNum == "1") {
+	if (chNum == "01") {
 		if (secNum == '1') sec11.print();
 		if (secNum == '2') sec12.print();
 		if (secNum == '3') sec13.print();
@@ -1676,42 +1830,42 @@ void viewPrintSec(string sec) {
 		if (secNum == '6') sec16.print();
 		if (secNum == '7') sec17.print();
 	}
-	if (chNum == "2") {
+	if (chNum == "02") {
 		if (secNum == '1') sec21.print();
 		if (secNum == '2') sec22.print();
 		if (secNum == '3') sec23.print();
 		if (secNum == '4') sec24.print();
 		if (secNum == '6') sec26.print();
 	}
-	if (chNum == "3") {
+	if (chNum == "03") {
 		if (secNum == '1') sec31.print();
 		if (secNum == '2') sec32.print();
 		if (secNum == '3') sec33.print();
 	}
-	if (chNum == "4") {
+	if (chNum == "04") {
 		if (secNum == '1') sec41.print();
 		if (secNum == '2') sec42.print();
 		if (secNum == '3') sec43.print();
 		if (secNum == '5') sec45.print();
 		if (secNum == '6') sec46.print();
 	}
-	if (chNum == "5") {
+	if (chNum == "05") {
 		if (secNum == '1') sec51.print();
 		if (secNum == '2') sec52.print();
 		if (secNum == '3') sec53.print();
 	}
-	if (chNum == "6") {
+	if (chNum == "06") {
 		if (secNum == '1') sec61.print();
 		if (secNum == '2') sec62.print();
 		if (secNum == '3') sec63.print();
 		if (secNum == '5') sec65.print();
 	}
-	if (chNum == "7") {
+	if (chNum == "07") {
 		if (secNum == '1') sec71.print();
 		if (secNum == '2') sec72.print();
 		if (secNum == '3') sec73.print();
 	}
-	if (chNum == "9") {
+	if (chNum == "09") {
 		if (secNum == '1') sec91.print();
 		if (secNum == '3') sec92.print();
 		if (secNum == '5') sec93.print();
@@ -1928,12 +2082,31 @@ string sectionId() {
 	}
 	return idnum;
 }
+bool reenter() {
+	cout << "\nWould you like to re-enter your selection?" << endl;
+	cout << "1. YES" << endl;
+	cout << "2. NO" << endl;
+	int in; cin >> in;
+	if (cin.fail() || (in != 1) && (in != 2)) {
+		cout << "Invalid input." << endl;
+		cin.clear();
+		cin.ignore(1024, '\n');
+		cout << endl;
+		return false;
+	}
+	if (in == 1) {
+		return true;
+	}
+	if (in == 2) {
+		return false;
+	}
+}
 
 int main() {
 	int userInput;
 	int* userNum = &userInput;
 
-	definition.load("allDefinitions.txt");
+	definition.load("allDef.txt");
 	listSections();
 	//load non sorting chapters
 	def01.load("1Def.txt");
