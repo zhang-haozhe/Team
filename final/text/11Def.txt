@@ -31,7 +31,7 @@ Huffman Coding: an algorithm that takes as input the frequencies (which are the 
 Nim Game: at the start of a game there are a number of piles of stones. Two players take turns making [moves; a legal move consists of removing one or more stones from one of the piles, without removing all the stones left. [A player without a legal move loses.
 Minmax Strategy: The strategy where the first player moves to a position represented by a child with [maximum value and the second player moves to a position of a child with minimum value
 Minmax Theorem: The value of a vertex of a game tree tells us the payoff to the first player if both [players follow the minmax strategy and play starts from the position represented by this vertex
-Universal Address System: a vertex v at level n, for n ≥ 1, is labeled x1.x2. . . . .xn, where the [unique path from the root to v goes through the x1st vertex at level 1, the x2nd vertex at level 2, [and so on.
+Universal Address System: a vertex v at level n, for n ≥ 1, is labeled x@u2081.x@u2082. . . . .x@u2099, where the [unique path from the root to v goes through the x@u2081st vertex at level 1, the x@u2082nd vertex at level 2, [and so on.
 Traversal Algorithms: Procedures for systematically visiting every vertex of an ordered rooted tree.
 Infix Form: To make such expressions unambiguous it is necessary to include parentheses in the in order [traversal whenever we encounter an operation.
 Prefix Form: obtain the prefix form of an expression when we traverse its rooted tree in preorder.
