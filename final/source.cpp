@@ -957,7 +957,7 @@ void sortEntire(int sub) {
 	}
 	else if (sub == 2) {
 		//FIXME: sort everything
-		sortAll->load("allDefinitions.txt");
+		sortAll->load("allDef.txt");
 		Node *head = sortAll->getHead();
 		sortAll->bubbleSort(head);
 		sortAll->print();
