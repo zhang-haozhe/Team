@@ -1,16 +1,16 @@
-Set: an unordered collection of objects 
+Set: an unordered collection of objects
 Elements: objects in the set (aka members of the set). A set is said to contain its elements. 
-Roster Method for Describing Sets: set = {//list of elements in set}. Order is not important 
-Important Sets: \nN = natural numbers\nZ = integers\nZ+ = positive integers\nR = set of real numbers\nR+ = set [of positive real numbers\nC = set of complex numbers\nQ = set of rational numbers 
-Set-Builder Notation - Set = {domain | condition}, S = {x | P(x)} 
-Universal Set: denoted by U, the universal set contains everything currently under consideration. It is sometimes [implicit or explicitly stated depending on the content. 
-Empty Set: a set with no elements, symbolized as Ø, but {} is also used 
-Set Equality: two sets are equal if and only if they have the same elements 
-Subset: a set A is a subset of B, if and only if every element of A is also an element of B, A⊆ B 
-Proper Subset: if A ⊆ B, but A != B, then A is a proper subset of B, denoted by A ⊂ B 
-Set Cardinality: if there are exactly n distinct elements in S where n is a nonnegative integer, then S is finite. [Otherwise, it is infinite. The cardinality of a finite set A, denoted by |A|, is the number of distinct elements of A 
-Power Sets: the set of all subsets of a set A, denoted by P(A), is called the power set of A 
-Tuples: ordered n-tuple (a1,a2,a3…,an), 2-tuples are called ordered pairs 
-Cartesian Product: denoted by A × B, it is the set of ordered pairs (a, b) where a set of ordered pairs (a,b) [shows a ∈ A and b ∈ B 
-Relation: a subset of the Cartesian product A × B is called a relation from the set A to the set B 
-Truth Sets of Quantifiers: given a predicate P and a domain D, we define the truth set of P to be the set of [elements in D for which P(x) is true. The truth set of P(x) is denoted by {x ∈ D | P(x)} 
+Roster Method for Describing Sets: set = {list of elements in set}. Order is not important	
+Important Sets: [N = natural numbers[Z = integers[Z+ = positive integers[R = set of real numbers[R+ = set [of positive real numbers[C = set of complex numbers[Q = set of rational numbers
+Set-Builder Notation - Set = {domain | condition}, S = {x | P(x)}
+Universal Set: denoted by U, the universal set contains everything currently under consideration. It is [sometimes implicit or explicitly stated depending on the content. 
+Empty Set: a set with no elements, symbolized as Ø, but {} is also used
+Set Equality: two sets are equal if and only if they have the same elements
+Subset: a set A is a subset of B, if and only if every element of A is also an element of B, A⊆ B
+Proper Subset: if A ⊆ B, but A != B, then A is a proper subset of B, denoted by A ⊂ B
+Set Cardinality: if there are exactly n distinct elements in S where n is a nonnegative integer, then S [is finite. Otherwise, it is infinite. The cardinality of a finite set A, denoted by |A|, is the number of [distinct elements of A
+Power Sets: the set of all subsets of a set A, denoted by P(A), is called the power set of A
+Tuples: ordered n-tuple (a@u2081,a@u2082,...a@u2099), 2-tuples are called ordered pairs
+Cartesian Product: denoted by A × B, it is the set of ordered pairs (a, b) where a set of ordered pairs [(a,b) shows a ∈ A and b ∈ B
+Relation: a subset of the Cartesian product A × B is called a relation from the set A to the set B
+Truth Sets of Quantifiers: given a predicate P and a domain D, we define the truth set of P to be the set [of elements in D for which P(x) is true. The truth set of P(x) is denoted by {x ∈ D | P(x)}
