@@ -1,2 +1,2 @@
-Weighted Graphs: Graphs that have a number assigned to each edge :106
-Approximation Algorithm: A practical approach to the traveling salesperson problem when there are many vertices. [These are algorithms that do not necessarily produce the exact solution to the problem but instead are guaranteed to [produce a solution that is close to an exact solution. :106
+Weighted Graphs: Graphs that have a number assigned to each edge  
+Approximation Algorithm: A practical approach to the traveling salesperson problem when there are many vertices. [These are algorithms that do not necessarily produce the exact solution to the problem but instead are guaranteed to [produce a solution that is close to an exact solution.  
