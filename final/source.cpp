@@ -572,7 +572,7 @@ void sort(int *userNum) {
 			cout << endl;
 		}
 		else {
-			sortSec(numSec);
+			sortSections(numSec);
 		}
 		*userNum = 4;
 	}
@@ -973,24 +973,23 @@ void sortEntire(int sub) {
 		sortAll->print();
 	}
 }
-void sortSec(int numSec) {
+void sortSections(int numSec) {
 	//max of 6 sections to sort
-	//List *secList = new List;
 	if (numSec == 1) {
-		List *secList = new List;
 		string sec1 = sectionId();
 		if (sectionIdList.contains(sec1)) {
-			if (toPrintSort()) {
-			cout << "Section Sorted!" << endl;
-			cout << "\n--------------------------------------------------------------------------------" << endl;
-			cout << "PRINTING OUT SORTED SECTION" << endl;
-			cout << "--------------------------------------------------------------------------------" << endl;
-			sortPrintSecIdv(sec1);
+			int sel = sortPrint();
+			if (sel == 1 || sel == 2) {
+				cout << "Section Sorted!" << endl;
+				cout << "\n--------------------------------------------------------------------------------" << endl;
+				cout << "PRINTING OUT SORTED SECTION" << endl;
+				cout << "--------------------------------------------------------------------------------" << endl;
+				sortPrintSecIdv(sec1);
 			}
 		}
 		else {
 			cout << "This section does not exist" << endl;
-			if (reenter()) sortSec(numSec);
+			if (reenter()) sortSections(numSec);
 		}
 	}
 	if (numSec == 2) {
@@ -1006,28 +1005,44 @@ void sortSec(int numSec) {
 			}
 			else if (sec2 == sec1) {
 				cout << "Duplicate" << endl;
-				if (reenter()) sortSec(numSec);
+				if (reenter()) sortSections(numSec);
 			}
 			else {
 				cout << "This section does not exist" << endl;
-				if (reenter()) sortSec(numSec);
+				if (reenter()) sortSections(numSec);
 			}
 		}
 		else {
 			cout << "This section does not exist" << endl;
-			if (reenter()) sortSec(numSec);
+			if (reenter()) sortSections(numSec);
 		}
-		if (toPrintSort()) {
+		int sel = sortPrint();
+		if (sel == 1) {
 			string secId;
 			Node*head = secList->getHead();
 			cout << "\n--------------------------------------------------------------------------------" << endl;
-			cout << "\nPRINTING OUT SORTED SECTIONS" << endl;
+			cout << "\nPRINTING OUT SORTED SECTIONS INDIVIDUALLY" << endl;
 			cout << "--------------------------------------------------------------------------------" << endl;
 			while (head != NULL) {
 				secId = head->value;
 				sortPrintSecIdv(secId);
 				head = head->next;
 			}
+		}
+		if (sel == 2) {
+			//FIXME: print out stuff in sortedSecSel list
+			string secId;
+			Node*head = secList->getHead();
+			cout << "\n--------------------------------------------------------------------------------" << endl;
+			cout << "\nPRINTING OUT SORTED TERMS OF ALL SELECTED SECTIONS" << endl;
+			cout << "--------------------------------------------------------------------------------" << endl;
+			while (head != NULL) {
+				secId = head->value;
+				addSortSel(secId);
+				head = head->next;
+			}
+			sortedSecSel.bubbleSort(sortedSecSel.getHead());
+			sortedSecSel.print();
 		}
 	}
 	if (numSec == 3) {
@@ -1047,26 +1062,27 @@ void sortSec(int numSec) {
 				}
 				else if (secList->contains(sec3)) {
 					cout << "Duplicate" << endl;
-					if (reenter()) sortSec(numSec);
+					if (reenter()) sortSections(numSec);
 				}
 				else {
 					cout << "This section does not exist" << endl;
-					if (reenter()) sortSec(numSec);
+					if (reenter()) sortSections(numSec);
 				}
 			}
 			else if (secList->contains(sec2)) {
 				cout << "Duplicate" << endl;
-				if (reenter()) sortSec(numSec);
+				if (reenter()) sortSections(numSec);
 			}
 			else {
 				cout << "This section does not exist" << endl;
-				if (reenter()) sortSec(numSec);
+				if (reenter()) sortSections(numSec);
 			}
-			if (toPrintSort()) {
+			int sel = sortPrint();
+			if (sel == 1) {
 				string secId;
 				Node*head = secList->getHead();
 				cout << "\n--------------------------------------------------------------------------------" << endl;
-				cout << "\nPRINTING OUT SORTED SECTIONS" << endl;
+				cout << "\nPRINTING OUT SORTED SECTIONS INDIVIDUALLY" << endl;
 				cout << "--------------------------------------------------------------------------------" << endl;
 				while (head != NULL) {
 					secId = head->value;
@@ -1074,10 +1090,24 @@ void sortSec(int numSec) {
 					head = head->next;
 				}
 			}
+			if (sel == 2) {
+				string secId;
+				Node*head = secList->getHead();
+				cout << "\n--------------------------------------------------------------------------------" << endl;
+				cout << "\nPRINTING OUT SORTED TERMS OF ALL SELECTED SECTIONS" << endl;
+				cout << "--------------------------------------------------------------------------------" << endl;
+				while (head != NULL) {
+					secId = head->value;
+					addSortSel(secId);
+					head = head->next;
+				}
+				sortedSecSel.bubbleSort(sortedSecSel.getHead());
+				sortedSecSel.print();
+			}
 		}
 		else {
 			cout << "This section does not exist" << endl;
-			if (reenter()) sortSec(numSec);
+			if (reenter()) sortSections(numSec);
 		}
 	}
 	if (numSec == 4) {
@@ -1101,35 +1131,36 @@ void sortSec(int numSec) {
 					}
 					else if (secList->contains(sec4)) {
 						cout << "Duplicate" << endl;
-						if (reenter()) sortSec(numSec);
+						if (reenter()) sortSections(numSec);
 					}
 					else {
 						cout << "This section does not exist" << endl;
-						if (reenter()) sortSec(numSec);
+						if (reenter()) sortSections(numSec);
 					}
 				}
 				else if (secList->contains(sec3)) {
 					cout << "Duplicate" << endl;
-					if (reenter()) sortSec(numSec);
+					if (reenter()) sortSections(numSec);
 				}
 				else {
 					cout << "This section does not exist" << endl;
-					if (reenter()) sortSec(numSec);
+					if (reenter()) sortSections(numSec);
 				}
 			}
 			else if (secList->contains(sec2)) {
 				cout << "Duplicate" << endl;
-				if (reenter()) sortSec(numSec);
+				if (reenter()) sortSections(numSec);
 			}
 			else {
 				cout << "This section does not exist" << endl;
-				if (reenter()) sortSec(numSec);
+				if (reenter()) sortSections(numSec);
 			}
-			if (toPrintSort()) {
+			int sel = sortPrint();
+			if (sel == 1) {
 				string secId;
 				Node*head = secList->getHead();
 				cout << "\n--------------------------------------------------------------------------------" << endl;
-				cout << "\nPRINTING OUT SORTED SECTIONS" << endl;
+				cout << "\nPRINTING OUT SORTED SECTIONS INDIVIDUALLY" << endl;
 				cout << "--------------------------------------------------------------------------------" << endl;
 				while (head != NULL) {
 					secId = head->value;
@@ -1137,10 +1168,24 @@ void sortSec(int numSec) {
 					head = head->next;
 				}
 			}
+			if (sel == 2) {
+				string secId;
+				Node*head = secList->getHead();
+				cout << "\n--------------------------------------------------------------------------------" << endl;
+				cout << "\nPRINTING OUT SORTED TERMS OF ALL SELECTED SECTIONS" << endl;
+				cout << "--------------------------------------------------------------------------------" << endl;
+				while (head != NULL) {
+					secId = head->value;
+					addSortSel(secId);
+					head = head->next;
+				}
+				sortedSecSel.bubbleSort(sortedSecSel.getHead());
+				sortedSecSel.print();
+			}
 		}
 		else {
 			cout << "This section does not exist" << endl;
-			if (reenter()) sortSec(numSec);
+			if (reenter()) sortSections(numSec);
 		}
 	}
 	if (numSec == 5) {
@@ -1168,44 +1213,45 @@ void sortSec(int numSec) {
 						}
 						else if (secList->contains(sec5)) {
 							cout << "Duplicate" << endl;
-							if (reenter()) sortSec(numSec);
+							if (reenter()) sortSections(numSec);
 						}
 						else {
 							cout << "This section does not exist" << endl;
-							if (reenter()) sortSec(numSec);
+							if (reenter()) sortSections(numSec);
 						}
 					}
 					else if (secList->contains(sec4)) {
 						cout << "Duplicate" << endl;
-						if (reenter()) sortSec(numSec);
+						if (reenter()) sortSections(numSec);
 					}
 					else {
 						cout << "This section does not exist" << endl;
-						if (reenter()) sortSec(numSec);
+						if (reenter()) sortSections(numSec);
 					}
 				}
 				else if (secList->contains(sec3)) {
 					cout << "Duplicate" << endl;
-					if (reenter()) sortSec(numSec);
+					if (reenter()) sortSections(numSec);
 				}
 				else {
 					cout << "This section does not exist" << endl;
-					if (reenter()) sortSec(numSec);
+					if (reenter()) sortSections(numSec);
 				}
 			}
 			else if (secList->contains(sec2)) {
 				cout << "Duplicate" << endl;
-				if (reenter()) sortSec(numSec);
+				if (reenter()) sortSections(numSec);
 			}
 			else {
 				cout << "This section does not exist" << endl;
-				if (reenter()) sortSec(numSec);
+				if (reenter()) sortSections(numSec);
 			}
-			if (toPrintSort()) {
+			int sel = sortPrint();
+			if (sel == 1) {
 				string secId;
 				Node*head = secList->getHead();
 				cout << "\n--------------------------------------------------------------------------------" << endl;
-				cout << "\nPRINTING OUT SORTED SECTIONS" << endl;
+				cout << "\nPRINTING OUT SORTED SECTIONS INDIVIDUALLY" << endl;
 				cout << "--------------------------------------------------------------------------------" << endl;
 				while (head != NULL) {
 					secId = head->value;
@@ -1213,10 +1259,24 @@ void sortSec(int numSec) {
 					head = head->next;
 				}
 			}
+			if (sel == 2) {
+				string secId;
+				Node*head = secList->getHead();
+				cout << "\n--------------------------------------------------------------------------------" << endl;
+				cout << "\nPRINTING OUT SORTED TERMS OF ALL SELECTED SECTIONS" << endl;
+				cout << "--------------------------------------------------------------------------------" << endl;
+				while (head != NULL) {
+					secId = head->value;
+					addSortSel(secId);
+					head = head->next;
+				}
+				sortedSecSel.bubbleSort(sortedSecSel.getHead());
+				sortedSecSel.print();
+			}
 		}
 		else {
 			cout << "This section does not exist" << endl;
-			if (reenter()) sortSec(numSec);
+			if (reenter()) sortSections(numSec);
 		}
 	}
 	if (numSec == 6) {
@@ -1248,53 +1308,54 @@ void sortSec(int numSec) {
 							}
 							else if (secList->contains(sec6)) {
 								cout << "Duplicate" << endl;
-								if (reenter()) sortSec(numSec);
+								if (reenter()) sortSections(numSec);
 							}
 							else {
 								cout << "This section does not exist" << endl;
-								if (reenter()) sortSec(numSec);
+								if (reenter()) sortSections(numSec);
 							}
 						}
 						else if (secList->contains(sec5)) {
 							cout << "Duplicate" << endl;
-							if (reenter()) sortSec(numSec);
+							if (reenter()) sortSections(numSec);
 						}
 						else {
 							cout << "This section does not exist" << endl;
-							if (reenter()) sortSec(numSec);
+							if (reenter()) sortSections(numSec);
 						}
 					}
 					else if (secList->contains(sec4)) {
 						cout << "Duplicate" << endl;
-						if (reenter()) sortSec(numSec);
+						if (reenter()) sortSections(numSec);
 					}
 					else {
 						cout << "This section does not exist" << endl;
-						if (reenter()) sortSec(numSec);
+						if (reenter()) sortSections(numSec);
 					}
 				}
 				else if (secList->contains(sec3)) {
 					cout << "Duplicate" << endl;
-					if (reenter()) sortSec(numSec);
+					if (reenter()) sortSections(numSec);
 				}
 				else {
 					cout << "This section does not exist" << endl;
-					if (reenter()) sortSec(numSec);
+					if (reenter()) sortSections(numSec);
 				}
 			}
 			else if (secList->contains(sec2)) {
 				cout << "Duplicate" << endl;
-				if (reenter()) sortSec(numSec);
+				if (reenter()) sortSections(numSec);
 			}
 			else {
 				cout << "This section does not exist" << endl;
-				if (reenter()) sortSec(numSec);
+				if (reenter()) sortSections(numSec);
 			}
-			if (toPrintSort()) {
+			int sel = sortPrint();
+			if (sel == 1) {
 				string secId;
 				Node*head = secList->getHead();
 				cout << "\n--------------------------------------------------------------------------------" << endl;
-				cout << "\nPRINTING OUT SORTED SECTIONS" << endl;
+				cout << "\nPRINTING OUT SORTED SECTIONS INDIVIDUALLY" << endl;
 				cout << "--------------------------------------------------------------------------------" << endl;
 				while (head != NULL) {
 					secId = head->value;
@@ -1302,12 +1363,27 @@ void sortSec(int numSec) {
 					head = head->next;
 				}
 			}
+			if (sel == 2) {
+				string secId;
+				Node*head = secList->getHead();
+				cout << "\n--------------------------------------------------------------------------------" << endl;
+				cout << "\nPRINTING OUT SORTED TERMS OF ALL SELECTED SECTIONS" << endl;
+				cout << "--------------------------------------------------------------------------------" << endl;
+				while (head != NULL) {
+					secId = head->value;
+					addSortSel(secId);
+					head = head->next;
+				}
+				sortedSecSel.bubbleSort(sortedSecSel.getHead());
+				sortedSecSel.print();
+			}
 		}
 		else {
 			cout << "This section does not exist" << endl;
-			if (reenter()) sortSec(numSec);
+			if (reenter()) sortSections(numSec);
 		}
 	}
+	sortedSecSel.clear();
 }
 void sortPrintSecIdv(string sec) {
 	string chNum = sec.substr(0, 2);
@@ -1603,10 +1679,357 @@ void sortPrintSecIdv(string sec) {
 		}
 	}
 }
-bool toPrintSort() {
+void addSortSel(string sec) {
+	string chNum = sec.substr(0, 2);
+	char secNum = sec.at(2);
+	if (chNum == "01") {
+		if (secNum == '1') {
+			Node*h011 = sort011.getHead();
+			while (h011 != NULL) {
+				sortedSecSel.addTerm(h011->value);
+				h011 = h011->next;
+			}
+		}
+		if (secNum == '2') {
+			Node*h012 = sort012.getHead();
+			while (h012 != NULL) {
+				sortedSecSel.addTerm(h012->value);
+				h012 = h012->next;
+			}
+		}
+		if (secNum == '3') {
+			Node*h013 = sort013.getHead();
+			while (h013 != NULL) {
+				sortedSecSel.addTerm(h013->value);
+				h013 = h013->next;
+			}
+		}
+		if (secNum == '4') {
+			Node*h014 = sort014.getHead();
+			while (h014 != NULL) {
+				sortedSecSel.addTerm(h014->value);
+				h014 = h014->next;
+			}
+		}
+		if (secNum == '5') {
+			Node*h015 = sort015.getHead();
+			while (h015 != NULL) {
+				sortedSecSel.addTerm(h015->value);
+				h015 = h015->next;
+			}
+		}
+		if (secNum == '6') {
+			Node*h016 = sort016.getHead();
+			while (h016 != NULL) {
+				sortedSecSel.addTerm(h016->value);
+				h016 = h016->next;
+			}
+		}
+		if (secNum == '7') {
+			Node*h017 = sort017.getHead();
+			while (h017 != NULL) {
+				sortedSecSel.addTerm(h017->value);
+				h017 = h017->next;
+			}
+		}
+	}
+	if (chNum == "02") {
+		if (secNum == '1') {
+			Node*h021 = sort021.getHead();
+			while (h021 != NULL) {
+				sortedSecSel.addTerm(h021->value);
+				h021 = h021->next;
+			}
+		}
+		if (secNum == '2') {
+			Node*h022 = sort022.getHead();
+			while (h022 != NULL) {
+				sortedSecSel.addTerm(h022->value);
+				h022 = h022->next;
+			}
+		}
+		if (secNum == '3') {
+			Node*h023 = sort023.getHead();
+			while (h023 != NULL) {
+				sortedSecSel.addTerm(h023->value);
+				h023 = h023->next;
+			}
+		}
+		if (secNum == '4') {
+			Node*h024 = sort024.getHead();
+			while (h024 != NULL) {
+				sortedSecSel.addTerm(h024->value);
+				h024 = h024->next;
+			}
+		}
+		if (secNum == '6') {
+			Node*h026 = sort026.getHead();
+			while (h026 != NULL) {
+				sortedSecSel.addTerm(h026->value);
+				h026 = h026->next;
+			}
+		}
+	}
+	if (chNum == "03") {
+		if (secNum == '1') {
+			Node*h031 = sort031.getHead();
+			while (h031 != NULL) {
+				sortedSecSel.addTerm(h031->value);
+				h031 = h031->next;
+			}
+		}
+		if (secNum == '2') {
+			Node*h032 = sort032.getHead();
+			while (h032 != NULL) {
+				sortedSecSel.addTerm(h032->value);
+				h032 = h032->next;
+			}
+		}
+		if (secNum == '3') {
+			Node*h033 = sort033.getHead();
+			while (h033 != NULL) {
+				sortedSecSel.addTerm(h033->value);
+				h033 = h033->next;
+			}
+		}
+	}
+	if (chNum == "04") {
+		if (secNum == '1') {
+			Node*h041 = sort041.getHead();
+			while (h041 != NULL) {
+				sortedSecSel.addTerm(h041->value);
+				h041 = h041->next;
+			}
+		}
+		if (secNum == '2') {
+			Node*h042 = sort042.getHead();
+			while (h042 != NULL) {
+				sortedSecSel.addTerm(h042->value);
+				h042 = h042->next;
+			}
+		}
+		if (secNum == '3') {
+			Node*h043 = sort043.getHead();
+			while (h043 != NULL) {
+				sortedSecSel.addTerm(h043->value);
+				h043 = h043->next;
+			}
+		}
+		if (secNum == '5') {
+			Node*h045 = sort045.getHead();
+			while (h045 != NULL) {
+				sortedSecSel.addTerm(h045->value);
+				h045 = h045->next;
+			}
+		}
+		if (secNum == '6') {
+			Node*h046 = sort046.getHead();
+			while (h046 != NULL) {
+				sortedSecSel.addTerm(h046->value);
+				h046 = h046->next;
+			}
+		}
+	}
+	if (chNum == "05") {
+		if (secNum == '1') {
+			Node*h051 = sort051.getHead();
+			while (h051 != NULL) {
+				sortedSecSel.addTerm(h051->value);
+				h051 = h051->next;
+			}
+		}
+		if (secNum == '2') {
+			Node*h052 = sort052.getHead();
+			while (h052 != NULL) {
+				sortedSecSel.addTerm(h052->value);
+				h052 = h052->next;
+			}
+		}
+		if (secNum == '3') {
+			Node*h053 = sort053.getHead();
+			while (h053 != NULL) {
+				sortedSecSel.addTerm(h053->value);
+				h053 = h053->next;
+			}
+		}
+	}
+	if (chNum == "06") {
+		if (secNum == '1') {
+			Node*h061 = sort061.getHead();
+			while (h061 != NULL) {
+				sortedSecSel.addTerm(h061->value);
+				h061 = h061->next;
+			}
+		}
+		if (secNum == '2') {
+			Node*h062 = sort062.getHead();
+			while (h062 != NULL) {
+				sortedSecSel.addTerm(h062->value);
+				h062 = h062->next;
+			}
+		}
+		if (secNum == '3') {
+			Node*h063 = sort063.getHead();
+			while (h063 != NULL) {
+				sortedSecSel.addTerm(h063->value);
+				h063 = h063->next;
+			}
+		}
+		if (secNum == '5') {
+			Node*h065 = sort065.getHead();
+			while (h065 != NULL) {
+				sortedSecSel.addTerm(h065->value);
+				h065 = h065->next;
+			}
+		}
+	}
+	if (chNum == "07") {
+		if (secNum == '1') {
+			Node*h071 = sort071.getHead();
+			while (h071 != NULL) {
+				sortedSecSel.addTerm(h071->value);
+				h071 = h071->next;
+			}
+		}
+		if (secNum == '2') {
+			Node*h072 = sort072.getHead();
+			while (h072 != NULL) {
+				sortedSecSel.addTerm(h072->value);
+				h072 = h072->next;
+			}
+		}
+		if (secNum == '3') {
+			Node*h073 = sort073.getHead();
+			while (h073 != NULL) {
+				sortedSecSel.addTerm(h073->value);
+				h073 = h073->next;
+			}
+		}
+	}
+	if (chNum == "09") {
+		if (secNum == '1') {
+			Node*h091 = sort091.getHead();
+			while (h091 != NULL) {
+				sortedSecSel.addTerm(h091->value);
+				h091 = h091->next;
+			}
+		}
+		if (secNum == '3') {
+			Node*h092 = sort092.getHead();
+			while (h092 != NULL) {
+				sortedSecSel.addTerm(h092->value);
+				h092 = h092->next;
+			}
+		}
+		if (secNum == '5') {
+			Node*h093 = sort093.getHead();
+			while (h093 != NULL) {
+				sortedSecSel.addTerm(h093->value);
+				h093 = h093->next;
+			}
+		}
+	}
+	if (chNum == "10") {
+		if (secNum == '1') {
+			Node*h101 = sort101.getHead();
+			while (h101 != NULL) {
+				sortedSecSel.addTerm(h101->value);
+				h101 = h101->next;
+			}
+		}
+		if (secNum == '2') {
+			Node*h102 = sort102.getHead();
+			while (h102 != NULL) {
+				sortedSecSel.addTerm(h102->value);
+				h102 = h102->next;
+			}
+		}
+		if (secNum == '3') {
+			Node*h103 = sort103.getHead();
+			while (h103 != NULL) {
+				sortedSecSel.addTerm(h103->value);
+				h103 = h103->next;
+			}
+		}
+		if (secNum == '4') {
+			Node*h104 = sort104.getHead();
+			while (h104 != NULL) {
+				sortedSecSel.addTerm(h104->value);
+				h104 = h104->next;
+			}
+		}
+		if (secNum == '5') {
+			Node*h105 = sort105.getHead();
+			while (h105 != NULL) {
+				sortedSecSel.addTerm(h105->value);
+				h105 = h105->next;
+			}
+		}
+		if (secNum == '6') {
+			Node*h106 = sort106.getHead();
+			while (h106 != NULL) {
+				sortedSecSel.addTerm(h106->value);
+				h106 = h106->next;
+			}
+		}
+		if (secNum == '7') {
+			Node*h107 = sort107.getHead();
+			while (h107 != NULL) {
+				sortedSecSel.addTerm(h107->value);
+				h107 = h107->next;
+			}
+		}
+		if (secNum == '8') {
+			Node*h108 = sort108.getHead();
+			while (h108 != NULL) {
+				sortedSecSel.addTerm(h108->value);
+				h108 = h108->next;
+			}
+		}
+	}
+	if (chNum == "11") {
+		if (secNum == '1') {
+			Node*h111 = sort111.getHead();
+			while (h111 != NULL) {
+				sortedSecSel.addTerm(h111->value);
+				h111 = h111->next;
+			}
+		}
+		if (secNum == '2') {
+			Node*h112 = sort112.getHead();
+			while (h112 != NULL) {
+				sortedSecSel.addTerm(h112->value);
+				h112 = h112->next;
+			}
+		}
+		if (secNum == '3') {
+			Node*h113 = sort113.getHead();
+			while (h113 != NULL) {
+				sortedSecSel.addTerm(h113->value);
+				h113 = h113->next;
+			}
+		}
+		if (secNum == '4') {
+			Node*h114 = sort114.getHead();
+			while (h114 != NULL) {
+				sortedSecSel.addTerm(h114->value);
+				h114 = h114->next;
+			}
+		}
+		if (secNum == '5') {
+			Node*h115 = sort115.getHead();
+			while (h115 != NULL) {
+				sortedSecSel.addTerm(h115->value);
+				h115 = h115->next;
+			}
+		}
+	}
+}
+int sortPrint() {
 	cout << "\nPrint selection? " << endl;
-	cout << "1. Print Selected Chapters" << endl;
-	cout << "2. Cancel" << endl;
+	cout << "1. Print Sorted Sections Individually" << endl;
+	cout << "2. Print Sorted Sections All Together" << endl;
+	cout << "3. Cancel" << endl;
 	cout << "choice - ";
 	int yn; cin >> yn;
 	if (cin.fail() || (yn != 1) && (yn != 2)) {
@@ -1614,19 +2037,24 @@ bool toPrintSort() {
 		cin.clear();
 		cin.ignore(1024, '\n');
 		cout << endl;
-		return false;
+		return 0;
 	}
 	if (yn == 1) {
-		cin.clear();
-		cin.ignore(1024, '\n');
-		cout << endl;
-		return true;
+		return 1;
 	}
 	if (yn == 2) {
-		cin.clear();
-		cin.ignore(1024, '\n');
-		cout << endl;
-		return false;
+		return 2;
+	}
+	if (yn == 3) {
+		return 0;
+	}
+}
+void List::clear() {
+	Node*temp = new Node;
+	while (head != NULL) {
+		temp = head;
+		head = head->next;
+		delete temp;
 	}
 }
 
