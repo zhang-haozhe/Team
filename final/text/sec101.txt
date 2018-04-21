@@ -3,7 +3,7 @@ Infinite Graph: A graph with an infinite vertex set or an infinite number of edg
 Finite Graph: A graph with a finite vertex set and a finite edge set 
 Simple Graph: A graph in which each edge connects two different vertices and where no two edges connect the [same pair of vertices 
 Multigraphs: Graphs that may have multiple edges connecting the same vertices 
-Pseudographs: Graphs that may include loops, and possibly multiple edges connecting the same pair of vertices [or a vertex to itself :101
+Pseudographs: Graphs that may include loops, and possibly multiple edges connecting the same pair of vertices [or a vertex to itself
 Directed Graph: (or digraph) (V , E) consists of a nonempty set of vertices V and a set of directed edges [(or arcs) E. Each directed edge is associated with an ordered pair of vertices. The directed edge associated [with the ordered pair (u, v) is said to start at u and end at v. 
 Simple Directed Graph: A directed graph with no loops and no multiple directed edges 
 Directed Multigraphs: Directed graphs that may have multiple directed edges from a vertex to a second [(possibly the same) vertex are used to model such networks. 
