@@ -1,15 +1,15 @@
-Proposition: Proposition is a declarative sentence that is either true or false. If it is always true, then it is [denoted by “T” and, if it is always false, then it is denoted by “F”. They can't be commands, questions, or have [unknown variables. :011
-Compound Proposition: Compound propositions are constructed from logical connectives and other propositions :011
-Negation: The negation of a proposition p is denoted by ¬p. It is the opposite of the proposition. If p is T, [then ¬p is F. If p is F, then ¬p is T. :011
-Conjunction: For propositions p and q, it is denoted by p ^ q. It’s a compound statement formed by joining two [statements with the connector AND. It is true if and only if both statements are true; otherwise, it is false. :011
-Disjunction: For propositions p and q, it is denoted by p v q. It’s a compound statement formed by joining two [statements with the connector OR. A disjunction is false if and only if both statements or false; otherwise it is true. :011
-Inclusive Disjunction: OR connective, a disjunction that remains true if either or both of its arguments are true. :011
-Exclusive Disjunction: XOR connective, a disjunction that is true if only one, but not both of its arguments are [true, and is false if neither or both are true, denoted by ⊕. :011
-Implication: Conditional statement, if p and q are propositions, then p → q is the implication which reads [“if p, then q”. In this case, p is the hypothesis (aka antecedent or premise) and q is the conclusion. [ If p = T and q = T, then p → q = T [If p = T and q = F, then p → q = F [ If p = F and q = T, then p → q = T [ If p = F and q = F, then p → q = T :011
-Converse of Implication: Flip the hypothesis and conclusion of p → q [ The converse of p → q is q → p :011
-Contrapositive of Implication: Flip and negate p → q [ The contrapositive of p → q is ¬q → ¬p :011
-Inverse of Implication: Negate p → q [ The inverse of p → q is ¬p → ¬q :011
-Biconditional: True whenever both parts have the same truth value, if p and q are propositions, then p ↔ q is [the biconditional statement [ If p and q both have the same true or false value, then p ↔ q = T. Else, p ↔ q = F. :011
-Truth Table: Shows true or false for compound propositions. :011
-Equivalent Propositions: Two propositions are equivalent if they always have the same truth value. :011
-Precedence of Logical Operators: [As follows ¬ (negation) > ^ (conjunction) > v (disjunction) > →  (implication) > ↔ (biconditional) :011
+Proposition: Proposition is a declarative sentence that is either true or false. If it is always true, then it is [denoted by “T” and, if it is always false, then it is denoted by “F”. They can't be commands, questions, or have [unknown variables.  
+Compound Proposition: Compound propositions are constructed from logical connectives and other propositions  
+Negation: The negation of a proposition p is denoted by ¬p. It is the opposite of the proposition. If p is T, [then ¬p is F. If p is F, then ¬p is T.  
+Conjunction: For propositions p and q, it is denoted by p ^ q. It’s a compound statement formed by joining two [statements with the connector AND. It is true if and only if both statements are true; otherwise, it is false.  
+Disjunction: For propositions p and q, it is denoted by p v q. It’s a compound statement formed by joining two [statements with the connector OR. A disjunction is false if and only if both statements or false; otherwise it is true.  
+Inclusive Disjunction: OR connective, a disjunction that remains true if either or both of its arguments are true.  
+Exclusive Disjunction: XOR connective, a disjunction that is true if only one, but not both of its arguments are [true, and is false if neither or both are true, denoted by ⊕.  
+Implication: Conditional statement, if p and q are propositions, then p → q is the implication which reads [“if p, then q”. In this case, p is the hypothesis (aka antecedent or premise) and q is the conclusion. [ If p = T and q = T, then p → q = T [If p = T and q = F, then p → q = F [ If p = F and q = T, then p → q = T [ If p = F and q = F, then p → q = T  
+Converse of Implication: Flip the hypothesis and conclusion of p → q [ The converse of p → q is q → p  
+Contrapositive of Implication: Flip and negate p → q [ The contrapositive of p → q is ¬q → ¬p  
+Inverse of Implication: Negate p → q [ The inverse of p → q is ¬p → ¬q  
+Biconditional: True whenever both parts have the same truth value, if p and q are propositions, then p ↔ q is [the biconditional statement [ If p and q both have the same true or false value, then p ↔ q = T. Else, p ↔ q = F.  
+Truth Table: Shows true or false for compound propositions.  
+Equivalent Propositions: Two propositions are equivalent if they always have the same truth value.  
+Precedence of Logical Operators: [As follows ¬ (negation) > ^ (conjunction) > v (disjunction) > →  (implication) > ↔ (biconditional)  
