@@ -1,2 +1,2 @@
-Dual Graph: Two regions that touch at only one point are not considered adjacent. :108 
-Chromatic Number: the least number of colors needed for a coloring of this graph. :108
+Dual Graph: Two regions that touch at only one point are not considered adjacent.  
+Chromatic Number: the least number of colors needed for a coloring of this graph.  
