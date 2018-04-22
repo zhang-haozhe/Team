@@ -3089,6 +3089,11 @@ void creditList(int *userNum) {
     cout << "4. Teresa Cheung" << endl;
     cout << "5. James Boultinghouse" << endl;
     cout << "6. Thien Pham" << endl;
+	
+    cout << "\nREFERENCES" << endl;
+    cout << "[1] C. Boucher, J. Ruiz. “Discrete Mathematics and Its Applications.” \nInternet: http://www.christinaboucher.com/teaching/3100/sp2018/home_progress.php, 2017. [April 20, 2018]." << endl;
+    cout << "[2] K. H. Rosen. Discrete Mathematics and Its Applications. New York, NY: McGraw-Hill, 2012, pp. 1-803." << endl;
+
     *userNum = 0;
 }
 void listSections() {
