@@ -1,25 +1,25 @@
 Tree: a connected undirected graph with no simple circuits
-Forest: the property that each of their connected component is a tree 
-Tree Theorem: An undirected graph is a tree if and only if there is a unique simple path between any [two of its vertices. 
-Root: A vertex of a tree. 
-Rooted Tree:  a tree in which one vertex has been designated as the rot and every edge is directed away [from the root. 
-Parent: If v is a vertex in T other than the root, the parent of v is the unique vertex u such that there [is a directed edge from u to v. 
-Child: Vertices are u and v. When u is the parent of v, v is called a child of u. 
-Siblings: Vertices with the same parent are called siblings. 
-Ancestors: The ancestors of a vertex other than the root are the vertices in the path from the root to this vertex. 
-Descendants : The descendants of a vertex v are those vertices that have v as an ancestor. 
-Leaf: A vertex of a rooted tree if it has no children. 
-Internal Vertices:  Vertices that have children. 
-M-ary Tree:  When every internal vertex has no more than m children. 
-Full M-ary Tree:  When every internal vertex has exactly m children. 
-Ordered Rooted Tree: a rooted tree where the children of each internal vertex are ordered 
-Binary Tree:  if an internal vertex has two children 
-Left Child:  First child of a binary tree 
-Right Child: Second child of a binary tree 
-Left Subtree: tree rooted at the left child 
-Right Subtree: tree rooted at the right child 
-Tree Vertices Theorem: A tree with n vertices has n-1 edges 
-Full M-ary Tree Vertices Theorem: A full m-ary tree with i internal vertices contains n = mi + 1 vertices. 
-Full M-ary Tree Theorem: A full m-ary tree with (i ) n vertices has i = (n - 1)/m internal vertices and l = [(m - 1)n + 1]/m leaves, (ii ) i internal vertices has n = mi + 1 vertices and l = (m - 1)i + 1 leaves, (iii ) [l leaves has n = (ml - 1)/(m - 1) vertices and i = (l - 1)/(m - 1) internal vertices. 
-Balanced Tree: A rooted m-ary tree of height h is balanced if all leaves are at levels h or h - 1. 
-Balanced Tree Theorem: There are at most mh leaves in an m-ary tree of height h. 
+Forest: the property that each of their connected component is a tree
+Tree Theorem: An undirected graph is a tree if and only if there is a unique simple path between any [two of its vertices.
+Root: A vertex of a tree.
+Rooted Tree:  a tree in which one vertex has been designated as the rot and every edge is directed [away from the root.
+Parent: If v is a vertex in T other than the root, the parent of v is the unique vertex u such that [there is a directed edge from u to v.
+Child: Vertices are u and v. When u is the parent of v, v is called a child of u.
+Siblings: Vertices with the same parent are called siblings.
+Ancestors: The ancestors of a vertex other than the root are the vertices in the path from the root [to this vertex.
+Descendants : The descendants of a vertex v are those vertices that have v as an ancestor.
+Leaf: A vertex of a rooted tree if it has no children.
+Internal Vertices:  Vertices that have children.
+M-ary Tree:  When every internal vertex has no more than m children.
+Full M-ary Tree:  When every internal vertex has exactly m children.
+Ordered Rooted Tree: a rooted tree where the children of each internal vertex are ordered
+Binary Tree:  if an internal vertex has two children
+Left Child:  First child of a binary tree
+Right Child: Second child of a binary tree
+Left Subtree: tree rooted at the left child
+Right Subtree: tree rooted at the right child
+Tree Vertices Theorem: A tree with n vertices has n-1 edges
+Full M-ary Tree Vertices Theorem: A full m-ary tree with i internal vertices contains n = mi + 1 [vertices.
+Full M-ary Tree Theorem: A full m-ary tree with [(i ) n vertices has i = (n − 1)/m internal vertices and l = @u005b(m − 1)n + 1]/m leaves, [(ii ) i internal vertices has n = mi + 1 vertices and l = (m − 1)i + 1 leaves, [(iii ) l leaves has n = (ml − 1)/(m − 1) vertices and i = (l − 1)/(m − 1) internal vertices.
+Balanced Tree: A rooted m-ary tree of height h is balanced if all leaves are at levels h or h − 1.
+Balanced Tree Theorem: There are at most mh leaves in an m-ary tree of height h.
