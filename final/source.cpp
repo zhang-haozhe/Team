@@ -3048,12 +3048,17 @@ void toc(int *userNum) {
     cout << "\t Section 10.1 & 10.2: Graphs and Graph Models, Graph Terminology and Special Types of Graphs" << endl;
     cout << "\t Section 10.3: Representing Graphs and Graph Isomorphism" << endl;
     cout << "\t Section 10.4: Connectivity" << endl;
+	cout<<"\t Section 10.5: Euler and Hamilton Paths"<<endl;
+	cout<<"\t Section 10.6: Shortest-Path Problems"<<endl;
+	cout<<"\t Section 10.7: Planar Graphs"<<endl;
+	cout<<"\t Section 10.8: Graph Coloring"<<endl;
     cout << endl;
     cout << "11. Trees" << endl;
     cout << "\t Section 11.1: Introduction to Trees" << endl;
     cout << "\t Section 11.2: Application of Trees" << endl;
     cout << "\t Section 11.3: Tree Traversal" << endl;
     cout << "\t Section 11.4: Spanning Trees" << endl;
+	cout << "\t Section 11.5: Minimal Spanning Trees" << endl;
     cout << endl;
     cout << "NOTE: Chapter 8 not covered in Spring 2018" << endl;
     cout << endl;
