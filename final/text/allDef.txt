@@ -1,0 +1,337 @@
+Proposition: A proposition is a declarative sentence that is either true or false. If it is always true, [then it is denoted by “T” and, if it is always false, then it is denoted by “F”. They can't be commands, [questions, or have unknown variables. 
+Compound Proposition: Compound propositions are constructed from logical connectives and other propositions
+Negation: The negation of a proposition p is denoted by ¬p. It is the opposite of the proposition. If p is [T, then ¬p is F. If p is F, then ¬p is T.
+Conjunction: For propositions p and q, it is denoted by p ^ q. It’s a compound statement formed by joining [two statements with the connector AND. It is true if and only if both statements are true; otherwise, [it is false.
+Disjunction: For propositions p and q, it is denoted by p v q. It’s a compound statement formed by joining [two statements with the connector OR. A disjunction is false if and only if both statements or false; [otherwise it is true.
+Inclusive Disjunction: OR connective, a disjunction that remains true if either or both of its arguments are true.
+Exclusive Disjunction: XOR connective, a disjunction that is true if only one, but not both of its arguments [are true, and is false if neither or both are true, denoted by ⊕.
+Implication: Conditional statement, if p and q are propositions, then p → q is the implication which reads [“if p, then q”. In this case, p is the hypothesis (aka antecedent or premise) and q is the conclusion. [ If p = T and q = T, then p → q = T [If p = T and q = F, then p → q = F [ If p = F and q = T, then p → q = T [ If p = F and q = F, then p → q = T
+Converse of Implication: Flip the hypothesis and conclusion of p → q [ The converse of p → q is q → p
+Contrapositive of Implication: Flip and negate p → q [ The contrapositive of p → q is ¬q → ¬p
+Inverse of Implication: Negate p → q [ The inverse of p → q is ¬p → ¬q
+Biconditional: True whenever both parts have the same truth value, if p and q are propositions, [then p ↔ q is the biconditional statement [ If p and q both have the same true or false value, then p ↔ q = T. Else, p ↔ q = F.
+Truth Table: Shows true or false for compound propositions.
+Equivalent Propositions: Two propositions are equivalent if they always have the same truth value.
+Precedence of Logical Operators: As follows ¬ (negation) > ^ (conjunction) > v (disjunction) > →  (implication) > ↔ (biconditional)
+Logic Puzzles: Puzzles that can be solved using logical reasoning. These are excellent for practicing [working with the rules of logic.
+Tautology: A proposition which is always true [ Ex: p v ¬p
+Contradiction: A proposition which is always false [ Ex: p ^ ¬p
+Contingency: A proposition which is neither a tautology nor a contradiction [ Ex: p
+Logical Equivalence: A two compound propositions p and q are logically equivalent if p ↔ q is a [tautology. This is written as p ⇔ q or as p ≡ q where p and q are compound propositions.
+De Morgan’s Laws: As follows [ ¬(p ^ q) ≡ ¬p v ¬q [ ¬(p v q) ≡ ¬p ^ ¬q
+Identity Laws of Logical Equivalence: As follows [ p ^ T ≡ p [ p v F ≡ p
+Domination Laws of Logical Equivalence: As follows [ p v T ≡ T [ p ^ F ≡ F
+Idempotent Laws of Logical Equivalence: As follows [ p v p ≡ p [ p ^ p ≡ p
+Double Negation Law of Logical Equivalence: As follows ¬(¬p) ≡ p
+Negation Laws of Logical Equivalence: As follows [ p v ¬p ≡ T [ p ^ ¬p ≡ F 
+Commutative Laws of Logical Equivalence: As follows [ p v q ≡ q v p [ p ^ q ≡ q ^ p
+Associative Laws of Logical Equivalence: As follows [ (p ^ q) ^ r ≡ p ^ (q ^ r) [ (p v q) v r ≡ p v (q ^ r)
+Distributive Laws of Logical Equivalence: As follows [ (p v (q ^ r)) ≡ (p v q) ^ (p v r) [ (p ^ (q v r)) ≡ (p ^ q) v (p ^ r)
+Absorption Laws of Logical Equivalence: As follows [ p v (p ^ q) ≡ p [ p ^ (p v q) ≡ p
+Propositional Satisfiability: A compound proposition is satisfiable if there is an assignment of [truth values to its variables that make it true
+Predicate Logic: Made up of variables (x, y, z, etc.), predicates (P(x), M(x), etc.), and quantifiers [(∀, ∃, etc.). It is a Boolean-valued function P: X → {true, false} and is called the predicate on X.
+Propositional Functions: Represented as P(x), they become propositions (and have truth values) when [their variables are each replaced by a value from the domain of the quantifier
+Compound Expression: Connectives from propositional logic carry over to predicate logic. You combine 2 or [more propositional functions to form propositional expressions.
+Quantifiers: Quantifiers are used to express the extent to which a predicate is true over a range of elements. [In English, some of these terms used for quantification are all, some, many, none, and few. In logic, ∀ and ∃ [are used. The quantifiers ∀ and ∃ also have higher precedence than all the logical operators. The [truth value of quantified expressions depends on both the propositional function P(x) and on the domain U.
+Universal Quantifier: Asserts that the propositional P(x) is true for all values x in the domain. [It is denoted as ∀; ∀xP(x) reads as “for every x P(x)”.
+Existential Quantifier: Asserts that there exists an element x in the domain which that P(x). The [notation used for this is ∃ and ∃xP(x) reads as “there exists an element x in the domain such that P(x)”
+Uniqueness Quantifier: Denoted by ∃!x P(x), it means that P(x) is true for one and only one x in the [domain. It can also be expressed as ∃x(P(x)∧∀y(P(y)→y=x))
+Equivalence of Predicate Logic: Statements involving predicates and quantifiers are logically equivalent [if and only if they have the same truth value.
+System Specification in Predicate Logic: Predicate logic is used for specifying properties that [systems must satisfy.
+Lewis-Carroll Example: There are premises and a conclusion statements in an argument.
+Nested Quantifiers: Necessary to express the meaning of logic in various fields such as English and [computer science and mathematics concepts.
+Order of Quantifiers: Quantified expressions are read from left to right. [ Negation of Nested Quantifiers - The steps do doing this is as follows: [ Use quantifiers to express a statement [ Use De Morgan’s Laws to move the negation as far inward as possible
+Rules of Inference: They are the essential building blocks in the construction of valid arguments. [Propositional Logic uses inference rules. For predicate logic, they use inference rules for propositional [logic as well as additional interference rules to handle variables and quantifiers.
+Argument: In propositional logic, it is a sequence of propositions
+Premise: The statements in an argument aside from the last statement
+Conclusion: The last statement in an argument
+Modus Ponens: As follows (p ^ (p → q)) → q
+Modus Tollens: As follows (¬q ^ (p → q)) → ¬p
+Hypothetical Syllogism: As follows ((p → q) ^ (q → r)) → (p → r)
+Disjunctive Syllogism: As follows (¬p ^ (p v q)) → q
+Addition: As follows p → (p v q)
+Simplification: As follows (p ^ q) → q
+Conjunction with Respect to Rules of Inference: As follows ((p) ^ (q)) → (p ^ q)
+Resolution: As follows ((¬p v r) ^ (p v q)) → (q v r)
+Valid argument: A sequence of statements where each statement is either a premise or follows from previous [statements by rules of inference. The last statement is the conclusion.
+Universal Instantiation: It’s a generalization of simplification defined on the whole domain [ ∀xP(x) = P(c)
+Universal Generalization: It’s a generalization of conjunction with the propositional value for all [variables in the domain being true → universal quantifier true [ P(c) for an arbitrary c = ∀xP(x)
+Existential Instantiation: As follows [ ∃xP(x) = P(c) for some element c
+Existential Generalization: As follows [ P(c) for some element c = ∃xP(x)
+Universal Modus Ponens: Combines universal instantiation and modus ponens into one rule [ ∀x(P(x) → Q(x)) [ P(a) [ = Q(a)
+Proof: A valid argument that establishes the truth of a statement
+Theorem: A statement that can be shown to be true using definitions, other theorems, axioms, rules of [interference. Less important theorems are sometimes called propositions.
+Lemma: A ‘helping theorem’ or a result which is needed to prove a theorem
+Corollary: A result which follows directly from a theorem
+Conjecture: A statement that is being proposed to be true. Once a proof of a conjecture is found, it [becomes a theorem. It may turn out to be false.
+Direct Proof: Assume that p is true. Use rules of inference, axioms, and logical equivalences to show [that q must also be true.
+Proof by Contraposition: Assume ¬q and show ¬p is also true. This is sometimes called the indirect [proof method. If we give a direct proof of ¬q → ¬p, then we have a proof of p ¬p → q [ p → q ≡ ¬q → ¬p
+Proof by Contradiction: To prove p, assume ¬p and derive a contradiction such as p ^ ¬p (an indirect [form of proof). Since we have shown that ¬p → F is true, it follows that the contrapositive T → p also holds. 
+Proof of Theorems that are Biconditional Statements: To prove a theorem that is a biconditional statement, [we show that p → q and q → p are both true.
+Set: an unordered collection of objects
+Elements: objects in the set (aka members of the set). A set is said to contain its elements. 
+Roster Method for Describing Sets: set = {list of elements in set}. Order is not important	
+Important Sets: [N = natural numbers[Z = integers[Z+ = positive integers[R = set of real numbers[R+ = set [of positive real numbers[C = set of complex numbers[Q = set of rational numbers
+Set-Builder Notation - Set = {domain | condition}, S = {x | P(x)}
+Universal Set: denoted by U, the universal set contains everything currently under consideration. It is [sometimes implicit or explicitly stated depending on the content. 
+Empty Set: a set with no elements, symbolized as Ø, but {} is also used
+Set Equality: two sets are equal if and only if they have the same elements
+Subset: a set A is a subset of B, if and only if every element of A is also an element of B, A⊆ B
+Proper Subset: if A ⊆ B, but A != B, then A is a proper subset of B, denoted by A ⊂ B
+Set Cardinality: if there are exactly n distinct elements in S where n is a nonnegative integer, then S [is finite. Otherwise, it is infinite. The cardinality of a finite set A, denoted by |A|, is the number of [distinct elements of A
+Power Sets: the set of all subsets of a set A, denoted by P(A), is called the power set of A
+Tuples: ordered n-tuple (a@u2081,a@u2082,...a@u2099), 2-tuples are called ordered pairs
+Cartesian Product: denoted by A × B, it is the set of ordered pairs (a, b) where a set of ordered pairs [(a,b) shows a ∈ A and b ∈ B
+Relation: a subset of the Cartesian product A × B is called a relation from the set A to the set B
+Truth Sets of Quantifiers: given a predicate P and a domain D, we define the truth set of P to be the set [of elements in D for which P(x) is true. The truth set of P(x) is denoted by {x ∈ D | P(x)}
+Union: Union of sets A and B is denoted by A U B
+Intersection:  A ∩ B = {x | x ∈ A ^ x ∈ B} – what’s in common between A and B
+Complement: If A is a set, then the complement of the A (with respect to U), denoted by Ā is the set U – A
+Difference: A and B are sets with respect to U – the difference between them is denoted by A – B – contains [elements of A that are not in B
+Inclusion-Exclusion: |A U B| = |A| + |B| - |A ∩ B|
+Disjoint: two sets are disjoint if their intersection is an empty set (A ∩ B = Ø)
+Symmetric Difference: denoted by A (XOR) B
+Generalized Unions: the union of a collection of sets is the set that contains those elements that are members [of at least 1 set in the collection
+Generalized Intersection: the intersection of a collection of sets is the set that contains those elements [that are members of the sets in the collection
+Function: f from A to B, denoted f:A à B, is an assignment of each element of A to exactly one element of B, [can be specified as an explicit statement of the assignment, a formula, or a computer program 
+Injections: function f is said to be this if and only if f(a) = f(b), which implies that a = b for all a and [b in the domain of f (an injection if it is one-to-one)
+Surjections: function f from A to B is called onto or surjective if and only if for every element b in B, there [is an element a in A with f(a) = b
+Bijections: one-to-one correspondence, if it is both one to one and onto (surjective and injective)
+Inverse Function: f = bijection from A to B, then the inverse of f (f-1) is the function from B to A defined as
+Composition: let f:B→C and g:A→B. The composition of f with g (denoted f ○ g) is the function from A to C defined as
+Floor Function: f(x) = @u2308x@u2309 – largest integer less than or equal to x
+Ceiling Function: f(x) = @u230Ax@u230B - smallest integer greater than or equal to x
+Factorial Function: f:N→Z+, denoted by f(n) = n!, product of the first n positive integer when n is nonnegative
+Sequence: function from a subset of the integers to a set S – notation a@u2099 (term of the sequence)
+Geometric Progression: sequence of the form where initial term a and common ratio r are real numbers
+Arithmetic Progression: initial term a and the common difference d are real numbers
+String: a finite sequence of characters from a finite set (an alphabet)
+Recurrence Relations: {a@u2099} is an equation that expresses a@u2099 in terms of one or more of the previous terms of the sequence (a@u2099@u208B@u2081)
+Solution of Recurrence Relations: a sequence is called a solution of a recurrence relation if its terms [satisfy the recurrence relation
+Initial Condition of Recurrence Relations: initial conditions for a sequence specify the terms that precede [the first term where the recurrence relation takes effect
+Fibonacci Sequence: f@u2080, @u2081, f@u2082,… represented by initial condition f@u2080 = 0, f@u2081 = 1 and recurrence relation of [f@u2099 = f@u2099@u208B@u2081 + f@u2099@u208B@u2082
+Closed Formula: the formula for the nth term of the sequence generated by a recurrence relation
+Useful Sequences: n^2, n^3, n^4, 2^n, 3^n, n!, f@u2099
+Summation: sum of the terms a@u2098, a@u2098@u208A@u2081, …, a@u2099 from the sequence {a@u2099}
+Index of Summation: the letter j in the summation notation. It runs through all the integers starting with [its lower limit m and ending with its upper limit n
+Matrix: a rectangular array of numbers
+m × n Matrix: a matrix with m rows and n columns
+Square: a matrix with the same number of rows as columns
+Equality of Matrices: two matrices are equal if they have the same number of rows and columns and the [corresponding entries in every position are equal
+Addition of Matrices: Let A = @u005ba@u1d62@u2C7C] and B = @u005bb@u1d62@u2C7C] be m x n matrices. The sum of A and B, denoted [by A + B, is the m x n matrix that has a@u1d62@u2C7C + b@u1d62@u2C7C as its (i,j)th element. In other words, A + B = @u005ba@u1d62@u2C7C + b@u1d62@u2C7C]
+Multiplication of Matrices: Let A be an m x k matrix and B be a k x n matrix. The product of A and B, denoted [by AB, is the m x n matrix that has its (i,j)th element equal to the sum of products of the corresponding [elements from the ith row of A and the jth column of B. In other words, if AB = @u005bc@u1d62@u2C7C], then [c@u1d62@u2C7C = a@u1d62@u2081b@u2081@u2C7C + a@u1d62@u2082b@u2082@u2C7C + … + a@u2096@u2C7Cb@u2082@u2C7C
+Identity Matrix of Order n: It is the m x n matrix I@u2099 = @u005bδ@u1d62@u2C7C], where δ@u1d62@u2C7C = 1 if i = j and δ@u1d62@u2C7C = 0 if i != j
+Powers of Square Matrices: when A is an n x n matrix, we have: A0 = I@u2099 and Ar = AAA...A where A is multiplied [by itself r times
+Transposes of Matrices: Let A = @u005ba@u1d62@u2C7C] be an m x n matrix. The transpose of A, denoted by At, is the n x m [matrix obtained by interchanging the rows and columns of A
+Symmetric Matrices: a square matrix A is called symmetric if A = At. Thus, A = @u005ba@u1d62@u2C7C] is symmetric if [a@u1d62@u2C7C = a@u2C7C@u1d62 for i and j with 1 <= i <=n and i <= j <=n. Square matrices do not change when their rows and [columns are interchanged
+Zero-One Matrices: a matrix all of whose entries are either 0 or 1. Algorithms operating on discrete structures [represented by zero-one matrices are based on Boolean arithmetic defined by the following Boolean operations:
+Join of Zero-One Matrices: Let A = @u005ba@u1d62@u2C7C] and B = @u005bb@u1d62@u2C7C] be m x n zero-one matrices. The join of A and B [is the zero-one matrix with (i,j)th entry a@u1d62@u2C7C v b@u1d62@u2C7C. The join of A and B is dented by A v B.
+Meet of Zero-One Matrices: Let A = @u005ba@u1d62@u2C7C] and B = @u005bb@u1d62@u2C7C] be m x n zero-one matrices. The meet of A and B [is the zero-one matrix with (i,j)th entry a@u1d62@u2C7C ^ b@u1d62@u2C7C. The meet of A and B is denoted by A ^ B
+Boolean Product of Zero-One Matrices:  Let A = @u005ba@u1d62@u2C7C] and B = @u005bb@u1d62@u2C7C] be m x n zero-one matrices [and B = @u005bb@u1d62@u2C7C] be a k x n zero-one matrix. The Boolean product of A and B, denoted by A ⊙ B, is the m x n [zero-one matrix with (i,j)th entry
+Boolean Powers of Zero-One Matrices: Let A be a square zero-one matrix and let r be a positive integer. [The rth Boolean power of A is the Boolean product of r factors of A, denoted by A@u005br]. Hence A@u005br] = [A ⊙ A ⊙ … ⊙ A where A is multiplied r times.
+Algorithm: An algorithm is a finite sequence of precise instructions for performing a computation or for [solving a problem
+Searching Problems: A problem involving the location of an element in an ordered list
+Linear Search: also known as Sequential Search, a type of algorithm that begins by comparing x to an, where [the solution is ak when x=ak and 0≤k≤n. If x@u2260an for all n, then the solution is 0.
+Binary Search: A search algorithm that compares elements in a list by assuming that the desired term is the [middle element of a list. If not, the search is then restricted to a sublist that has endpoints based on the [comparison of the previous list against the desired element to be located in the middle term
+Sorting: The action of putting elements into an ordered list of increasing size
+Bubble Sort: A sorting algorithm that puts a list into increasing order by successively comparing adjacent [elements and swapping the two elements if they are not in increasing order
+Insertion Sort: A sorting algorithm that begins with the second element in a list of n elements. The element [is then compared to the preceding elements; it is either placed before the preceding element if it does not [exceed the value of the preceding element, or it is placed after the element if it does exceed the preceding [element’s value.
+Optimization Problems: Problems where the goal is to minimize or maximize the value of a certain parameter [within the problem. 
+Greedy Algorithms: Algorithms that appear to make the “best” choice at all steps
+Halting Problems: A well-known computer science problem that is unsolvable. It entails the impossibility of [a procedure that can take a computer program as input and input to the program and determine whether the [program will eventually stop when run with this input.
+Big-O Notation: allows the estimation of growth of functions without needing the consideration of constant [multipliers and smaller order terms
+Landau Symbol: the name of the big-O symbol, named after the German mathematician Paul Landau
+Big-Omega Notation: provides the lower bound for the size of f(x)
+Big-Theta Notation: The notation used when providing both the upper bound and lower bound of a function f(x) [relative to a reference function g(x)
+Computational Complexity: The efficiency of an algorithm based on the amount of time needed based on a [specified input size and the size of memory needed to implement it
+Time Complexity: An analysis of the time required to solve a problem of a particular size
+Space Complexity: An analysis of the computer memory required of an algorithm
+Worst-Case: the largest number of operations needed to solve the given problem using this algorithm on input [of specified size
+Average-Case: The average number of operations used to solve the problem over all possible inputs of a given size
+Algorithmic Paradigms: a general approach based on a particular concept that can be used to construct [algorithms for solving a variety of problems
+Brute Force Algorithm: an algorithm where a problem is solved in the most straightforward manner based on [the statement of the problem and the definitions of terms
+Constant Complexity: When the time or space complexity of an algorithm remains the same regardless of the input
+Linear Complexity: When the complexity of an algorithm relies on either the average-case or worst-case scenario
+Logarithmic Complexity: When the complexity of an algorithm relies solely on the worst-case scenario
+Linearithmic Complexity: When the time complexity of an algorithm is n log n
+Polynomial Complexity: When the time complexity of an algorithm is Θ(n^b)
+Exponential Complexity: When the time complexity of an algorithm is Θ(b^n), where b>1
+Factorial Complexity: When the time complexity of an algorithm is Θ(n!)
+Tractable: a problem that is solvable using an algorithm with polynomial worst-case complexity
+Intractable: problems that cannot be solved using an algorithm with worst-case polynomial time complexity 
+Unsolvable: problems where it can be shown that there is no algorithm that exists for solving them
+Solvable: problems that can be solved using an algorithm
+Congruence: When the modulo of two integers are equal
+Modulus: In modular arithmetic, it is the divisor that, once divided as many times as it can into the divisor, [will result in the remainder of the division
+Congruence Class: The set of all integers congruent to an integer a modulo m
+Z(m): The set of nonnegative integers less than m
+Arithmetic Modulo: Used when performing tasks utilizing the operations +m and @u2022m
+Base b Expansion of n: Let b be an integer greater than 1. Then if n is a positive integer, it can be expressed [uniquely in the form [ n = a@u2093b^x + a@u2093@u208b@u2081b^(x-1)+...+a@u2081b+a@u2080 [ Where x is a nonnegative integer, a@u2080, a@u2081, ..., a@u2093 are nonnegative integers less than b, and a@u2093 @u2260 0
+Decimal Expansions: base 10 expansion of integers
+Binary Expansions: base 2 expansion of integers
+Octal Expansions: base 8 expansion of integers
+Hexadecimal Expansions: base 16 expansion of integers
+Bytes: bit strings of length 8
+Primes: Positive integers that have exactly two different positive integer factors
+The Fundamental Theorem of Arithmetic: Every integer greater than 1 can be written uniquely as a prime or as [the product of two or more primes where the prime factors are written in order of nondecreasing size
+Trial Division: A brute-force algorithm that divides some integer n by all primes not exceeding @u221An and [concludes that n is prime if it is not divisible by any of these primes
+Euclidean Algorithm: An algorithm that finds the greatest common divisor of two integers by using successive [division to reduce the problem to two smaller integers until one of the integers is zero
+Linear Combination: For two integers a and b, there exists integers s and t such that the greatest common [divisor between a and b can be expressed as gcd(a, b) = sa + tb
+Extended Euclidean Algorithm: A method of finding the linear combination of two integers@u0027 greatest common [divisor by making a forward pass through the Euclidean algorithm and then making a backward pass through its [steps in order to the integers s and t when constructing the linear combination
+Pseudorandom: Numbers generated by systematic methods
+Encryption: The process of making a message secret 
+Decryption: The process of determining the original message from an encrypted message
+Principle of Mathematical Induction: To prove that P(n) is true for all positive integers n, we complete these steps:[ Basis Step: Show that P(1) is true. [ Inductive Step: Show that P(k) → P(k+1) is true for all positive integers k. [ To complete the inductive step, assuming the inductive hypothesis that P(k) holds for an arbitrary integer k, [show that must P(k+1) be true.
+Number of Subsets of a Finite Set: For an arbitrary nonnegative integer k, every set with k elements has 2^k subset.
+Strong Induction: To prove that P(n) is true for all positive integers n, where P(n) is a propositional function, [complete two steps: [ Basis Step: Verify that the proposition P(1) is true. [ Inductive Step: Show the conditional statement [P(1) ∧ P(2) ∧ … ∧ P(k)] → P(k+1) holds for all positive integers k.
+Using Strong Induction in Computational Geometry: Theorem: A simple polygon with n sides, where n is an integer [with n ≥ 3, can be triangulated into n - 2 triangles.
+Well-Ordering Property: A set is well ordered if every subset has a least element.[ N is well ordered under ≤. [ The set of finite strings over an alphabet using lexicographic ordering is well ordered.
+Recursively Defined Functions: A recursive or inductive definition of a function consists of two steps: [ Basis Step: Specify the value of the function at zero [ Recursive step: Give a rule for finding its value at an integer from its values at smaller integers
+Recursive Definitions of Sets Have Two Parts: The basis step specifies an initial collection of elements. [ The recursive step gives the rules for forming new elements in the set from those already known to be in the set.
+String Concatenation: Two strings can be combined via the operation of concatenation. Let Σ be a set of symbols [and Σ* be the set of strings formed from the symbols in Σ. We can define the concatenation of two strings, [denoted by @u2219, recursively as follows. [ Basis step: w @u220A Σ*, then w @u2219 λ= w.  [ Recursive step: If w1 @u220A Σ* and w2 @u220A Σ* and x @u220A Σ, then w1 @u2219 (w2x), = (w1 @u2219 w2)x.
+Well-Formed Formulae in Propositional Logic: The set of well-formed formulae in propositional logic involving [T, F, propositional variables, and operators from the set {@u00AC,∧,∨,→,@u2194}. [ Basis step: T, F, and s, where s is a propositional variable, are well-formed formulae. [ Recursive step: If E and F are well-formed formulae, then (@u00ACE),  (E∧ F), (E∨ F), (E→ F), [(E@u2194 F), are well-formed formulae. 
+Structural Induction: To prove a property of the elements of a recursively defined set, we use structural induction. [ Basis step: Show that the result holds for all elements specified in the basis step of the recursive definition. [ Recursive step: Show that if the statement is true for each of the elements used to construct new elements [in the recursive step of the definition, the result holds for these new elements.
+Product Rule: A procedure can be broken down into a sequence of two tasks. There are n1 ways to do the first task [and n2 ways to do the second task. Then there are n1 × n2 ways to do a procedure.
+Sum Rule: If a task can be done either in one of n1 ways or in one of n2, where none of the set of n1 ways is the [same as any of the n2 ways, then there are n1+ n2 ways to do the task.
+Subtraction Rule: If a task can be done either in one of n1 ways or in one of n2 ways, then the total number of ways [to do the task is n1+ n2 minus the number of ways to do the task that are common to the two different ways. [ |A ∪ B|= |A| + |B| - |A ∩ B|
+Division Rule: There are n/d ways to do a task if it can be done using a procedure that can be carried out in n [ways, and for every way w, exactly d of the n ways corresponds to way w. 
+Division Rule in Terms of Sets: If the finite set A is the union of n pairwise disjoint subsets each with d [elements, then n = |A|/d.
+Division Rule in Terms of Functions: If f is a function from A to B, where both are finite sets, and for every [value y ∈ B there are exactly d values x ∈ A such that f(x) = y, then |B| = |A|/d.
+Tree Diagrams: We can solve many counting problems through the use of tree diagrams, where a branch represents [a possible choice and the leaves represent possible outcomes. 
+Pigeonhole Principle: If k is a positive integer and k + 1 objects are placed into k boxes, then at least one box [contains two or more objects.
+Generalized Pigeonhole Principle: If N objects are placed into k boxes, then there is at least one box containing [at least ⌈N/k⌉ objects.
+Permutations: A permutation of a set of distinct objects is an ordered arrangement of these objects. An ordered [arrangement of r elements of a set is called an r-permutation.
+Combinations: An r-combination of elements of a set is an unordered selection of r elements from the set. Thus, [an r-combination is simply a subset of the set with r elements. 
+Binomial Coefficient: Binomial[n,k]
+Double Counting Proof: A double counting proof uses counting arguments to prove that both sides of an identity [count the same objects, but in different ways. 
+Bijective Proof: A bijective proof shows that there is a bijection between the sets of objects counted by the two [sides of the identity. 
+Distinguishable: When objects are different from each other 
+Identical: When objects are identical to each other
+Distinguishable Boxes: Labeled boxes 
+Indistinguishable Boxes: Unlabeled boxes
+Procedure that yields one of a given set of possible outcomes 
+In an experiment, it is the set of possible outcomes 
+Subset of the sample space 
+If S is a finite space of equally likely outcomes, and E is an event (a subset of S), then the probability of E is p(E) = |E|/|S|.
+For every event E, 0 <= p(E) <= 1. This follows from the definition: 0 <= p(E) = |E|/|S| <= |S|/|S| = 1, since 0 <= |E| <= |S|. 
+Function p from the set of all outcomes of the sample space S
+Suppose we have a set S with n elements, then uniform distribution assigns the probability 1/n to each element of S.
+The probability of the event E is the sum of the possibilities of the outcomes in E. 
+p(@u0112) = 1-p(E)
+p(E@u2081 @u222a E@u2082) = p(E@u2081) + p(E@u2082) - p(E@u2081 @u2229 E@u2082) 
+Let E and F be events with P(F) > 0. The conditional probability of E given F, denoted p(E|F), is defined as: p(E|F) = p(E @u2229 F)/p(F)
+The events E and F are independent if and only if (E @u2229 F) = p(E)p(F)
+The events E@u2081, E@u2082, ..., En are pairwise independent if and only if p(E@u1d62 @u2229 E@u2C7C) = p(E@u1d62)p(E@u2C7C) for all pairs i and j with i <= j <= n.[ They are mutually independent if :p(E@u1d62@u2081 @u2229 E@u1d62@u2082 @u2229 ... @u2229 E@u1d62@u2098) = p(E@u1d62@u2081)p(E@u1d62@u2082)@u00D7...@u00D7p(E@u1d62@u2098) whenever ij, j = 1,2,...,m, are integers with 1 <= i@u2081 < i@u2082 < … < i@u2098<=n, and m >= 2 [ Note: If something is mutually independent, it has to be pairwise independent.
+Suppose an experiment can only have two possible outcomes, e.g., the flipping of a coin or the random generation of a bit. [ Bernoulli trial: each performance of the experiment [ One outcome is called success and the other a failure [ If p is the probability of success and q is the probability of failure, then p + q = 1. 
+A random variable is a function from the sample space of an experiment to the set of real numbers. That is, a random variable assigns a real number to each possible outcome. 
+The distribution of a random variable X on a sample space S is the set of pairs (r, p(X=r)) for all r @u2208 X(S), where p(X = r) is the probability that X takes the value r.
+Algorithms that make random choices at one or more steps are called probabilistic algorithms. [ Monte Carlo Algorithms are probabilistic algorithms used to answer decision problems, which are problems that are either “true” or “false” as thE@u1d62r answer. [ A Monte Carlo Algorithm consists of a sequence of tests. For each test, the algorithm responds “true” or “unknown”. [ If the response is “true”, the algorithm terminates with the answer is “true”. [ After running a specified sequence of tests where every step yields “unknown”, the algorithm outputs “false”. [ Idea: probability of algorithm incorrectly outputting “false” should be very small as long as a sufficient number of tests are performed. 
+Example of a Monte Carlo Algorithm...useful for finding large primes 
+Suppose that E and F are events from a sample space S such that p(E) =/= 0 and p(F) =/= 0. Then: [ p(F|E) = p(E|F)p(F)/(p(E|F)p(F) + p(E|G)p(G)) where G is the complement of F.
+Binary Relations: A binary relation R from a set A to a set B is a subset R ⊆ A x B.
+Binary Relation on a Set: A binary relation R on a set A is a subset of A x A or a relation from A to A.
+Reflexive Relations: R is reflexive iff(a,a) ∊ R for every element a ∊ A. Written symbolically, R is reflexive [if and only if ∀x(x∊U⟶ (x,x) ∊ R).
+Symmetric Relations: R is symmetric iff (b,a) ∊ R whenever (a,b) ∊ R for all a,b ∊ A. Written symbolically, R [is symmetric if and only if ∀x∀y((x,y) ∊R⟶ (y,x) ∊ R) 
+Antisymmetric Relations: A relation R on a set A such that for all a,b ∊ A if (a,b) ∊ R and (b,a) ∊ R, then [a = b is called antisymmetric. [ Written symbolically, ∀x∀y((x,y) ∊R∧ (y,x) ∊ R ⟶ x= y)
+Transitive Relations: A relation R on a set A is called transitive if whenever (a,b) ∊ R and (b,c) ∊ R, [then (a,c) ∊ R, for all a,b,c ∊ A.[Written symbolically, R is transitive if and only if ∀x∀y∀z((x,y) ∊R∧ (y,z) ∊ R ⟶ (x,z) ∊ R)
+Composition: Suppose [ 1) R1 is a relation from a set A to a set B [ 2) R2 is a relation from B to a set C [ Then the composition (or composite) of R2 with R1, is a relation from A to C where if (x,y) is a member of [R1 and (y,z) is a member of R2, then (x,z) is a member of R2 ∘ R1.
+Powers of a Relation: Let R be a binary relation on A. Then the powers R^n of the relation R can be defined [inductively by: [ 1) Basis Step: R^1 = R [ 2) Inductive Step: R^(n+1) = R^n ∘ R 
+Digraphs: A directed graph, or digraph, consists of a set V of vertices (or nodes) together with a set E of [ordered pairs of elements of V called edges (or arcs). The vertex a is called the initial vertex of the edge [(a,b), and the vertex b is called the terminal vertex of this edge. An edge of the form (a,a) is called a loop.
+Reflexivity: A loop must be present at all vertices in the graph.
+Symmetry: If (x,y) is an edge, then so is (y,x).
+Antisymmetry: If (x,y) with x ≠ y is an edge, then (y,x) is not an edge.
+Transitivity: If (x,y) and (y,z) are edges, then so is (x,z).
+Equivalence Relations: A relation on a set A is called an equivalence relation if it is reflexive, symmetric, [and transitive. Two elements a, and b that are related by an equivalence relation are called equivalent. The [notation a~b is often used to denote that a and b are equivalent elements with respect to a particular [equivalence relation.
+Equivalence Classes: Let R be an equivalence relation on a set A. The set of all elements that are related to [an element a of A is called the equivalence class of a. The equivalence class of a with respect to R is [denoted by [a]R.
+Partition of a Set: A partition of a set S is a collection of disjoint nonempty subsets of S that have S as [their union. In other words, the collection of subsets Ai, where i ∈ I (where I is an index set), forms a [partition of S if and only if [ Ai ≠ ∅ for i ∈ I, [ Ai ∩ Aj = ∅ when i ≠ j
+Graph: (V , E) consists of V , a nonempty set of vertices (or nodes) and E, a set of edges. Each edge has [either one or two vertices associated with it, called its endpoints.  
+Infinite Graph: A graph with an infinite vertex set or an infinite number of edges 
+Finite Graph: A graph with a finite vertex set and a finite edge set 
+Simple Graph: A graph in which each edge connects two different vertices and where no two edges connect [the same pair of vertices
+Multigraphs: Graphs that may have multiple edges connecting the same vertices 
+Pseudographs: Graphs that may include loops, and possibly multiple edges connecting the same pair of [vertices or a vertex to itself
+Directed Graph: (or digraph) (V , E) consists of a nonempty set of vertices V and a set of directed edges [(or arcs) E. Each directed edge is associated with an ordered pair of vertices. The directed edge [associated with the ordered pair (u, v) is said to start at u and end at v.
+Simple Directed Graph: A directed graph with no loops and no multiple directed edges
+Directed Multigraphs: Directed graphs that may have multiple directed edges from a vertex to a second [(possibly the same) vertex are used to model such networks. 
+Mixed Graph:  A graph with both directed and undirected edges  
+Social Networks: Graphs that are extensively used to model social structures based on different kinds [of relationships between people or groups of people. 
+Isolated: A vertex of degree zero 
+Pendant: if and only if a vertex has degree one.
+Complete Graph: a simple graph that contains exactly one edge between each pair of distinct vertices.
+Non Complete Graph: A simple graph for which there is at least one pair of distinct vertex not [connected by an edge
+Bipartite: vertex set V can be partitioned into two disjoint sets V@u2081 and V@u2082 such that every edge [in the graph connects a vertex in V@u2081 and a vertex in V@u2082
+Serial: the algorithms written to solve problems were designed to perform one step at a time
+Parallel Processing: uses computers made up of many separate processors, each with its own memory, [helps overcome the limitations of computers with a single processor.
+Parallel Algorithm: breaks a problem into a number of subproblems that can be solved concurrently, [can then be devised to rapidly solve problems using a computer with multiple processors.
+Hops: a large number of intermediate links for processors to share information.
+Subgraph: When edges and vertices are removed from a graph, without removing endpoints of any [remaining edges, a smaller graph is obtained.  
+Edge Contraction: removes an edge e with endpoints u and v and merges u and w into a new single [vertex w, and for each edge with u or v as an endpoint replaces the edge with one with w as endpoint [in place of u or v and with the same second endpoint.
+Union of the Graphs: graph that contains all the vertices and edges of these graphs
+Isomorphic: two graphs have exactly the same form, in the sense that there is a one-to-one [correspondence between their vertex sets that preserves edges. 
+Adjacency Lists: specify the vertices that are adjacent to each vertex of the graph.
+Graph Invariant: two graphs are not isomorphic if we can find a property only one of the two graphs [has, but that is preserved by isomorphism.  
+Path: a sequence of edges that begins at a vertex of a graph and travels from vertex to vertex along [edges of the graph.
+Connected: An undirected graph’s path between every pair of distinct vertices of the graph. 
+Disconnected: An undirected graph that is not connected is called. We say that we disconnect a graph [when we remove vertices or edges, or both, to produce a disconnected subgraph.
+Cut Vertices: the removal from a graph of a vertex and all incident edges produces a subgraph with [more connected components.  
+Non Separable Graphs: Connected graphs without cut vertices and can be thought of as more connected [than those with a cut vertex.
+Vertex Cut: the vertex connectivity of a non complete graph G, denoted by κ(G), as the minimum number [of vertices in a strongly connected graph
+Strongly Connected: if there is a path from a to b and from b to a whenever a and b are vertices [in the graph.
+Weakly Connected: if there is a path between every two vertices in the underlying undirected graph.
+Euler Circuit: a simple circuit containing every edge of G. 
+Hamilton Path: A simple path in a graph G that passes through every vertex exactly once 
+Gray Code: a labeling of the arcs of the circle such that adjacent arcs are labeled with bit strings [that differ in exactly one bit.
+Weighted Graphs: Graphs that have a number assigned to each edge 
+Approximation Algorithm: A practical approach to the traveling salesperson problem when there are [many vertices. These are algorithms that do not necessarily produce the exact solution to the problem but instead are [guaranteed to produce a solution that is close to an exact solution. 
+Planar: a graph that is drawn in the plane without any edges crossing (where a crossing of edges is [the intersection of the lines or arcs representing them at a point other than their common endpoint).
+Regions: A planar representation of a graph splits the plane
+Elementary Subdivision: If a graph is planar, so will be any graph obtained by removing an edge {u, v} [and adding a new vertex w together with edges {u,w} and {w, v}.  
+Homeomorphic: The graphs G@u2081 = (V@u2081, E@u2081) and G@u2082 = (V@u2082, E@u2082) if they can be obtained from the same graph [by a sequence of elementary subdivisions.
+Dual Graph: Two regions that touch at only one point are not considered adjacent. 
+Chromatic Number: the least number of colors needed for a coloring of this graph.   
+Tree: a connected undirected graph with no simple circuits
+Forest: the property that each of their connected component is a tree
+Tree Theorem: An undirected graph is a tree if and only if there is a unique simple path between any [two of its vertices.
+Root: A vertex of a tree.
+Rooted Tree:  a tree in which one vertex has been designated as the rot and every edge is directed [away from the root.
+Parent: If v is a vertex in T other than the root, the parent of v is the unique vertex u such that [there is a directed edge from u to v.
+Child: Vertices are u and v. When u is the parent of v, v is called a child of u.
+Siblings: Vertices with the same parent are called siblings.
+Ancestors: The ancestors of a vertex other than the root are the vertices in the path from the root [to this vertex.
+Descendants : The descendants of a vertex v are those vertices that have v as an ancestor.
+Leaf: A vertex of a rooted tree if it has no children.
+Internal Vertices:  Vertices that have children.
+M-ary Tree:  When every internal vertex has no more than m children.
+Full M-ary Tree:  When every internal vertex has exactly m children.
+Ordered Rooted Tree: a rooted tree where the children of each internal vertex are ordered
+Binary Tree:  if an internal vertex has two children
+Left Child:  First child of a binary tree
+Right Child: Second child of a binary tree
+Left Subtree: tree rooted at the left child
+Right Subtree: tree rooted at the right child
+Tree Vertices Theorem: A tree with n vertices has n-1 edges
+Full M-ary Tree Vertices Theorem: A full m-ary tree with i internal vertices contains n = mi + 1 [vertices.
+Full M-ary Tree Theorem: A full m-ary tree with [(i ) n vertices has i = (n − 1)/m internal vertices and l = @u005b(m − 1)n + 1]/m leaves, [(ii ) i internal vertices has n = mi + 1 vertices and l = (m − 1)i + 1 leaves, [(iii ) l leaves has n = (ml − 1)/(m − 1) vertices and i = (l − 1)/(m − 1) internal vertices.
+Balanced Tree: A rooted m-ary tree of height h is balanced if all leaves are at levels h or h − 1.
+Balanced Tree Theorem: There are at most mh leaves in an m-ary tree of height h.
+Binary Search Tree: binary tree in which each child of a vertex is designated as a right or left [child, no vertex has more than one right child or left child, and each vertex is labeled with a key, which is one of the items.
+Decision Tree: A rooted tree in which each internal vertex corresponds to a decision, with a subtree [at these vertices for each possible outcome of the decision.
+Binary Comparison Theorem: A sorting algorithm based on binary comparisons requires at least upper [bound(log n!) comparisons.
+Average Comparison Theorem: The average number of comparisons used by a sorting algorithm to sort n [elements based on binary comparisons is (omega)(n log n). 
+Huffman Coding: an algorithm that takes as input the frequencies (which are the probabilities of [occurrences) of symbols in a string and produces as output a prefix code that encodes the string [using the fewest possible bits, among all possible binary prefix codes for these symbols.
+Nim Game: at the start of a game there are a number of piles of stones. Two players take turns making [moves; a legal move consists of removing one or more stones from one of the piles, without removing all the stones left. [A player without a legal move loses.
+Minmax Strategy: The strategy where the first player moves to a position represented by a child with [maximum value and the second player moves to a position of a child with minimum value
+Minmax Theorem: The value of a vertex of a game tree tells us the payoff to the first player if both [players follow the minmax strategy and play starts from the position represented by this vertex
+Universal Address System: a vertex v at level n, for n ≥ 1, is labeled x@u2081.x@u2082. . . . .x@u2099, where the [unique path from the root to v goes through the x@u2081st vertex at level 1, the x@u2082nd vertex at level 2, [and so on.
+Traversal Algorithms: Procedures for systematically visiting every vertex of an ordered rooted tree.
+Infix Form: To make such expressions unambiguous it is necessary to include parentheses in the in order [traversal whenever we encounter an operation.
+Prefix Form: obtain the prefix form of an expression when we traverse its rooted tree in preorder.
+Polish Notation: expressions written in prefix form.
+Postfix Form: We obtain the postfix form of an expression by traversing its binary tree in postorder.
+Reverse Polish Notation - expressions written in postfix form.
+Spanning Tree: Let G be a simple graph. A spanning tree of G is a subgraph of G that is a tree containing [every vertex of G.
+Backtracking: depth first search.
+Breath-first Search: producing a spanning tree of using a simple graph. a rooted tree will be constructed, [and the underlying undirected graph of this rooted tree forms the spanning tree.
+Minimum Spanning Tree: a spanning tree so that the sum of the weights of the edges of the tree is minimized.
+Prim’s Algorithm: Begin by choosing any edge with smallest weight, putting it into the spanning tree. [Successively add to the tree edges of minimum weight that are incident to a vertex already in the tree, [never forming a simple circuit with those edges already in the tree. Stop when n − 1 edges have [been added.
+Kruskal’s Algorithm: choose an edge in the graph with minimum weight. Successively add edges with [minimum weight that do not form a simple circuit with those edges already chosen. Stop after n - 1 edges [have been selected.
