@@ -3072,11 +3072,10 @@ void help(int*userNum) {
     cout << "2. Previous Searches: when selected, a list of terms that were previously searched for will be displayed." << endl;
     cout << "3. Sort Dictionary: sorts the words in the dictionary by chapters, sections or entire dictionary - determined by user input." << endl;
     cout << "4. View Dictionary: prints dictionary by chapter, a selection of chapters, section, a selection of sections or entire dictionary. " << endl;
-    cout << "5. Modifiable Dictionary: Sort by chapters, sections, or the entire dictionary." << endl;
-    cout << "6. Table of Contents: prints out a list of chapters and their respective sections in the textbook." << endl;
-    cout << "7. Navigation Help: prints out a help menu navigating through the user menu." << endl;
-    cout << "8. Credits: prints out the students working on this project and references" << endl;
-    cout << "9. Quit: exits the program." << endl;
+    cout << "5. Table of Contents: prints out a list of chapters and their respective sections in the textbook." << endl;
+    cout << "6. Navigation Help: prints out a help menu navigating through the user menu." << endl;
+    cout << "7. Credits: prints out the students working on this project and references" << endl;
+    cout << "8. Quit: exits the program." << endl;
     *userNum = 0;
 }
 void creditList(int *userNum) {
