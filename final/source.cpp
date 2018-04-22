@@ -3066,9 +3066,9 @@ void help(int*userNum) {
     cout << "\n----------------------------------------------------------------------------------------------------\n";
     cout << "\nThis program is a dictionary for UF's COT3100 discrete structures course.\n";
     cout << "1. Search Term: searches for a term that is inputted by the user." << endl;
-    cout << "2. Previous Searches: when selected, a list of terms that were previously searched for will be displayed." << endl;
-    cout << "3. Sort Dictionary: sorts the words in the dictionary by chapters, sections or entire dictionary - determined by user input." << endl;
-    cout << "4. View Dictionary: prints dictionary by chapter, a selection of chapters, section, a selection of sections or entire dictionary. " << endl;
+    cout << "2. Previous Searches: when selected, a list of terms that were previously searched for will be \ndisplayed." << endl;
+    cout << "3. Sort Dictionary: sorts the words in the dictionary by chapters, sections or entire dictionary - \ndetermined by user input." << endl;
+    cout << "4. View Dictionary: prints dictionary by chapter, a selection of chapters, section, a selection of \nsections or entire dictionary. " << endl;
     cout << "5. Table of Contents: prints out a list of chapters and their respective sections in the textbook." << endl;
     cout << "6. Navigation Help: prints out a help menu navigating through the user menu." << endl;
     cout << "7. Credits: prints out the students working on this project and references" << endl;
