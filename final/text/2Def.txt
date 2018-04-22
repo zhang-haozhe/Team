@@ -29,8 +29,8 @@ Surjections: function f from A to B is called onto or surjective if and only if 
 Bijections: one-to-one correspondence, if it is both one to one and onto (surjective and injective)
 Inverse Function: f = bijection from A to B, then the inverse of f (f-1) is the function from B to A defined as
 Composition: let f:BàC and g:AàB. The composition of f with g (denoted f ○ g) is the function from A to C defined as
-Floor Function: f(x) = |_x_| – largest integer less than or equal to x
-Ceiling Function: f(x) = |-x-| - smallest integer greater than or equal to x
+Floor Function: f(x) = @u2308x@u2309 – largest integer less than or equal to x
+Ceiling Function: f(x) = @u230Ax@u230B - smallest integer greater than or equal to x
 Factorial Function: f:NàZ+, denoted by f(n) = n!, product of the first n positive integer when n is nonnegative
 Sequence: function from a subset of the integers to a set S – notation a@u2099 (term of the sequence)
 Geometric Progression: sequence of the form where initial term a and common ratio r are real numbers
