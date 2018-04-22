@@ -305,6 +305,14 @@ void List::print() {
                     }
 			else if (tempString == "@u00D7") { //multiplication mark
                         cout<< "\u00D7";
+                    }else if (tempString == "@u2308") { //left ceiling
+                        cout<< "\u2308";
+                    }else if (tempString == "@u2309") { //right ceiling
+                        cout<< "\u2309";
+                    }else if (tempString == "@u230A") { //left floor
+                        cout<< "\u230A";
+                    }else if (tempString == "@u230B") { //right floor
+                        cout<< "\u230B";
                     }
                     tempString = "";
                 }
@@ -463,6 +471,14 @@ void List::printSearchDef(string term) {
                     }
 			else if (tempString == "@u00D7") { //multiplication mark
                         cout<< "\u00D7";
+                    }else if (tempString == "@u2308") { //left ceiling
+                        cout<< "\u2308";
+                    }else if (tempString == "@u2309") { //right ceiling
+                        cout<< "\u2309";
+                    }else if (tempString == "@u230A") { //left floor
+                        cout<< "\u230A";
+                    }else if (tempString == "@u230B") { //right floor
+                        cout<< "\u230B";
                     }
                     tempString = "";
                 }
