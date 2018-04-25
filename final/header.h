@@ -11,10 +11,8 @@ void searchByCh(int chIn);
 void sort(int*userNum);
 void sortChp(int numChp);
 void sortEntire(int sub);
-bool toPrintSort(); //delete maybe
-void sortSec(int numSec); 
 void sortPrintSecIdv(string sec);
-void addSortSel();
+void addSortSel(string x);
 int sortPrint();
 
 void view(int*userNum);
