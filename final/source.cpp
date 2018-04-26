@@ -2169,7 +2169,7 @@ void view(int *userNum) {
     }
     if (VDSelection == 3) {
         cout << "Input which sections you want to view. " << endl;
-		cout << "Note: You can only view up to 6 chapters at a time in this menu.\n";
+		cout << "Note: You can only view up to 6 sections at a time in this menu.\n";
 		int numSec;
 		cout << "\nEnter the number of sections to view: " << endl;
 		cin >> numSec;
